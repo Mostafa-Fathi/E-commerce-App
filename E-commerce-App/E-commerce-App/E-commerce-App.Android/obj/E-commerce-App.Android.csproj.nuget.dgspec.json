@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj": {}
+    "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj": {
+    "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
+        "projectUniqueName": "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
         "projectName": "E-commerce-App.Android",
-        "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
+        "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
         "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\obj\\",
+        "outputPath": "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid12.0": {
             "projectReferences": {
-              "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
-                "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj"
+              "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
+                "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj"
               }
             }
           }
@@ -54,14 +54,14 @@
         }
       }
     },
-    "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
+    "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
+        "projectUniqueName": "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
         "projectName": "E-commerce-App",
-        "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
+        "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
         "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\obj\\",
+        "outputPath": "C:\\Users\\mosta\\OneDrive\\Documents\\GitHub\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -94,11 +94,19 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Microsoft.Net.Http": {
+              "target": "Package",
+              "version": "[2.2.29, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
