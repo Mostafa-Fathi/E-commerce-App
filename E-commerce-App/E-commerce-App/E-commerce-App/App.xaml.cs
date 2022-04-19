@@ -10,7 +10,7 @@ namespace E_commerce_App
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new E_commerce_App.View.TabContainer();
         }
 
         protected override void OnStart()
