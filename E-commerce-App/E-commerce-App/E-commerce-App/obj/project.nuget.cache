@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "dM5qeZjn81YBXu1SRbdIALD6tfIt8O9Zk/X2YrVePZ4+0dIQIYn+SNmD/bmMh2+V1IkNMvrXEzThLNQzX54feg==",
+  "dgSpecHash": "zU2oSqTTlmG3gGFwPTAnYt44hUR2SN9rEMNVTRvMs4TZaj2DL7sk7n79elmKQRs+3KteeWQ3xT2L0OxRXpfVtg==",
   "success": true,
-  "projectFilePath": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
+  "projectFilePath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\marwa\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\marwa\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\marwa\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\marwa\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\marwa\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\mosta\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\mosta\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\mosta\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\mosta\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\mosta\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
   "logs": []
 }

@@ -3172,24 +3172,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marwa\\.nuget\\packages\\": {},
+    "C:\\Users\\mosta\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
+      "projectUniqueName": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
       "projectName": "E-commerce-App.Android",
-      "projectPath": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
-      "packagesPath": "C:\\Users\\marwa\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\obj\\",
+      "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
+      "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\marwa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mosta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3203,8 +3203,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
-              "projectPath": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj"
+            "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
+              "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj"
             }
           }
         }

@@ -525,23 +525,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marwa\\.nuget\\packages\\": {},
+    "C:\\Users\\mosta\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
+      "projectUniqueName": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
       "projectName": "E-commerce-App",
-      "projectPath": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
-      "packagesPath": "C:\\Users\\marwa\\.nuget\\packages\\",
-      "outputPath": "D:\\ITI\\Xamarin\\E-commerce\\E-commerce-App\\E-commerce-App\\E-commerce-App\\obj\\",
+      "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj",
+      "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\marwa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mosta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
