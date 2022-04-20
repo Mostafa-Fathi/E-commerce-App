@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <RootNamespace>$(MSBuildProjectName.Replace("-", "_"))</RootNamespace>
+    <AssemblyName>$(MSBuildProjectName.Replace("-", "_"))</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -21,16 +23,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\Pages\Cart.xaml">
+    <EmbeddedResource Update="Views\Pages\Cart.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Pages\Categories.xaml">
+    <EmbeddedResource Update="Views\Pages\Categories.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\Pages\Profile.xaml">
+    <EmbeddedResource Update="Views\Pages\Profile.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\TabContainer.xaml">
+    <EmbeddedResource Update="Views\TabContainer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

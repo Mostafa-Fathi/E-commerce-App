@@ -637,8 +637,6 @@ C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\bin\Debug\com.companyname.e_commerce_app-Signed.aab
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\bin\Debug\com.companyname.e_commerce_app-Signed.apk
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\bin\Debug\com.companyname.e_commerce_app-Signed.apk.idsig
-C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\bin\Debug\E-commerce-App.dll
-C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\bin\Debug\E-commerce-App.pdb
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\MonoAndroid,Version=v12.0.AssemblyAttributes.cs
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\build.props
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\adb.props
@@ -701,8 +699,6 @@ C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\resolvedassemblies.hash
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\E-commerce-App.Android.dll
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\E-commerce-App.Android.pdb
-C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\E-commerce-App.dll
-C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\E-commerce-App.pdb
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\FormsViewGroup.dll
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\FormsViewGroup.pdb
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\Java.Interop.dll
@@ -1262,3 +1258,8 @@ C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\stamp\_GenerateJavaStubs.stamp
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\bin\Debug\E_commerce_App.dll
+C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\bin\Debug\E_commerce_App.pdb
+C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\E_commerce_App.dll
+C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\E_commerce_App.pdb
+C:\Users\mosta\OneDrive\Documents\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.Android\obj\Debug\120\android\assets\Newtonsoft.Json.dll

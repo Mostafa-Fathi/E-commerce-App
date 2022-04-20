@@ -1549,7 +1549,7 @@
           "buildTransitive/monoandroid50/Xamarin.Google.Guava.ListenableFuture.targets": {}
         }
       },
-      "E-commerce-App/1.0.0": {
+      "E_commerce_App/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -1558,10 +1558,10 @@
           "Xamarin.Forms": "5.0.0.2196"
         },
         "compile": {
-          "bin/placeholder/E-commerce-App.dll": {}
+          "bin/placeholder/E_commerce_App.dll": {}
         },
         "runtime": {
-          "bin/placeholder/E-commerce-App.dll": {}
+          "bin/placeholder/E_commerce_App.dll": {}
         }
       }
     }
@@ -3195,7 +3195,7 @@
         "xamarin.google.guava.listenablefuture.nuspec"
       ]
     },
-    "E-commerce-App/1.0.0": {
+    "E_commerce_App/1.0.0": {
       "type": "project",
       "path": "../E-commerce-App/E-commerce-App.csproj",
       "msbuildProject": "../E-commerce-App/E-commerce-App.csproj"
@@ -3203,30 +3203,30 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v12.0": [
-      "E-commerce-App >= 1.0.0",
+      "E_commerce_App >= 1.0.0",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2196"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Aalaa\\.nuget\\packages\\": {},
+    "C:\\Users\\mosta\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ITI\\Xamarin\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
+      "projectUniqueName": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
       "projectName": "E-commerce-App.Android",
-      "projectPath": "E:\\ITI\\Xamarin\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
-      "packagesPath": "C:\\Users\\Aalaa\\.nuget\\packages\\",
-      "outputPath": "E:\\ITI\\Xamarin\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\obj\\",
+      "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\E-commerce-App.Android.csproj",
+      "packagesPath": "C:\\Users\\mosta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Aalaa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mosta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3240,8 +3240,8 @@
       "frameworks": {
         "monoandroid12.0": {
           "projectReferences": {
-            "E:\\ITI\\Xamarin\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
-              "projectPath": "E:\\ITI\\Xamarin\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj"
+            "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj": {
+              "projectPath": "C:\\Users\\mosta\\OneDrive\\Documents\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App\\E-commerce-App.csproj"
             }
           }
         }
