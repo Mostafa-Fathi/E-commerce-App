@@ -32,15 +32,16 @@ namespace E_commerce_App.ViewModel
             httpClient = new ServerRequests();
             loadData();
             ProductsList = new ObservableCollection<Product>() { 
-                new Product(){id=0,title="title1",description="description 1",category="category1"},
-                new Product(){id=0,title="title2",description="description 2",category="category2"},
-                new Product(){id=0,title="title3",description="description 3",category="category3"}
+                new Product(){id=0,title="Loading"},
+              
             };
             
         }
         private async void loadData()
         {
-            ProductsList = await httpClient.GetProducts();
+           // ProductsList = await httpClient.GetProducts();
+            ProductsList = await httpClient.GetProducts("category/jewelery");
+
         }
 
 

@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.UWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-04-20T03:18:13.138</Modified>
+      <Modified>2022-04-20T03:43:17.995</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.UWP\bin\x86\Debug\E_commerce_App.UWP.exe">
       <PackagePath>entrypoint\E_commerce_App.UWP.exe</PackagePath>
-      <Modified>2022-04-20T03:18:10.642</Modified>
+      <Modified>2022-04-20T03:43:16.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Aalaa\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -72,7 +72,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App\bin\Debug\netstandard2.0\E-commerce-App.dll">
       <PackagePath>E-commerce-App.dll</PackagePath>
-      <Modified>2022-04-20T03:27:37.428</Modified>
+      <Modified>2022-04-20T03:44:51.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Aalaa\.nuget\packages\win2d.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
@@ -231,11 +231,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.UWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-04-20T03:18:10.578</Modified>
+      <Modified>2022-04-20T03:43:16.338</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.UWP\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-04-20T03:18:10.579</Modified>
+      <Modified>2022-04-20T03:43:16.338</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -255,7 +255,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.UWP\bin\x86\Debug\Core\E_commerce_App.UWP.exe">
       <PackagePath>E_commerce_App.UWP.exe</PackagePath>
-      <Modified>2022-04-20T03:18:13.134</Modified>
+      <Modified>2022-04-20T03:43:17.991</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
