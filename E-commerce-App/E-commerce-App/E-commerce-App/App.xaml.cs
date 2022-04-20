@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_commerce_App.View.Pages;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,8 @@ namespace E_commerce_App
         {
             InitializeComponent();
 
-            MainPage = new E_commerce_App.View.TabContainer();
+            //MainPage = new E_commerce_App.View.TabContainer();
+            MainPage = new Categories();
         }
 
         protected override void OnStart()

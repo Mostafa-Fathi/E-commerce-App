@@ -1,1 +1,1 @@
-D:\ITI\Xamarin\E-commerce\E-commerce-App\E-commerce-App\E-commerce-App.UWP\E-commerce-App.UWP.csproj;x86
+E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App.UWP\E-commerce-App.UWP.csproj;x86

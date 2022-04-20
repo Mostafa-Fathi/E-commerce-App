@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerce-App.UWP", "E-com
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerce-App.Android", "E-commerce-App\E-commerce-App.Android\E-commerce-App.Android.csproj", "{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-commerce-App", "E-commerce-App\E-commerce-App\E-commerce-App.csproj", "{0EC70358-4598-4E8D-A224-B482ACCA2A3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-commerce-App", "E-commerce-App\E-commerce-App\E-commerce-App.csproj", "{0EC70358-4598-4E8D-A224-B482ACCA2A3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,8 +51,6 @@ Global
 		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Debug|x64.Build.0 = Debug|Any CPU
 		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Debug|x64.Deploy.0 = Debug|Any CPU
 		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Debug|x86.Build.0 = Debug|Any CPU
-		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Debug|x86.Deploy.0 = Debug|Any CPU
 		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D508CCBD-6D60-49A8-ABE4-455FAE3BEA47}.Release|Any CPU.Deploy.0 = Release|Any CPU

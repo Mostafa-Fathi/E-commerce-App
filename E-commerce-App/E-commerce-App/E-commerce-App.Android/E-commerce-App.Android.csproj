@@ -86,7 +86,7 @@
   <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\E-commerce-App\E-commerce-App.csproj">
-      <Project>{C4827231-0F4E-476E-8BEA-614EF4AC149A}</Project>
+      <Project>{0EC70358-4598-4E8D-A224-B482ACCA2A3B}</Project>
       <Name>E-commerce-App</Name>
     </ProjectReference>
   </ItemGroup>
