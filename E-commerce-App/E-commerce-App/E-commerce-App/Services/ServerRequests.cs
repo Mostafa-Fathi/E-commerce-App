@@ -19,8 +19,24 @@ namespace E_commerce_App.Services
         categories = JsonConvert.DeserializeObject<ObservableCollection<string>>(categoriesAsString);
         return categories;
         }
-    
- 
 
-}
+    // Only used for get all products or products belong to specific category  
+     public async Task<ObservableCollection<Product>> GetProducts(string url="")
+    {
+        string ProductAPI = $"https://fakestoreapi.com/products/{url}";
+        ObservableCollection<Product> products;
+        string productsAsString = await httpClient.GetStringAsync(ProductAPI);
+        products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
+        return products;
+    }
+    public async Task<Product> GetSelectedProduct(string url = "")
+        {
+            string ProductAPI = $"https://fakestoreapi.com/products/{url}";
+            Product product;
+            string productsAsString = await httpClient.GetStringAsync(ProductAPI);
+            product = JsonConvert.DeserializeObject<Product>(productsAsString);
+            return product;
+        }
+
+    }
 }

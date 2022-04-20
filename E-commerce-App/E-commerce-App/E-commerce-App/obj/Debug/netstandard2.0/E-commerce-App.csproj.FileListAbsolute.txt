@@ -55,3 +55,4 @@ E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App\obj\D
 E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App\obj\Debug\netstandard2.0\E-commerce-App.dll
 E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App\obj\Debug\netstandard2.0\ref\E-commerce-App.dll
 E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App\obj\Debug\netstandard2.0\E-commerce-App.pdb
+E:\ITI\Xamarin\E-commerce-App\E-commerce-App\E-commerce-App\E-commerce-App\obj\Debug\netstandard2.0\View\Pages\Products.xaml.g.cs
