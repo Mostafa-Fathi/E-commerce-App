@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_commerce_App.View.Pages.Products">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding ProductsList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="5">
+                                <Label Text="{Binding title}"/>
+                                <Label FontAttributes="Bold" TextColor="SaddleBrown" Text="{Binding description }"/>
+                                <Label TextColor="RosyBrown" Text="{Binding category}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
