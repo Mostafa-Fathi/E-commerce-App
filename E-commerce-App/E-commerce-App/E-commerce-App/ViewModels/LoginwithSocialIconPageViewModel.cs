@@ -149,9 +149,9 @@ namespace E_commerce_App.ViewModels
         /// Invoked when the Forgot Password button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void ForgotPasswordClicked(object obj)
+        private async void ForgotPasswordClicked(object obj)
         {
-            // Do something
+            var res = await App.Current.MainPage.DisplayAlert("Success", "Your data are saved", "Ok", "Cancel");
         }
 
         /// <summary>

@@ -23,6 +23,7 @@ public partial class Profile : ContentPage
         private void GoToLoginPage(object sender, EventArgs e)
         {
             Navigation.PushAsync(new LoginwithSocialIconPage());
+
         }
 
         private void GoToSignUpPage(object sender, EventArgs e)
