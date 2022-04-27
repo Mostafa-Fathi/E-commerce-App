@@ -1,4 +1,4 @@
-﻿using E_commerce_App.View.Pages;
+﻿using E_commerce_App.Views.Pages;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
