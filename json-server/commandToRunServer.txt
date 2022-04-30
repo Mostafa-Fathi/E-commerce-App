@@ -1,0 +1,4 @@
+Download: 
+	npm install -g json-server
+to run server: 
+	json-server --watch db.json --routes routes.json

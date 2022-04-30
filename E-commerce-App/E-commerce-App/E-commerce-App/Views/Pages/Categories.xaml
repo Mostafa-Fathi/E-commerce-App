@@ -5,6 +5,7 @@
 
     <ContentPage.Content>
         <StackLayout>
+           
             <ListView Margin="50" ItemsSource="{Binding CategoriesList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
