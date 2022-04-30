@@ -9,8 +9,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using E_commerce_App.ViewModels;
 using E_commerce_App.ViewModel;
-
-namespace E_commerce_App.View.Pages
+namespace E_commerce_App.Views.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 public partial class Categories : ContentPage
