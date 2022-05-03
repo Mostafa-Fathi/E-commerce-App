@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="E_commerce_App.Views.Pages.Cart" Title="Cart">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Cart"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" Spacing="70" VerticalOptions="Center">
+            <Label Text="Shopping Cart is empty " HorizontalTextAlignment="Center" Margin="0,20" FontSize="20"/>
+            <Image  Source="emptyCart.jpg"/>
+            <Button Text="Start Shopping Now " BackgroundColor="red" TextColor="White"  Margin="60,10" CornerRadius="10" TextTransform="None"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

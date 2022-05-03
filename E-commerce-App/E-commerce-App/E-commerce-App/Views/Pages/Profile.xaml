@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="E_commerce_App.Views.Pages.Profile" Title="Profile">
+             x:Class="E_commerce_App.Views.Pages.Profile" Title="Profile" BackgroundColor="LightGray">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Profile"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" Spacing="15" BackgroundColor="white" VerticalOptions="Center"  
+                     HorizontalOptions="Center" WidthRequest="300" HeightRequest="300">
+            <Label Text="If you have an Account"  TextColor="Black" HorizontalTextAlignment="Center" Margin="0,20"/>
+            <Button Text="Login In " BackgroundColor="red" TextColor="White"  Margin="30,10" CornerRadius="10" Clicked="GoToLoginPage"/>
+            <Label Text="Or" TextColor="Black" HorizontalTextAlignment="Center" />
+            <Button Text="Sign Up " BackgroundColor="Gray" TextColor="White"  Margin="30,10" CornerRadius="10" Clicked="GoToSignUpPage"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
