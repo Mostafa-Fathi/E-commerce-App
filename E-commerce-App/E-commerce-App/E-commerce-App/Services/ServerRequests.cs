@@ -9,12 +9,6 @@ using System.Threading.Tasks;
 
 namespace E_commerce_App.Services
 {
-    internal class userLoginInfo
-    {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-    }
-    
     public class ServerRequests
 {
     HttpClient httpClient = new HttpClient();
@@ -47,15 +41,16 @@ namespace E_commerce_App.Services
             return product;
         }
 
-    public async Task<string> Login(string userName,string password)
+    public async Task<User> Login(string userName="Defualt")
         {
-            string LoginAPI = "http://localhost:3000/users?username={userName}";
-            userLoginInfo userLoginInfo = new userLoginInfo() { Password = password, UserName=userName };
-            var json= JsonConvert.SerializeObject(userLoginInfo);
-            var data = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = await httpClient.PostAsync(LoginAPI, data);
-            string result = await response.Content.ReadAsStringAsync();
-            return result;
+            string LoginAPI = $"http://localhost:3000/users?username={userName}";
+            string response = await httpClient.GetStringAsync(LoginAPI);
+            ObservableCollection<User> result = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
+            if (result.Count>0)
+            {
+                return result[0];
+            }
+            return null;
         }
     }
     

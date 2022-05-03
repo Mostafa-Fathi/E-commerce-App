@@ -5,22 +5,38 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace E_commerce_App.ViewModels
+using E_commerce_App.Models;
+namespace E_commerce_App.ViewModel
 {
     public class UserVM : INotifyPropertyChanged
     {
-        private string token;
+        private User currentUser;
+        private string userName;
+        private string userPassword;
+
+        public string UserPassword
+        {
+            get { return userPassword; }
+            set { userPassword = value; }
+        }
+
+
+        public string UserName
+        {
+            get { return userName; }
+            set { userName = value; }
+        }
+
+
+        public User CurrentUser
+        {
+            get { return currentUser; }
+            set { currentUser = value; }
+        }
+
         private ServerRequests httpClient;
 
-        public string Token
-        {
-            get { return token; }
-            set { 
-                token = value;
-                OnChangeProperty();
-            }
-        }
+      
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnChangeProperty([CallerMemberName] string propertyName="")
@@ -34,8 +50,18 @@ namespace E_commerce_App.ViewModels
         }
         public async Task<string> Login()
         {
-            Token=await httpClient.Login("mor_2314", "83r5^_");
-            return Token;
+            // 83r5^_  username: mor_2314
+            CurrentUser = await httpClient.Login(UserName);
+            if (currentUser == null)
+            {
+                return "User not found";
+            }
+            if (!(CurrentUser.password.ToLower().Equals(userPassword?.ToLower())))
+            {
+             
+                 return "Wrong password";
+            }
+            return CurrentUser.username;
         }
         
 
