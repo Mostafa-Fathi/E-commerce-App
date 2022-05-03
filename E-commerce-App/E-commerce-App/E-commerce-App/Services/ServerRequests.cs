@@ -13,9 +13,12 @@ namespace E_commerce_App.Services
 {
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<string>> GetCategories(){
-            // fake api => https://fakestoreapi.com/products/categories
-            const string CtegoryAPI = "http://localhost:3000/category";
-        ObservableCollection<string> categories;
+            // fake api 
+           // const string CtegoryAPI = "https://fakestoreapi.com/products/categories";
+            // ngrok api
+            const string CtegoryAPI = "https://3ea2-41-176-245-240.eu.ngrok.io/category";
+              // const string CtegoryAPI = "http://localhost:3000/category";
+            ObservableCollection<string> categories;
          string categoriesAsString = await httpClient.GetStringAsync(CtegoryAPI);
         categories = JsonConvert.DeserializeObject<ObservableCollection<string>>(categoriesAsString);
         return categories;
@@ -25,8 +28,9 @@ namespace E_commerce_App.Services
     public async Task<ObservableCollection<Product>> GetProducts(string url="")
     {
             // https://fakestoreapi.com/products/{url}
-        string ProductAPI = $"http://localhost:3000/products";
-        ObservableCollection<Product> products;
+            //string ProductAPI = $"http://localhost:3000/products";
+            string ProductAPI = $"https://3ea2-41-176-245-240.eu.ngrok.io/";
+            ObservableCollection<Product> products;
         string productsAsString = await httpClient.GetStringAsync(ProductAPI);
         products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
         return products;
@@ -34,7 +38,8 @@ namespace E_commerce_App.Services
     public async Task<Product> GetSelectedProduct(string id = "")
         {
             // fake api => https://fakestoreapi.com/products/{id}
-            string ProductAPI = $"http://localhost:3000/products/{id}";
+            //string ProductAPI = $"http://localhost:3000/products/{id}";
+            string ProductAPI = $"https://3ea2-41-176-245-240.eu.ngrok.io/{id}";
             Product product;
             string productsAsString = await httpClient.GetStringAsync(ProductAPI);
             product = JsonConvert.DeserializeObject<Product>(productsAsString);
@@ -43,7 +48,8 @@ namespace E_commerce_App.Services
 
     public async Task<User> Login(string userName="Defualt")
         {
-            string LoginAPI = $"http://localhost:3000/users?username={userName}";
+            //string LoginAPI = $"http://localhost:3000/users?username={userName}";
+            string LoginAPI = "https://3ea2-41-176-245-240.eu.ngrok.io/users?username={userName}";
             string response = await httpClient.GetStringAsync(LoginAPI);
             ObservableCollection<User> result = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
             if (result.Count>0)
