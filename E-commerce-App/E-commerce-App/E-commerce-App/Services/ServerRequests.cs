@@ -49,7 +49,7 @@ namespace E_commerce_App.Services
     public async Task<User> Login(string userName="Defualt")
         {
             //string LoginAPI = $"http://localhost:3000/users?username={userName}";
-            string LoginAPI = "https://3ea2-41-176-245-240.eu.ngrok.io/users?username={userName}";
+            string LoginAPI = $"https://3ea2-41-176-245-240.eu.ngrok.io/users?username={userName}";
             string response = await httpClient.GetStringAsync(LoginAPI);
             ObservableCollection<User> result = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
             if (result.Count>0)
