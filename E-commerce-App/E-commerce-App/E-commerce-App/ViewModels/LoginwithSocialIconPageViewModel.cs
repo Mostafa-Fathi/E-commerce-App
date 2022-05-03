@@ -66,6 +66,7 @@ namespace E_commerce_App.ViewModels
         public LoginWithSocialIconViewModel()
         {
             httpClient = new ServerRequests();
+
             LoginCommand = new Command(async () =>await Login(),()=> !isLoading);
 
         }

@@ -11,11 +11,11 @@ namespace E_commerce_App.Services
 {
     public class ServerRequests
 {
-    const string BaseURL="https://3ea2-41-176-245-240.eu.ngrok.io";
+    const string BaseURL= "https://5b14-41-46-44-127.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<string>> GetCategories(){
             // fake api 
-           // const string CtegoryAPI = "https://fakestoreapi.com/products/categories";
+            // const string CtegoryAPI = "https://fakestoreapi.com/products/categories";
             // ngrok api
              string CtegoryAPI = $"{BaseURL}/category";
               // const string CtegoryAPI = "http://localhost:3000/category";
@@ -54,6 +54,17 @@ namespace E_commerce_App.Services
             string response = await httpClient.GetStringAsync(LoginAPI);
             ObservableCollection<User> result = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
             if (result.Count>0)
+            {
+                return result[0];
+            }
+            return null;
+        }
+        public async Task<User> CheckEmail(string email = "Defualt")
+        {
+            string LoginAPI = $"{BaseURL}/users?email={email}";
+            string response = await httpClient.GetStringAsync(LoginAPI);
+            ObservableCollection<User> result = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
+            if (result.Count > 0)
             {
                 return result[0];
             }
