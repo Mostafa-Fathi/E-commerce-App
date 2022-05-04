@@ -1,4 +1,5 @@
 ﻿using E_commerce_App.ViewModel;
+using Syncfusion.ListView.XForms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,25 @@ namespace E_commerce_App.Views.Pages
             userVM.UserName = "mor_2314";
             userVM.UserPassword = "83r5^_";
             Login();
+        }
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+
+            if (width < height)
+            {
+                if (this.CategoryTile.LayoutManager is GridLayout)
+                {
+                    (this.CategoryTile.LayoutManager as GridLayout).SpanCount = 2;
+                }
+            }
+            else
+            {
+                if (this.CategoryTile.LayoutManager is GridLayout)
+                {
+                    (this.CategoryTile.LayoutManager as GridLayout).SpanCount = 3;
+                }
+            }
         }
     }
 }
