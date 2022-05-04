@@ -7,6 +7,8 @@ using E_commerce_App.Validators.Rules;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using Xamarin.Essentials;
+using Newtonsoft.Json;
 
 namespace E_commerce_App.ViewModels
 {
@@ -20,7 +22,8 @@ namespace E_commerce_App.ViewModels
 
         private ValidatableObject<string> password;
         private ServerRequests httpClient;
-        private User  currentUser ;
+        private User currentUser;
+        private bool isRunning;
 
         #endregion
 
@@ -36,7 +39,8 @@ namespace E_commerce_App.ViewModels
             this.LoginCommand = new Command(this.LoginClickedAsync);
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
-            httpClient= new ServerRequests();
+            httpClient = new ServerRequests();
+            IsRunning = false;
 
         }
 
@@ -62,6 +66,23 @@ namespace E_commerce_App.ViewModels
                 }
 
                 this.SetProperty(ref this.password, value);
+            }
+        }
+        public bool IsRunning
+        {
+            get
+            {
+                return this.isRunning;
+            }
+
+            set
+            {
+                if (this.isRunning == value)
+                {
+                    return;
+                }
+
+                this.SetProperty(ref this.isRunning, value);
             }
         }
 
@@ -141,24 +162,24 @@ namespace E_commerce_App.ViewModels
             if (this.AreFieldsValid())
             {
 
-                ActivityIndicator activityIndicator = new ActivityIndicator { IsRunning = true };
+                IsRunning = true;
 
                 currentUser = await httpClient.CheckEmail(Email.Value);
                 if (currentUser == null)
                 {
-                    activityIndicator.IsRunning = false;
+                    IsRunning = false;
                     await App.Current.MainPage.DisplayAlert("Error", "Wrong Email", "OK");
 
                 }
                 else if ((currentUser.password.ToLower().Equals(Password.Value.ToLower())))
                 {
-                    activityIndicator.IsRunning = false;
+                    IsRunning = false;
 
                     App.Current.MainPage.Navigation.PushAsync(new Categories());
-
                 }
-                else {
-                    activityIndicator.IsRunning = false;
+                else
+                {
+                    IsRunning = false;
 
                     await App.Current.MainPage.DisplayAlert("Error", "Wrong Password", "OK");
 

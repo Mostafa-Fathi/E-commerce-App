@@ -47,7 +47,19 @@ namespace E_commerce_App.Services
             return product;
         }
 
-    public async Task<User> Login(string userName="Defualt")
+        public async Task<bool> SignUp(User user)
+        {
+            // fake api => https://fakestoreapi.com/products/{id}
+            //string ProductAPI = $"http://localhost:3000/products/{id}";
+            string SginUpAPI = $"{BaseURL}/users/";
+            var json = JsonConvert.SerializeObject(user);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var httpResponse = await httpClient.PostAsync(SginUpAPI,data);
+            return httpResponse.IsSuccessStatusCode;
+        }
+
+        public async Task<User> Login(string userName="Defualt")
         {
             //string LoginAPI = $"http://localhost:3000/users?username={userName}";
             string LoginAPI = $"{BaseURL}/users?username={userName}";

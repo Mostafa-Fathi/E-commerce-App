@@ -26,6 +26,8 @@ namespace E_commerce_App.ViewModels
         //added by hadeer
         private ValidatableObject<string> phone;
         private ValidatableObject<string> sname;
+        private ServerRequests httpClient;
+        private bool isRunning;
 
         #endregion
 
@@ -40,7 +42,9 @@ namespace E_commerce_App.ViewModels
             this.AddValidationRules();
             httpClient = new ServerRequests();
             this.LoginCommand = new Command(this.LoginClicked);
-            this.SignUpCommand = new Command(this.SignUpClicked);
+            this.SignUpCommand = new Command(this.SignUpClickedAsync);
+            IsRunning = false;
+            
 
         }
         #endregion
@@ -123,8 +127,24 @@ namespace E_commerce_App.ViewModels
                 this.SetProperty(ref this.password, value);
             }
         }
+        public bool IsRunning
+        {
+            get
+            {
+                return this.isRunning;
+            }
 
-        private ServerRequests httpClient;
+            set
+            {
+                if (this.isRunning == value)
+                {
+                    return;
+                }
+
+                this.SetProperty(ref this.isRunning, value);
+            }
+        }
+
         #endregion
 
         #region Command
@@ -199,29 +219,63 @@ namespace E_commerce_App.ViewModels
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
+        private async void SignUpClickedAsync(object obj)
         {
             if (this.AreFieldsValid())
             {
+                IsRunning = true;
+                if (await IsEmailExists())
+                {
 
-                user = new User();
-                user.name.firstname = Name.Value;
-                user.name.lastname = SName.Value;
-                user.email = Email.Value;
-                user.phone = Phone.Value;
-                user.username = generateUserName();
-                user.password = Password.Item1.Value;
+                    user = new User();
+                    user.name.firstname = Name.Value;
+                    user.name.lastname = SName.Value;
+                    user.email = Email.Value;
+                    user.phone = Phone.Value;
+                    user.username = await generateUserName();
+                    user.password = Password.Item1.Value;
+                    if (await httpClient.SignUp(user))
+                    {
+                       IsRunning = false;
+
+
+                        await App.Current.MainPage.DisplayAlert("Scuuses", "This Email is Already Exits Do You Forget Your Password", "Yes", "Not my Email");
+
+                    }
+                    else {
+                        IsRunning = false;
+
+                        await App.Current.MainPage.DisplayAlert("Wrong", "This Email is Already Exits Do You Forget Your Password", "Yes", "Not my Email");
+
+                    }
+                }
+                else
+                {
+                    IsRunning= false;
+                    await App.Current.MainPage.DisplayAlert("Exists Email", "This Email is Already Exits Do You Forget Your Password", "Yes","Not my Email");
+
+                }
 
             }
         }
 
+        private async Task<bool> IsEmailExists()
+        {
 
-        private string generateUserName()
+            User currentUser = await httpClient.CheckEmail(Email.Value);
+            if (currentUser == null)
+            {
+                return true;
+            }
+            else return false;
+
+        }
+        private async Task<string> generateUserName()
         {
             String generatedUserName;
 
             do { generatedUserName = user.name.ToString() + new Random().Next(0, 9) + new Random().Next(0, 9) + new Random().Next(0, 9); }
-            while (CheckUserNameValid(generatedUserName).Result);
+            while (await CheckUserNameValid(generatedUserName));
             return generatedUserName;
         }
 
