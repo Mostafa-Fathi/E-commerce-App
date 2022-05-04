@@ -1,4 +1,6 @@
 ﻿using E_commerce_App.Models;
+using E_commerce_App.Views.Pages;
+using E_commerce_App.Views;
 using E_commerce_App.Services;
 using E_commerce_App.Validators;
 using E_commerce_App.Validators.Rules;
@@ -18,7 +20,7 @@ namespace E_commerce_App.ViewModels
 
         private ValidatableObject<string> password;
         private ServerRequests httpClient;
-        private User currentUser;
+        private User  currentUser ;
 
         #endregion
 
@@ -34,6 +36,7 @@ namespace E_commerce_App.ViewModels
             this.LoginCommand = new Command(this.LoginClickedAsync);
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
+            httpClient= new ServerRequests();
 
         }
 
@@ -125,6 +128,8 @@ namespace E_commerce_App.ViewModels
         private void AddValidationRules()
         {
             this.Password.Validations.Add(new IsNotNullOrEmptyRule<string> { ValidationMessage = "Password Required" });
+            this.Email.Validations.Add(new IsValidEmailRule<string> { ValidationMessage = "Wrong Eamil Format" });
+
         }
 
         /// <summary>
@@ -135,25 +140,33 @@ namespace E_commerce_App.ViewModels
         {
             if (this.AreFieldsValid())
             {
-                
+
+                ActivityIndicator activityIndicator = new ActivityIndicator { IsRunning = true };
 
                 currentUser = await httpClient.CheckEmail(Email.Value);
                 if (currentUser == null)
-                {   // wrong Email
-
-                }
-                else if (!(currentUser.password.ToLower().Equals(Password.Value.ToLower())))
                 {
+                    activityIndicator.IsRunning = false;
+                    await App.Current.MainPage.DisplayAlert("Error", "Wrong Email", "OK");
 
-                    // log in 
                 }
-                else { 
-                
-                    // wrong password
+                else if ((currentUser.password.ToLower().Equals(Password.Value.ToLower())))
+                {
+                    activityIndicator.IsRunning = false;
+
+                    App.Current.MainPage.Navigation.PushAsync(new Categories());
+
+                }
+                else {
+                    activityIndicator.IsRunning = false;
+
+                    await App.Current.MainPage.DisplayAlert("Error", "Wrong Password", "OK");
+
                 }
 
             }
         }
+
 
         /// <summary>
         /// Invoked when the Sign Up button is clicked.
@@ -161,7 +174,8 @@ namespace E_commerce_App.ViewModels
         /// <param name="obj">The Object</param>
         private void SignUpClicked(object obj)
         {
-            // Do something
+            App.Current.MainPage.Navigation.PushAsync(new SignUpPage());
+
         }
 
         /// <summary>
