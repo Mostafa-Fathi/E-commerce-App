@@ -32,6 +32,7 @@ namespace E_commerce_App
             //new Views.LoginwithSocialIconPage();
             //new E_commerce_App.Views.CategoryTilePage();
            //new E_commerce_App.Views.ProductTilePage();
+           //new E_commerce_App.Views.DetailPage();
         }
 
         protected override void OnStart()

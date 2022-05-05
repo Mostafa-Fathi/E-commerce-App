@@ -40,5 +40,15 @@ namespace E_commerce_App.Views
                 }
             }
         }
+
+        private void ProductSelect(object sender, ItemTappedEventArgs e)
+        {
+            DisplayAlert("alert", "alert", "ok");
+        }
+
+        private void toProductDetails(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new DetailPage());
+        }
     }
 }

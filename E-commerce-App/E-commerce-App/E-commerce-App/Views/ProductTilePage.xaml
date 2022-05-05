@@ -113,7 +113,7 @@
             ColumnSpacing="0"
             RowDefinitions="Auto, *"
             RowSpacing="0">
-
+            <Button Text="To Product Details" Margin="15" Clicked="toProductDetails" BackgroundColor="Yellow"/>
             <!--  Title View  -->
             <!--<controls:TitleView BackgroundColor="Red"  Title="Dress" Grid.Row="0">
                 
@@ -156,6 +156,7 @@
 
             <!--  ListView for catalog  -->
             <listView:SfListView
+                ItemTapped="ProductSelect"
                 x:Name="ListViewTile"
                 Grid.Row="1"
                 Padding="8"
