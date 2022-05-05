@@ -11,8 +11,8 @@ using Xamarin.Forms;
 namespace E_commerce_App.Services
 {
     public class ServerRequests
-{
-    const string BaseURL= "https://803b-102-189-69-174.eu.ngrok.io";
+    {
+    const string BaseURL= "https://deff-156-198-207-28.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -29,17 +29,17 @@ namespace E_commerce_App.Services
     // Only used for get all products or products belong to specific category  
     public async Task<ObservableCollection<Product>> GetProducts(string url="")
     {
-            // https://fakestoreapi.com/products/{url}
-            //string ProductAPI = $"http://localhost:3000/products";
-            string ProductAPI = $"{BaseURL}/products";
-            ObservableCollection<Product> products;
+        // https://fakestoreapi.com/products/{url}
+        //string ProductAPI = $"http://localhost:3000/products";
+        string ProductAPI = $"{BaseURL}/products";
+        ObservableCollection<Product> products;
         string productsAsString = await httpClient.GetStringAsync(ProductAPI);
         products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
         return products;
     }
     public async Task<Product> GetSelectedProduct(string id = "")
         {
-            // fake api => https://fakestoreapi.com/products/{id}
+            //fake api => https://fakestoreapi.com/products/{id}
             //string ProductAPI = $"http://localhost:3000/products/{id}";
             string ProductAPI = $"{BaseURL}/products/{id}";
             Product product;
