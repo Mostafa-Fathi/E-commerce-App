@@ -1,19 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="E_commerce_App.Views.Pages.Categories" Title="Category">
-
+             x:Class="E_commerce_App.Views.Pages.Categories"
+            xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+            xmlns:listView="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
+            xmlns:syncEffectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
+            x:Name="categoryPage"
+            Title="Categories"
+            BackgroundColor="{DynamicResource Gray-Bg}"
+            NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <ListView Margin="50" ItemsSource="{Binding CategoriesList}">
-                <ListView.ItemTemplate>
+        <Grid RowDefinitions="Auto, *">
+
+            <!--  Title View  -->
+            <!--  ListView for Category  -->
+            <listView:SfListView
+                x:Name="CategoryTile"
+                Grid.Row="1"
+                Padding="8"
+                AutoFitMode="Height"
+                HorizontalOptions="FillAndExpand"
+                ItemSpacing="8"
+                ItemsSource="{Binding CategoriesList}"
+                Style="{StaticResource TransparentSelectionListView}">
+
+                <listView:SfListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding}">
-                            
-                        </TextCell>
+                        <syncEffectsView:SfEffectsView
+                            RippleColor="{DynamicResource Gray-300}"
+                            TouchDownEffects="Ripple"
+                            TouchUpCommand="{Binding Path=BindingContext.CategorySelectedCommand, Source={x:Reference categoryPage}}"
+                            TouchUpCommandParameter="{Binding}">
+                            <Grid RowDefinitions="Auto, Auto" RowSpacing="8">
+
+                                <!--  Category Image  -->
+                                <Image
+                                    Grid.Row="0"
+                                    Aspect="AspectFill"
+                                    BackgroundColor="{DynamicResource Gray-200}"
+                                    HeightRequest="{OnIdiom Phone=150,
+                                                            Tablet=240,
+                                                            Desktop=120}"
+                                    WidthRequest="{OnIdiom Phone=160,
+                                                           Tablet=224,
+                                                           Desktop=200}">
+                                    <Image.Source>
+                                        <UriImageSource
+                                            CacheValidity="14"
+                                            CachingEnabled="true"
+                                            Uri="{Binding img}" />
+                                    </Image.Source>
+                                </Image>
+
+                                <!--  Category Name  -->
+                                <Label
+                                    Grid.Row="1"
+                                    Margin="0,0,0,8"
+                                    FontSize="14"
+                                    Style="{StaticResource TitleLabelStyle}"
+                                    Text="{Binding name}" />
+
+                            </Grid>
+                        </syncEffectsView:SfEffectsView>
                     </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                </listView:SfListView.ItemTemplate>
+
+                <!--  Layout to customize no. of columns in SfListView  -->
+                <listView:SfListView.LayoutManager>
+                    <listView:GridLayout SpanCount="{core:OnPlatformOrientationIntValue Desktop=4, PhonePortrait=2, PhoneLandscape=3, TabletPortrait=3, TabletLandscape=4}" />
+                </listView:SfListView.LayoutManager>
+
+            </listView:SfListView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

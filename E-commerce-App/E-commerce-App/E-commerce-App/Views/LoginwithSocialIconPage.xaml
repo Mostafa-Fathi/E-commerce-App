@@ -113,7 +113,7 @@
                                 Margin="15,-3,0,0"
                                 IsVisible="{Binding Password.IsValid, Converter={StaticResource InverseBoolConverter}}"
                                 Style="{StaticResource SimpleLabelStyle}"
-                                Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
+                              Text="{Binding Password.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                                 TextColor="{DynamicResource Red}"
                                 VerticalOptions="FillAndExpand" />
                         </StackLayout>
@@ -130,7 +130,9 @@
                             Text="Forget Password?"
                             TextColor="{DynamicResource Gray-White}" />
 
-
+                         <!--
+                         <Label Text="{Binding UserName}" FontSize="30"/>
+                        -->      
                         <buttons:SfButton
                             Grid.Row="5"
                             Margin="30,16"

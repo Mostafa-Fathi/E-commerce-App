@@ -12,10 +12,26 @@ namespace E_commerce_App
 {
     public partial class App : Application
     {
+        public static string ImageServerPath { get; } = "https://cdn.syncfusion.com/essential-ui-kit-for-xamarin.forms/common/uikitimages/";
         public App()
         {
             InitializeComponent();
 
+            //MainPage = new E_commerce_App.View.TabContainer();
+            //MainPage = new Categories();
+            //MainPage = new Products();
+            MainPage =
+              //  new Products();
+            //new Views.SignUpPage();
+            //new Cart();
+            //new Views.LoginwithSocialIconPage();
+           // new E_commerce_App.Views.TabContainer();
+                //new Views.SignUpPage();
+                //new Cart();
+                //new Views.LoginwithSocialIconPage();
+                new E_commerce_App.Views.TabContainer();
+                //new E_commerce_App.Views.CategoryTilePage();
+           
             MainPage = //new Views.AccountDetails();
             new NavigationPage(new Views.AccountDetails());
             //new Views.SignUpPage();

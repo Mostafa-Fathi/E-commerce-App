@@ -1,0 +1,20 @@
+Download: 
+	npm install -g json-server
+to run server: 
+	json-server --watch db.json --routes routes.json
+
+
+
+install ngrok 
+	https://ngrok.com/download
+
+sign up and login 
+	https://dashboard.ngrok.com/signup
+	copy your token
+
+Add authtoken
+ 	ngrok config add-authtoken paste-your-token
+
+run command
+	ngrok http 3000
+	copy fowrwadeding url and paste it BaseURL in service
