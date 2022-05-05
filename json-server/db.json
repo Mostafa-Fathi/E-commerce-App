@@ -242,23 +242,37 @@
     }
   ],
   "category": [
-    "electronics",
-    "jewelery",
-    "men's clothing",
-    "women's clothing"
+    {
+      "name": "electronics",
+      "img": "https://i0.wp.com/nabaajordan.com/wp-content/uploads/2021/09/4-78.jpg?fit=1200%2C628&ssl=1"
+    },
+    {
+      "name": "jewelery",
+      "img": "https://img.davidyurman.com/is/image/DavidYurmanNew/Spring22_Wedding_LP_Hero_Desktop?$w2800$"
+    },
+    {
+      "name": "women's clothing",
+      "img": "https://i.pinimg.com/736x/bc/44/8d/bc448d1b083b28fc1fe5d3035ae2294a.jpg"
+    },
+    {
+      "name": "men's clothing",
+      "img": "https://i.pinimg.com/originals/a7/e5/01/a7e5011b53d5d540a8d90ecd24ddedc3.jpg"
+    }
   ],
   "users": [
     {
-      "address": {
-        "geolocation": {
-          "lat": "-37.3159",
-          "long": "81.1496"
-        },
-        "city": "kilcoole",
-        "street": "new road",
-        "number": 7682,
-        "zipcode": "12926-3874"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "-37.3159",
+            "long": "81.1496"
+          },
+          "city": "kilcoole",
+          "street": "new road",
+          "number": 7682,
+          "zipcode": "12926-3874"
+        }
+      ],
       "id": 1,
       "email": "john@gmail.com",
       "username": "johnd",
@@ -271,16 +285,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "-37.3159",
-          "long": "81.1496"
-        },
-        "city": "kilcoole",
-        "street": "Lovers Ln",
-        "number": 7267,
-        "zipcode": "12926-3874"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "-37.3159",
+            "long": "81.1496"
+          },
+          "city": "kilcoole",
+          "street": "Lovers Ln",
+          "number": 7267,
+          "zipcode": "12926-3874"
+        }
+      ],
       "id": 2,
       "email": "morrison@gmail.com",
       "username": "mor_2314",
@@ -293,16 +309,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "40.3467",
-          "long": "-30.1310"
-        },
-        "city": "Cullman",
-        "street": "Frances Ct",
-        "number": 86,
-        "zipcode": "29567-1452"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "40.3467",
+            "long": "-30.1310"
+          },
+          "city": "Cullman",
+          "street": "Frances Ct",
+          "number": 86,
+          "zipcode": "29567-1452"
+        }
+      ],
       "id": 3,
       "email": "kevin@gmail.com",
       "username": "kevinryan",
@@ -315,16 +333,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "50.3467",
-          "long": "-20.1310"
-        },
-        "city": "San Antonio",
-        "street": "Hunters Creek Dr",
-        "number": 6454,
-        "zipcode": "98234-1734"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "50.3467",
+            "long": "-20.1310"
+          },
+          "city": "San Antonio",
+          "street": "Hunters Creek Dr",
+          "number": 6454,
+          "zipcode": "98234-1734"
+        }
+      ],
       "id": 4,
       "email": "don@gmail.com",
       "username": "donero",
@@ -337,16 +357,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "40.3467",
-          "long": "-40.1310"
-        },
-        "city": "san Antonio",
-        "street": "adams St",
-        "number": 245,
-        "zipcode": "80796-1234"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "40.3467",
+            "long": "-40.1310"
+          },
+          "city": "san Antonio",
+          "street": "adams St",
+          "number": 245,
+          "zipcode": "80796-1234"
+        }
+      ],
       "id": 5,
       "email": "derek@gmail.com",
       "username": "derek",
@@ -359,16 +381,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "20.1677",
-          "long": "-10.6789"
-        },
-        "city": "el paso",
-        "street": "prospect st",
-        "number": 124,
-        "zipcode": "12346-0456"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "20.1677",
+            "long": "-10.6789"
+          },
+          "city": "el paso",
+          "street": "prospect st",
+          "number": 124,
+          "zipcode": "12346-0456"
+        }
+      ],
       "id": 6,
       "email": "david_r@gmail.com",
       "username": "david_r",
@@ -381,16 +405,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "10.3456",
-          "long": "20.6419"
-        },
-        "city": "fresno",
-        "street": "saddle st",
-        "number": 1342,
-        "zipcode": "96378-0245"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "10.3456",
+            "long": "20.6419"
+          },
+          "city": "fresno",
+          "street": "saddle st",
+          "number": 1342,
+          "zipcode": "96378-0245"
+        }
+      ],
       "id": 7,
       "email": "miriam@gmail.com",
       "username": "snyder",
@@ -403,16 +429,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "50.3456",
-          "long": "10.6419"
-        },
-        "city": "mesa",
-        "street": "vally view ln",
-        "number": 1342,
-        "zipcode": "96378-0245"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "50.3456",
+            "long": "10.6419"
+          },
+          "city": "mesa",
+          "street": "vally view ln",
+          "number": 1342,
+          "zipcode": "96378-0245"
+        }
+      ],
       "id": 8,
       "email": "william@gmail.com",
       "username": "hopkins",
@@ -425,16 +453,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "40.12456",
-          "long": "20.5419"
-        },
-        "city": "miami",
-        "street": "avondale ave",
-        "number": 345,
-        "zipcode": "96378-0245"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "40.12456",
+            "long": "20.5419"
+          },
+          "city": "miami",
+          "street": "avondale ave",
+          "number": 345,
+          "zipcode": "96378-0245"
+        }
+      ],
       "id": 9,
       "email": "kate@gmail.com",
       "username": "kate_h",
@@ -447,16 +477,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "30.24788",
-          "long": "-20.545419"
-        },
-        "city": "fort wayne",
-        "street": "oak lawn ave",
-        "number": 526,
-        "zipcode": "10256-4532"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "30.24788",
+            "long": "-20.545419"
+          },
+          "city": "fort wayne",
+          "street": "oak lawn ave",
+          "number": 526,
+          "zipcode": "10256-4532"
+        }
+      ],
       "id": 10,
       "email": "jimmie@gmail.com",
       "username": "jimmie_k",
@@ -469,16 +501,18 @@
       "__v": 0
     },
     {
-      "address": {
-        "geolocation": {
-          "lat": "-37.3159",
-          "long": "81.1496"
-        },
-        "city": "kilcoole",
-        "street": "new road",
-        "number": 7682,
-        "zipcode": "12926-3874"
-      },
+      "address": [
+        {
+          "geolocation": {
+            "lat": "-37.3159",
+            "long": "81.1496"
+          },
+          "city": "kilcoole",
+          "street": "new road",
+          "number": 7682,
+          "zipcode": "12926-3874"
+        }
+      ],
       "id": 11,
       "email": "john@gmail.com",
       "username": "aalaa",
@@ -491,14 +525,34 @@
       "__v": 0
     },
     {
-      "UserName": "mor_2314",
-      "Password": "83r5^_",
-      "id": 12
+      "username": "mostafafathy833",
+      "password": "P@ssw0rd",
+      "email": "mostafa@gmail.com",
+      "name": {
+        "firstname": "mostafa",
+        "lastname": "fathy"
+      },
+      "address": {
+        "city": null,
+        "street": null,
+        "zipcode": null,
+        "number": 0,
+        "geolocation": null
+      },
+      "phone": "01093402662",
+      "id": 25
     },
     {
-      "UserName": "mor_2314",
-      "Password": "83r5^_",
-      "id": 13
+      "username": "aalaafathallah680",
+      "password": "P@ssw0rd",
+      "email": "aalaa@gmail.com",
+      "name": {
+        "firstname": "aalaa",
+        "lastname": "fathallah"
+      },
+      "address": [],
+      "phone": "123456789",
+      "id": 26
     }
   ],
   "jewelery": [
