@@ -6,22 +6,25 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace E_commerce_App.Services
 {
     public class ServerRequests
 {
-    const string BaseURL= "https://9fd0-41-46-35-26.eu.ngrok.io";
+
+
+    const string BaseURL= "https://803b-102-189-69-174.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
-    public async Task<ObservableCollection<string>> GetCategories(){
-            // fake api 
-            // const string CtegoryAPI = "https://fakestoreapi.com/products/categories";
-            // ngrok api
-             string CtegoryAPI = $"{BaseURL}/category";
-              // const string CtegoryAPI = "http://localhost:3000/category";
-            ObservableCollection<string> categories;
-         string categoriesAsString = await httpClient.GetStringAsync(CtegoryAPI);
-        categories = JsonConvert.DeserializeObject<ObservableCollection<string>>(categoriesAsString);
+    public async Task<ObservableCollection<Category>> GetCategories(){
+        // fake api 
+        // const string CtegoryAPI = "https://fakestoreapi.com/products/categories";
+        // ngrok api
+        string CtegoryAPI = $"{BaseURL}/category";
+        ObservableCollection<Category> categories;
+        string categoriesAsString = await httpClient.GetStringAsync(CtegoryAPI);
+        // await Application.Current.MainPage.DisplayAlert("AA", "categoriesAsString, "Ok");
+        categories = JsonConvert.DeserializeObject<ObservableCollection<Category>>(categoriesAsString);
         return categories;
         }
 

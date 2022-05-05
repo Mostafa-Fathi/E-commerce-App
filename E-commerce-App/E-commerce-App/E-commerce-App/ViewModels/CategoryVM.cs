@@ -1,4 +1,5 @@
-﻿using E_commerce_App.Services;
+﻿using E_commerce_App.Models;
+using E_commerce_App.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,14 +11,15 @@ namespace E_commerce_App.ViewModel
 {
     public class CategoryVM:INotifyPropertyChanged
 {
-        private ObservableCollection<String> categoriesList;
+        private ObservableCollection<Category> categoriesList;
         private ServerRequests httpClient;
         public event PropertyChangedEventHandler PropertyChanged;
         void onPropertyChanged([CallerMemberName]string propertyName="")
         {
             PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(propertyName));
         }
-        public ObservableCollection<String> CategoriesList
+
+        public ObservableCollection<Category> CategoriesList
         {
             get { return categoriesList; }
             set { 
@@ -29,17 +31,15 @@ namespace E_commerce_App.ViewModel
         public CategoryVM()
         {
             httpClient = new ServerRequests();
-            loadData();
-            CategoriesList = new ObservableCollection<String>()
+            CategoriesList = new ObservableCollection<Category>()
             {
-                "Loading..."
+               new Category(){name="Loading"}
             };
-
-
+            loadData();
         }
         private async void loadData()
         {
-            CategoriesList = await httpClient.GetCategories();
+            CategoriesList = await httpClient.GetCategories();  
         }
 
     }
