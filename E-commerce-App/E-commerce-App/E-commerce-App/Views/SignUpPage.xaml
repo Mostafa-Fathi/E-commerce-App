@@ -286,7 +286,7 @@
                         <buttons:SfButton
                             Command="{Binding SignUpCommand}"
                             HorizontalOptions="FillAndExpand"
-                            IsEnabled="{Binding Path=!IsRunning}"
+                            IsEnabled="{Binding NotIsRunning}"
                             Style="{StaticResource GradientButtonStyle}"
                             Text="Register" />
                     </StackLayout>

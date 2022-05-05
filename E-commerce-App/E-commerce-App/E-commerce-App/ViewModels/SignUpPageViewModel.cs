@@ -144,6 +144,14 @@ namespace E_commerce_App.ViewModels
                 this.SetProperty(ref this.isRunning, value);
             }
         }
+        public bool NotIsRunning
+        {
+            get
+            {
+                return !this.isRunning;
+            }
+
+        }
 
         #endregion
 

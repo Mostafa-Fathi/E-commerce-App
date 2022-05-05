@@ -139,7 +139,7 @@
                             Margin="30,16"
                             Command="{Binding LoginCommand}"
                             CornerRadius="4"                            
-                            IsEnabled="{Binding ! IsRunning}"
+                            IsEnabled="{Binding  NotIsRunning}"
                             HorizontalOptions="Fill" 
                             Style="{StaticResource GradientButtonStyle}"
                             Text="Login" />
