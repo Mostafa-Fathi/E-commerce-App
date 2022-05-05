@@ -1,3 +1,4 @@
+using Syncfusion.XForms.UWP.EffectsView;
 using System.Reflection;
 using Syncfusion.SfRating.XForms.UWP;
 using Syncfusion.ListView.XForms.UWP;
@@ -65,8 +66,7 @@ namespace E_commerce_App.UWP
 
                 rootFrame.NavigationFailed += OnNavigationFailed;
                 var assembliesToInclude = new List<Assembly>
-                {
-                    typeof(SfButtonRenderer).GetTypeInfo().Assembly,
+                {typeof(SfButtonRenderer).GetTypeInfo().Assembly,
                     typeof(SfBorderRenderer).GetTypeInfo().Assembly,
                     typeof(SfGradientViewRenderer).GetTypeInfo().Assembly,
                     typeof(SfListViewRenderer).GetTypeInfo().Assembly,
@@ -74,7 +74,8 @@ namespace E_commerce_App.UWP
                     typeof(SfRadioButtonRenderer).GetTypeInfo().Assembly,
                     typeof(SfSegmentedControlRenderer).GetTypeInfo().Assembly,
                     typeof(SfTextInputLayoutRenderer).GetTypeInfo().Assembly,
-                    typeof(SfComboBoxRenderer).GetTypeInfo().Assembly
+                    typeof(SfComboBoxRenderer).GetTypeInfo().Assembly,
+                    typeof(SfEffectsViewRenderer).GetTypeInfo().Assembly
                 };
                 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 
