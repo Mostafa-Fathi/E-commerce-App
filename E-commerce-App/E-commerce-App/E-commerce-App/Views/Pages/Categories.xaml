@@ -10,8 +10,8 @@
             BackgroundColor="{DynamicResource Gray-Bg}"
             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <Grid RowDefinitions="Auto, *">
-
+        <Grid RowDefinitions="Auto, *" >
+            <Button Text="To Products" Margin="15" Clicked="toProducts" BackgroundColor="Yellow"/>
             <!--  Title View  -->
             <!--  ListView for Category  -->
             <listView:SfListView
@@ -24,18 +24,20 @@
                 ItemsSource="{Binding CategoriesList}"
                 Style="{StaticResource TransparentSelectionListView}">
 
-                <listView:SfListView.ItemTemplate>
-                    <DataTemplate>
+                <listView:SfListView.ItemTemplate >
+                    <DataTemplate >
                         <syncEffectsView:SfEffectsView
+                            
                             RippleColor="{DynamicResource Gray-300}"
                             TouchDownEffects="Ripple"
                             TouchUpCommand="{Binding Path=BindingContext.CategorySelectedCommand, Source={x:Reference categoryPage}}"
                             TouchUpCommandParameter="{Binding}">
-                            <Grid RowDefinitions="Auto, Auto" RowSpacing="8">
+                            <Grid RowDefinitions="Auto, Auto" RowSpacing="8" >
 
                                 <!--  Category Image  -->
                                 <Image
                                     Grid.Row="0"
+                                    
                                     Aspect="AspectFill"
                                     BackgroundColor="{DynamicResource Gray-200}"
                                     HeightRequest="{OnIdiom Phone=150,
@@ -58,7 +60,7 @@
                                     Margin="0,0,0,8"
                                     FontSize="14"
                                     Style="{StaticResource TitleLabelStyle}"
-                                    Text="{Binding name}" />
+                                    Text="{Binding name}" x:Name="categoryItem"/>
 
                             </Grid>
                         </syncEffectsView:SfEffectsView>

@@ -13,7 +13,8 @@
     xmlns:syncEffectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
     xmlns:template="clr-namespace:E_commerce_App.Views.Templates"
     x:Name="catalogTilePage"
-    Title="Catalog Tile page"
+    Title="Products"
+    
     BackgroundColor="{OnIdiom Default={DynamicResource Gray-Bg},
                               Desktop={DynamicResource Gray-100},
                               Converter={StaticResource DynamicResourceToColorConverter}}"
@@ -108,16 +109,18 @@
     <ContentPage.Content>
 
         <Grid
+          
             ColumnSpacing="0"
             RowDefinitions="Auto, *"
             RowSpacing="0">
 
             <!--  Title View  -->
-            <controls:TitleView Title="Dress" Grid.Row="0">
+            <!--<controls:TitleView BackgroundColor="Red"  Title="Dress" Grid.Row="0">
+                
                 <controls:TitleView.LeadingView>
                     <buttons:SfButton
                         x:Name="backButton"
-                        Command="{Binding BindingContext.BackButtonCommand, Source={x:Reference ListViewTile}}"
+                        TextColor="White"
                         CommandParameter="{x:Reference backButton}"
                         Style="{StaticResource IconButtonStyle}"
                         Text="{StaticResource Back}" />
@@ -125,6 +128,7 @@
                 <controls:TitleView.TrailingView>
                     <StackLayout HorizontalOptions="End" Orientation="Horizontal">
                         <badge:SfBadgeView
+                            
                             Margin="{Binding Path=BindingContext.CartItemCount, Source={x:Reference catalogTilePage}, Converter={x:StaticResource intToThicknessConverter}}"
                             Padding="0"
                             BadgeText="{Binding Path=BindingContext.CartItemCount, Source={x:Reference catalogTilePage}, Mode=TwoWay}"
@@ -136,11 +140,11 @@
                                 <buttons:SfButton
                                     Command="{Binding Path=BindingContext.CardItemCommand, Source={x:Reference ListViewTile}}"
                                     Style="{StaticResource IconButtonStyle}"
-                                    Text="{StaticResource Cart}" />
+                                    Text="{StaticResource Cart}" TextColor="White" />
                             </badge:SfBadgeView.Content>
                             <badge:SfBadgeView.BadgeSettings>
                                 <badge:BadgeSetting
-                                    BackgroundColor="{DynamicResource PrimaryColor}"
+                                    BackgroundColor="Red"
                                     BadgeType="None"
                                     FontSize="9"
                                     Offset="-5,10" />
@@ -148,7 +152,7 @@
                         </badge:SfBadgeView>
                     </StackLayout>
                 </controls:TitleView.TrailingView>
-            </controls:TitleView>
+            </controls:TitleView>-->
 
             <!--  ListView for catalog  -->
             <listView:SfListView

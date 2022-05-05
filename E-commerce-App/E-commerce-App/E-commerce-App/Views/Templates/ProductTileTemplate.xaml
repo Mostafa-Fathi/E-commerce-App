@@ -45,7 +45,7 @@
                 <UriImageSource
                     CacheValidity="14"
                     CachingEnabled="true"
-                    Uri="{Binding PreviewImage}" />
+                    Uri="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
             </Image.Source>
         </Image>
 
@@ -60,7 +60,7 @@
             LineBreakMode="TailTruncation"
             MaxLines="1"
             Style="{StaticResource TitleLabelStyle}"
-            Text="{Binding Name}" />
+            Text="Product Name" />
 
         <StackLayout
             Grid.Row="2"
@@ -76,13 +76,13 @@
                 LineHeight="{OnPlatform Android=1.25,
                                         Default=-1}"
                 Style="{StaticResource SimpleLabelStyle}"
-                Text="{Binding DiscountPrice, StringFormat='${0:0 }'}"
+                Text="100"
                 TextColor="{DynamicResource PrimaryColor}" />
 
             <Label
                 Margin="0,6,0,6"
                 Style="{StaticResource SimpleLabelStyle}"
-                Text="{Binding ActualPrice, StringFormat='${0:0.00}'}"
+                Text="109"
                 TextDecorations="Strikethrough" />
 
         </StackLayout>
@@ -99,7 +99,7 @@
             HeightRequest="-1"
             Style="{StaticResource IconButtonStyle}"
             Text="{Binding IsFavourite, Converter={StaticResource boolToStringConverter}, ConverterParameter=1}"
-            TextColor="{Binding IsFavourite, Converter={x:StaticResource boolToColorConverter}, ConverterParameter=4}" />
+            TextColor="Red" />
 
     </Grid>
 </Grid>

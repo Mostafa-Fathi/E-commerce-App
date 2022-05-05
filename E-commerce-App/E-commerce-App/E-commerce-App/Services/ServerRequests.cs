@@ -14,7 +14,7 @@ namespace E_commerce_App.Services
 {
 
 
-    const string BaseURL= "https://9844-102-189-69-174.eu.ngrok.io";
+    const string BaseURL= "https://730f-84-233-75-245.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 

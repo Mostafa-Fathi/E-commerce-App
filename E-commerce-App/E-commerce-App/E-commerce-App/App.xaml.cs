@@ -19,18 +19,19 @@ namespace E_commerce_App
 
             
            
-            MainPage =new NavigationPage(new Views.AccountDetails());
+            MainPage =
+            //new NavigationPage(new Views.AccountDetails());
            //new Views.AccountDetails();
-            //new E_commerce_App.View.TabContainer();
             //new Categories();
             //new Products();
             //new Views.SignUpPage();
             //new Views.LoginwithSocialIconPage();
-           // new E_commerce_App.Views.TabContainer();
+            new E_commerce_App.Views.TabContainer();
             //new Views.SignUpPage();
             //new Cart();
             //new Views.LoginwithSocialIconPage();
             //new E_commerce_App.Views.CategoryTilePage();
+           //new E_commerce_App.Views.ProductTilePage();
         }
 
         protected override void OnStart()
