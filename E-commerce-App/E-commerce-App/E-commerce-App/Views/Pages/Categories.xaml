@@ -4,13 +4,12 @@
              x:Class="E_commerce_App.Views.Pages.Categories">
     <ContentPage.Content>
         <StackLayout>
-            <Button Text="hahahha" Clicked="aaaa"/>
-            <ListView Margin="50" ItemsSource="{Binding CategoriesList}">
+            <Label Text="{Binding Test}"/>
+            <Button Text="yr" Clicked="Button_Clicked"/>
+            <ListView Margin="50" x:Name="listTest" ItemsSource="{Binding CategoriesList}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding}">
-
-                        </TextCell>
+                        <TextCell Text="{Binding name}" Detail="{Binding img}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

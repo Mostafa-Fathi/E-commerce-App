@@ -20,10 +20,11 @@ namespace E_commerce_App
             //MainPage = new Categories();
             //MainPage = new Products();
             MainPage =
-                       //new Views.SignUpPage();
-                //new Cart();
-                //new Views.LoginwithSocialIconPage();
-                new E_commerce_App.Views.TabContainer();
+              //  new Products();
+            //new Views.SignUpPage();
+            //new Cart();
+            //new Views.LoginwithSocialIconPage();
+            new E_commerce_App.Views.TabContainer();
                 //MainPage = new Categories();
                 // MainPage = new Products();
         }
