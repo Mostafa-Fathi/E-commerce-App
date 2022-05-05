@@ -41,8 +41,17 @@ namespace E_commerce_App.ViewModels
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             httpClient = new ServerRequests();
             IsRunning = false;
+            SharedPreferences sharedPreferences = SharedPreferences.Instance;
+            if (sharedPreferences.IsLoggedIn) {
+                // go to profile 
+                User user =sharedPreferences.CurrentUserInfo;
+                App.Current.MainPage.DisplayAlert(user.email, "Wrong Password", "OK");
+
+            }
+
 
         }
+
 
         #endregion
 
@@ -174,8 +183,9 @@ namespace E_commerce_App.ViewModels
                 else if ((currentUser.password.ToLower().Equals(Password.Value.ToLower())))
                 {
                     IsRunning = false;
-
-                    App.Current.MainPage.Navigation.PushAsync(new Categories());
+                    SharedPreferences sharedPreferences = SharedPreferences.Instance;
+                    sharedPreferences.CurrentUserInfo = currentUser;
+                    App.Current.MainPage.Navigation.PushAsync(new LoginwithSocialIconPage());
                 }
                 else
                 {
