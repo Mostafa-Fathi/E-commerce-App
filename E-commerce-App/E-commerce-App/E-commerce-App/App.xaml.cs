@@ -29,7 +29,6 @@ namespace E_commerce_App
                 //new Views.SignUpPage();
                 //new Cart();
                 //new Views.LoginwithSocialIconPage();
-
                 new E_commerce_App.Views.TabContainer();
                 //new E_commerce_App.Views.CategoryTilePage();
            
