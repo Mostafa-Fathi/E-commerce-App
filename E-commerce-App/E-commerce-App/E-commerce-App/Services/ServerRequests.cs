@@ -16,7 +16,7 @@ namespace E_commerce_App.Services
     {
         const string CtegoryAPI = "https://fakestoreapi.com/products/categories";
         ObservableCollection<string> categories;
-        string categoriesAsString = await httpClient.GetStringAsync(CtegoryAPI);
+         string categoriesAsString = await httpClient.GetStringAsync(CtegoryAPI);
         categories = JsonConvert.DeserializeObject<ObservableCollection<string>>(categoriesAsString);
         return categories;
     }
