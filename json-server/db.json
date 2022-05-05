@@ -524,7 +524,6 @@
       "phone": "1-570-236-7033",
       "__v": 0
     },
-    
     {
       "username": "mostafafathy833",
       "password": "P@ssw0rd",
@@ -542,6 +541,18 @@
       },
       "phone": "01093402662",
       "id": 25
+    },
+    {
+      "username": "aalaafathallah680",
+      "password": "P@ssw0rd",
+      "email": "aalaa@gmail.com",
+      "name": {
+        "firstname": "aalaa",
+        "lastname": "fathallah"
+      },
+      "address": [],
+      "phone": "123456789",
+      "id": 26
     }
   ],
   "jewelery": [

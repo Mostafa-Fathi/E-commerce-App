@@ -24,12 +24,19 @@ namespace E_commerce_App.Droid
             base.OnElementChanged(e);
             if(Control != null)
             {
-               
-                IntPtr IntPtrtextViewClass = JNIEnv.FindClass(typeof(TextView));
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.Q)
+                {
+                    Control.SetTextCursorDrawable(0); //This API Intrduced in android 10
+                }
+                else
+                {
+                   IntPtr IntPtrtextViewClass = JNIEnv.FindClass(typeof(TextView));
                 IntPtr mCursorDrawableResProperty = JNIEnv.GetFieldID(IntPtrtextViewClass, "mCursorDrawableRes", "I");
 
+                    JNIEnv.SetField(Control.Handle, mCursorDrawableResProperty, Resource.Drawable.cursor);
+                }
+
                 //cursor is the xml file name which we defined 
-                JNIEnv.SetField(Control.Handle, mCursorDrawableResProperty, Resource.Drawable.cursor);
 
                 //remove underline on Entry
                 Control.SetBackgroundColor(Android.Graphics.Color.Transparent);

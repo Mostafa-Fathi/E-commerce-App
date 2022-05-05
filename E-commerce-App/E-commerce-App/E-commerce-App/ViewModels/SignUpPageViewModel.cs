@@ -238,21 +238,24 @@ namespace E_commerce_App.ViewModels
                     {
                        IsRunning = false;
 
-
+                        // will be deleted 
+                        // TODO : Go to home page
+                        // TODO : manual login
                         await App.Current.MainPage.DisplayAlert("Scuuses", "This Email is Already Exits Do You Forget Your Password", "Yes", "Not my Email");
 
                     }
                     else {
                         IsRunning = false;
-
-                        await App.Current.MainPage.DisplayAlert("Wrong", "This Email is Already Exits Do You Forget Your Password", "Yes", "Not my Email");
+                        await App.Current.MainPage.DisplayAlert("Network Error", "Check you network", "OK");
 
                     }
                 }
                 else
                 {
                     IsRunning= false;
-                    await App.Current.MainPage.DisplayAlert("Exists Email", "This Email is Already Exits Do You Forget Your Password", "Yes","Not my Email");
+                    // TODO : Forget password =>  go to reset password screen.
+                    // TODO : Not My Email => Stay at the same page.
+                    await App.Current.MainPage.DisplayAlert("Exists Email", "This Email is Already Exits", "Forget Password", "Not my Email");
 
                 }
 
