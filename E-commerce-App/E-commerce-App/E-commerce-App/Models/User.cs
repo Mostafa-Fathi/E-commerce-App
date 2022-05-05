@@ -6,6 +6,12 @@ namespace E_commerce_App.Models
 {
     public class User
     {
+
+
+       public User() {
+            name = new Name();
+            address = new Address();
+        }
         public string username { get; set; }
         public string password { get; set; }
         public string email { get; set; }
