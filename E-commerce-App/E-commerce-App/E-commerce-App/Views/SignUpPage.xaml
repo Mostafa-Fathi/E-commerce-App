@@ -13,10 +13,11 @@
     xmlns:local="clr-namespace:E_commerce_App.Views"
     xmlns:viewModel="clr-namespace:E_commerce_App.ViewModels"
     Title="Sign Up"
-    BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
+>
+    <!--BackgroundImageSource="{core:OnPlatformOrientationStringValue Default=LoginBackground.png,
                                                                   iOSPhoneLandscape=LoginBackground-Landscape.png,
                                                                   iOSTabletLandscape=LoginBackground-Landscape.png}"
-    NavigationPage.HasNavigationBar="False">
+    NavigationPage.HasNavigationBar="False"-->
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -35,7 +36,7 @@
         <Grid>
             <gradient:SfGradientView Style="{StaticResource BlueGradientStyle}" />
 
-            <ScrollView HorizontalOptions="Center">
+            <ScrollView HorizontalOptions="Center" BackgroundColor="Black">
                 <ScrollView.VerticalOptions>
                     <OnIdiom
                         x:TypeArguments="LayoutOptions"
@@ -43,7 +44,7 @@
                         Phone="FillAndExpand" />
                 </ScrollView.VerticalOptions>
 
-                <StackLayout
+                <StackLayout 
                     Margin="{core:OnPlatformOrientationThickness PhonePortrait='20,32',
                                                                  PhoneLandscape='150,32',
                                                                  TabletPortrait='200,50',
@@ -52,11 +53,11 @@
                     Spacing="0"
                     VerticalOptions="FillAndExpand"
                     WidthRequest="{OnPlatform Default='-1',
-                                              UWP='350'}">
+                                              UWP='350'}" >
                     <StackLayout
                         HorizontalOptions="Center"
                         Spacing="24"
-                        VerticalOptions="CenterAndExpand">
+                        VerticalOptions="CenterAndExpand" BackgroundColor="Black">
 
                         <!--  Label to display the title of this page  -->
                         <Label
@@ -308,14 +309,14 @@
                             Command="{Binding LoginCommand}"
                             Style="{StaticResource TransparentButtonStyle}"
                             Text="Log In"
-                            TextColor="{DynamicResource PrimaryColor}" />
+                            TextColor="{DynamicResource Red}" />
 
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
 
             <!--  back button  -->
-            <buttons:SfButton
+            <!--<buttons:SfButton
                 Margin="8"
                 Command="{Binding BackButtonCommand}"
                 FontSize="20"
@@ -323,7 +324,7 @@
                 Style="{StaticResource IconButtonStyle}"
                 Text="{StaticResource Back}"
                 TextColor="{DynamicResource Gray-White}"
-                VerticalOptions="Start" />
+                VerticalOptions="Start" />-->
 
         </Grid>
     </ContentPage.Content>

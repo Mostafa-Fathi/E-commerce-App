@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_commerce_App.Views.AccountDetails" >
+    <ContentPage.Content>
+        <StackLayout Margin="20,40" Spacing="30">
+            <StackLayout Orientation="Vertical" Spacing="10">
+                <Image Source="persongetails" HeightRequest="100" WidthRequest="100"/>
+                <!-- we will Bind here for User Name and User Email--> 
+                <!--<Label Text="{Binding}" TextColor="Black" FontSize="17"
+               HorizontalTextAlignment="Center"/>-->
+                <Label Text="Hadeer Elsayed Mohammed Eladawey" TextColor="Black" FontSize="17"
+               HorizontalTextAlignment="Center"/>
+                <Label Text="hadeereladawy123@gmail.com"
+                  HorizontalTextAlignment="Center" />
+            </StackLayout>
+            
+            
+            <StackLayout Orientation="Vertical" Spacing="30">
+                <!--<StackLayout Orientation="Horizontal">
+                    <ImageButton Source="person" HeightRequest="30" WidthRequest="30" BackgroundColor="LightGray" Padding="5"/>
+                    <Label Text="Account details" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                </StackLayout>-->
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Frame CornerRadius="5" Padding="5" BackgroundColor="LightGray">
+                        <Image Source="person" HeightRequest="20" WidthRequest="20"  />
+                    </Frame>
+                    <Label Text="Account Information" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AccountDetailsClick"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Frame CornerRadius="5" Padding="5" BackgroundColor="LightGray">
+                        <Image Source="Location" HeightRequest="20" WidthRequest="20"  />
+                    </Frame>
+                    <Label Text="My Address" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AddressClick"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Frame CornerRadius="5" Padding="5" BackgroundColor="LightGray">
+                        <Image Source="market" HeightRequest="20" WidthRequest="20"  />
+                    </Frame>
+                    <Label Text="My Orders" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OrdersClick"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Frame CornerRadius="5" Padding="5" BackgroundColor="LightGray">
+                        <Image Source="favorite" HeightRequest="20" WidthRequest="20"  />
+                    </Frame>
+                    <Label Text="My WishList" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="FavouriteProductClick"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <Frame CornerRadius="5" Padding="5" BackgroundColor="LightGray">
+                        <Image Source="logout" HeightRequest="20" WidthRequest="20"  />
+                    </Frame>
+                    <Label Text="Log out" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LogoutClick"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

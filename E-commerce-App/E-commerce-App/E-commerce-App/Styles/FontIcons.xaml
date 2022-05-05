@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
     <!--  Font icon text  -->
+    <!--<x:String x:Key="location">&#xe617;</x:String>-->    <!--hadeer try add icons-->
     <x:String x:Key="DropDownButtonIcon">&#xe70b;</x:String>
     <x:String x:Key="Contact">&#xe723;</x:String>
     <x:String x:Key="FaceBook">&#xe70f;</x:String>

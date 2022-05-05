@@ -18,6 +18,7 @@
     <Color x:Key="Link">#567cd7</Color>
     <Color x:Key="Steel">#788396</Color>
     <Color x:Key="Gold">#fcbc0f</Color>
+    <!--added-->
     <Color x:Key="Pink">#F5B7B1</Color>
     <Color x:Key="Dull-Red">#c04848</Color>
     <Color x:Key="Deep-Purple">#480048</Color>
