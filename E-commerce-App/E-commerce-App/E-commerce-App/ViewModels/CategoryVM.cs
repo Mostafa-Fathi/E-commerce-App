@@ -18,16 +18,6 @@ namespace E_commerce_App.ViewModel
         {
             PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(propertyName));
         }
-        private string test;
-
-        public string Test
-        {
-            get { return test; }
-            set { 
-                test = value;
-                onPropertyChanged();
-            }
-        }
 
         public ObservableCollection<Category> CategoriesList
         {
@@ -43,15 +33,13 @@ namespace E_commerce_App.ViewModel
             httpClient = new ServerRequests();
             CategoriesList = new ObservableCollection<Category>()
             {
-               new Category(){name="Loading",img=""}
+               new Category(){name="Loading"}
             };
             loadData();
         }
         private async void loadData()
         {
-            Test = "Before";
             CategoriesList = await httpClient.GetCategories();  
-            Test = CategoriesList[0].name;
         }
 
     }

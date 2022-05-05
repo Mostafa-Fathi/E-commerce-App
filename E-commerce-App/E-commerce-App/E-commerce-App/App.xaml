@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:themes = "clr-namespace:E-commerce-App.Themes;assembly=E-commerce-App"
+             xmlns:themes = "clr-namespace:E_commerce_App.Themes;assembly=E_commerce_App"
              xmlns:themes1="clr-namespace:E_commerce_App.Themes"
              x:Class="E_commerce_App.App">
     <Application.Resources>
 
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <themes:LightTheme />
                 <themes1:LightTheme />
             </ResourceDictionary.MergedDictionaries >
         </ResourceDictionary>
