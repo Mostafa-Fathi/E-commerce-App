@@ -12,9 +12,8 @@
     xmlns:gradient="clr-namespace:Syncfusion.XForms.Graphics;assembly=Syncfusion.Core.XForms"
     xmlns:local="clr-namespace:E_commerce_App.Views"
     xmlns:template="clr-namespace:E_commerce_App.Views.Templates"
-    xmlns:viewModel="clr-namespace:E_commerce_App.ViewModels"
-    BackgroundColor="{DynamicResource Gray-200}"
-    NavigationPage.HasNavigationBar="False">
+    xmlns:viewModel="clr-namespace:E_commerce_App.ViewModels" Title="Log In"
+    >
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -29,10 +28,10 @@
         <viewModel:LoginWithSocialIconViewModel />
     </ContentPage.BindingContext>
 
-    <ContentPage.Content>
-        <Grid>
+    <ContentPage.Content >
+        <Grid >
             <gradient:SfGradientView Style="{StaticResource VioletGradientStyle}" />
-            <ScrollView HorizontalOptions="Center">
+            <ScrollView HorizontalOptions="Center" BackgroundColor="Black">
 
                 <ScrollView.VerticalOptions>
                     <OnIdiom
@@ -41,7 +40,7 @@
                         Phone="FillAndExpand" />
                 </ScrollView.VerticalOptions>
 
-                <StackLayout
+                <StackLayout BackgroundColor="Black"
                     Margin="{core:OnPlatformOrientationThickness PhonePortrait='24,32',
                                                                  PhoneLandscape='150,32',
                                                                  TabletPortrait='200,50',
@@ -134,7 +133,7 @@
 
                         <buttons:SfButton
                             Grid.Row="5"
-                            Margin="0,16"
+                            Margin="30,16"
                             Command="{Binding LoginCommand}"
                             CornerRadius="4"
                             HorizontalOptions="Fill" 
@@ -161,7 +160,7 @@
                             Command="{Binding SignUpCommand}"
                             Style="{StaticResource TransparentButtonStyle}"
                             Text="Sign Up"
-                            TextColor="{DynamicResource PrimaryColor}" 
+                            TextColor="{DynamicResource Red}" 
                             HorizontalOptions="Center"/>
 
                         <!--  Login button with social icons  -->
@@ -191,7 +190,7 @@
             </ScrollView>
 
             <!--  back button  -->
-            <buttons:SfButton
+            <!--<buttons:SfButton
                 Margin="8"
                 Command="{Binding BackButtonCommand}"
                 FontSize="20"
@@ -199,7 +198,7 @@
                 Text="{StaticResource Back}"
                 TextColor="{DynamicResource Gray-White}"
                 VerticalOptions="Start"
-                HorizontalOptions="Start"/>
+                HorizontalOptions="Start"/>-->
 
         </Grid>
     </ContentPage.Content>

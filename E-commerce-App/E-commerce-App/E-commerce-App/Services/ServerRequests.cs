@@ -12,15 +12,17 @@ namespace E_commerce_App.Services
     public class ServerRequests
 {
     HttpClient httpClient = new HttpClient();
-    public async Task<ObservableCollection<string>> GetCategories(){
+    public async Task<ObservableCollection<string>> GetCategories()
+    {
         const string CtegoryAPI = "https://fakestoreapi.com/products/categories";
         ObservableCollection<string> categories;
         string categoriesAsString = await httpClient.GetStringAsync(CtegoryAPI);
         categories = JsonConvert.DeserializeObject<ObservableCollection<string>>(categoriesAsString);
         return categories;
-        }
+    }
 
-    // Only used for get all products or products belong to specific category  
+    // Only used for get all products or products belong to specific category
+    
      public async Task<ObservableCollection<Product>> GetProducts(string url="")
     {
         string ProductAPI = $"https://fakestoreapi.com/products/{url}";

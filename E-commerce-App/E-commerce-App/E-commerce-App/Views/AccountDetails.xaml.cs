@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace E_commerce_App.Views
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AccountDetails : ContentPage
+    {
+        public AccountDetails()
+        {
+            InitializeComponent();
+        }
+
+        private void AccountDetailsClick(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ProfilePersonally());
+        }
+
+        private void AddressClick(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MyAddresses());
+        }
+
+        private void OrdersClick(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MyOrders());
+        }
+
+        private void FavouriteProductClick(object sender, EventArgs e)
+        {
+            //this alert for testing event Tapped we will change it to navigate to another page
+            DisplayAlert("data", "data", "ok", "cancel");
+        }
+
+        private void LogoutClick(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Pages.Profile());
+        }
+    }
+}

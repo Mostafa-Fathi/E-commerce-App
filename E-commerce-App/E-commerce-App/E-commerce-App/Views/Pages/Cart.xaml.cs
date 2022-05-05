@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace E_commerce_App.View.Pages
+namespace E_commerce_App.Views.Pages
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 public partial class Cart : ContentPage
