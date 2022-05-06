@@ -45,7 +45,7 @@
                 <UriImageSource
                     CacheValidity="14"
                     CachingEnabled="true"
-                    Uri="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+                    Uri="{Binding image}"/>
             </Image.Source>
         </Image>
 
@@ -60,7 +60,7 @@
             LineBreakMode="TailTruncation"
             MaxLines="1"
             Style="{StaticResource TitleLabelStyle}"
-            Text="Product Name" />
+            Text="{Binding title}" />
 
         <StackLayout
             Grid.Row="2"
@@ -76,7 +76,7 @@
                 LineHeight="{OnPlatform Android=1.25,
                                         Default=-1}"
                 Style="{StaticResource SimpleLabelStyle}"
-                Text="100"
+                Text="{Binding price}"
                 TextColor="{DynamicResource PrimaryColor}" />
 
             <Label

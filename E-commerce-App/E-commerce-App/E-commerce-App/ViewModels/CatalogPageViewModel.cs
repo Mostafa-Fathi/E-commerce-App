@@ -1,6 +1,8 @@
 using E_commerce_App.Models;
+using E_commerce_App.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Runtime.Serialization;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -17,6 +19,7 @@ namespace E_commerce_App.ViewModels
         #region Fields
 
         private ObservableCollection<Category> filterOptions;
+        private ServerRequests httpClient;
 
         private ObservableCollection<string> sortOptions;
 
@@ -41,6 +44,7 @@ namespace E_commerce_App.ViewModels
         /// <summary>
         /// Initializes a new instance for the <see cref="CatalogPageViewModel" /> class.
         /// </summary>
+        
         public CatalogPageViewModel()
         {
             this.FilterOptions = new ObservableCollection<Category>
@@ -133,6 +137,8 @@ namespace E_commerce_App.ViewModels
                 "Popularity",
                 "Discount",
             };
+            httpClient = new ServerRequests();
+            loadProducts();
         }
 
         #endregion
@@ -143,10 +149,29 @@ namespace E_commerce_App.ViewModels
         /// Gets or sets the property that has been bound with a list view, which displays the item details in tile.
         /// </summary>
         [DataMember(Name = "products")]
+        private ObservableCollection<Product> products;
+
         public ObservableCollection<Product> Products
         {
-            get; set;
+            get { return products; }
+            set {
+                products = value;
+                NotifyPropertyChanged();
+            }
         }
+        private ObservableCollection<Product> cart;
+
+        public ObservableCollection<Product> Cart
+        {
+            get { return cart; }
+            set { 
+                cart = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
+
 
         /// <summary>
         /// Gets or sets the property that has been bound with a list view, which displays the filter options.
@@ -281,6 +306,13 @@ namespace E_commerce_App.ViewModels
         private void SortClicked(object attachedObject)
         {
             // Do something
+            List<Product> unOrderdList = new List<Product>(Products);
+            // title
+            unOrderdList.Sort((a, b) => a.title.CompareTo(b.title));
+            Products = new ObservableCollection<Product>(unOrderdList);
+            // price 
+            List<Product> orderdList= unOrderdList.OrderBy(product=>product.price).ToList<Product>();
+            Products = new ObservableCollection<Product>(orderdList);
         }
 
         /// <summary>
@@ -290,6 +322,13 @@ namespace E_commerce_App.ViewModels
         private void FilterClicked(object obj)
         {
             // Do something
+            List<Product> unFilterdList = new List<Product>(Products);
+            // filter by price more than 100
+            //List<Product> filterdList = unFilterdList.Where(o => o.price > 100).ToList();
+            // filter by category
+            List<Product> filterdList = unFilterdList.Where(o => o.category=="jewelery").ToList();
+            Products = new ObservableCollection<Product>(filterdList);
+            
         }
 
         /// <summary>
@@ -311,6 +350,17 @@ namespace E_commerce_App.ViewModels
         private void AddToCartClicked(object obj)
         {
             // Do something
+            if (Cart == null)
+            {
+                Cart = new ObservableCollection<Product>()
+                {
+                    // selected item
+                };
+            }
+            else
+            {
+                //Cart.Add(selectedItem);
+            }
         }
 
         /// <summary>
@@ -320,6 +370,12 @@ namespace E_commerce_App.ViewModels
         private void CartClicked(object obj)
         {
             // Do something
+            // navigate to cart screen
+        }
+
+        private async void loadProducts()
+        {
+            Products = await httpClient.GetProducts("category/jewelery");
         }
 
         #endregion

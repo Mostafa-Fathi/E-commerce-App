@@ -1,4 +1,5 @@
 using E_commerce_App.DataService;
+using E_commerce_App.ViewModels;
 using Syncfusion.ListView.XForms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -18,7 +19,7 @@ namespace E_commerce_App.Views
         public ProductTilePage()
         {
             this.InitializeComponent();
-            this.BindingContext = CatalogDataService.Instance.CatalogPageViewModel;
+            this.BindingContext = new CatalogPageViewModel();
         }
 
         protected override void OnSizeAllocated(double width, double height)
