@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Grid
+    x:Class="E_commerce_App.Views.Templates.ProductTileTemplate"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:converter="clr-namespace:E_commerce_App.Converters"
+    xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
+    x:Name="productTileTemplate">
+
+    <Grid.Resources>
+        <ResourceDictionary>
+            <converter:BooleanToStringConverter x:Key="boolToStringConverter" />
+            <converter:BooleanToColorConverter x:Key="boolToColorConverter" />
+        </ResourceDictionary>
+    </Grid.Resources>
+
+    <Grid
+        Margin="0"
+        ColumnDefinitions="4*, 1*"
+        RowDefinitions="Auto, Auto, Auto"
+        RowSpacing="0">
+
+        <!--  Product Image  -->
+        <Image
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="0,0,0,8"
+            Aspect="Fill"
+            BackgroundColor="{DynamicResource Gray-200}"
+            HeightRequest="200"
+            HorizontalOptions="{core:OnPlatformOrientationLayoutOptions AndroidPhonePortrait=FillAndExpand,
+                                                                        AndroidPhoneLandscape=StartAndExpand,
+                                                                        iOSPhonePortrait=FillAndExpand,
+                                                                        iOSPhoneLandscape=StartAndExpand,
+                                                                        AndroidTabletPortrait=FillAndExpand,
+                                                                        AndroidTabletLandscape=StartAndExpand,
+                                                                        iOSTabletPortrait=FillAndExpand,
+                                                                        iOSTabletLandscape=StartAndExpand}"
+            WidthRequest="{OnIdiom Phone=183,
+                                   Tablet=224,
+                                   Desktop=224}">
+            <Image.Source>
+                <UriImageSource
+                    CacheValidity="14"
+                    CachingEnabled="true"
+                    Uri="{Binding image}"/>
+            </Image.Source>
+        </Image>
+
+        <!--  Product Name  -->
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="8,0,0,4"
+            FontSize="14"
+            HorizontalOptions="StartAndExpand"
+            LineBreakMode="TailTruncation"
+            MaxLines="1"
+            Style="{StaticResource TitleLabelStyle}"
+            Text="{Binding title}" />
+
+        <StackLayout
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="8,0,0,8"
+            Orientation="Horizontal"
+            Spacing="2">
+
+            <!--  Product Price  -->
+            <Label
+                FontFamily="Montserrat-SemiBold"
+                FontSize="20"
+                LineHeight="{OnPlatform Android=1.25,
+                                        Default=-1}"
+                Style="{StaticResource SimpleLabelStyle}"
+                Text="{Binding price}"
+                TextColor="{DynamicResource PrimaryColor}" />
+
+            <Label
+                Margin="0,6,0,6"
+                Style="{StaticResource SimpleLabelStyle}"
+                Text="109"
+                TextDecorations="Strikethrough" />
+
+        </StackLayout>
+
+        <!--  Favourite Icon  -->
+        <buttons:SfButton
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="0,0,0,8"
+            Padding="0"
+            Command="{Binding ParentBindingContext.AddFavouriteCommand, Source={x:Reference productTileTemplate}}"
+            CommandParameter="{Binding}"
+            FontSize="16"
+            HeightRequest="-1"
+            Style="{StaticResource IconButtonStyle}"
+            Text="{Binding IsFavourite, Converter={StaticResource boolToStringConverter}, ConverterParameter=1}"
+            TextColor="Red" />
+
+    </Grid>
+</Grid>
