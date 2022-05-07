@@ -12,7 +12,6 @@ namespace E_commerce_App.Models
         public float price { get; set; }
         public string category { get; set; }
         public Uri image { get; set; }
-
         public Rating rating { get; set; }
 
         public override string ToString()
