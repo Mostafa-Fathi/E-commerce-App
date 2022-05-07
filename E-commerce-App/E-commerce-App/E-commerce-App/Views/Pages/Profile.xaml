@@ -3,12 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="E_commerce_App.Views.Pages.Profile" Title="Profile" BackgroundColor="LightGray">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Spacing="15" BackgroundColor="white" VerticalOptions="Center"  
-                     HorizontalOptions="Center" WidthRequest="300" HeightRequest="300">
-            <Label Text="If you have an Account"  TextColor="Black" HorizontalTextAlignment="Center" Margin="0,20"/>
-            <Button Text="Login In " BackgroundColor="red" TextColor="White"  Margin="30,10" CornerRadius="10" Clicked="GoToLoginPage"/>
+        <StackLayout Orientation="Vertical" Spacing="15"
+                     BackgroundColor="white" VerticalOptions="Center"  
+                     HorizontalOptions="Center" WidthRequest="300" 
+                     HeightRequest="300">
+            <Label Text="If you have an Account"  TextColor="Black"
+                   HorizontalTextAlignment="Center" Margin="0,20"/>
+            <Button Text="Login In " BackgroundColor="red" TextColor="White" 
+                    Margin="30,10" CornerRadius="10" Clicked="GoToLoginPage"/>
             <Label Text="Or" TextColor="Black" HorizontalTextAlignment="Center" />
-            <Button Text="Sign Up " BackgroundColor="Gray" TextColor="White"  Margin="30,10" CornerRadius="10" Clicked="GoToSignUpPage"/>
+            <Button Text="Sign Up " BackgroundColor="Gray" TextColor="White" 
+                    Margin="30,10" CornerRadius="10" Clicked="GoToSignUpPage"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

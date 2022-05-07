@@ -9,7 +9,8 @@
                    HorizontalTextAlignment="Center"
                    TextColor="Black" FontSize="20"/>
             <Button Text="Add New Address" BackgroundColor="Red"
-                    TextTransform="None" TextColor="White" Margin="50,0"/>
+                    TextTransform="None" TextColor="White" 
+                    Margin="50,0" Clicked="AddAddressesPage"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

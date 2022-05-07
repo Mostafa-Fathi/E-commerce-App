@@ -95,6 +95,13 @@ namespace E_commerce_App.ViewModels
             }
         }
 
+        public bool NotIsRunning
+        {
+            get
+            {
+                return !this.isRunning;
+            }
+        }
         #endregion
 
         #region Command
