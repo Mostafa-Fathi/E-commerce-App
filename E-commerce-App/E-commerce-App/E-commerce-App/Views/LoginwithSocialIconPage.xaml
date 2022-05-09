@@ -62,6 +62,7 @@
                             Style="{StaticResource TitleLabelStyle}"
                             Text="Login"
                             TextColor="{DynamicResource Gray-White}" />
+                        <ActivityIndicator  Color="Red" HorizontalOptions="Center"  VerticalOptions="Center" IsRunning="{Binding IsRunning}" IsVisible="{Binding IsRunning}" IsEnabled="{Binding IsRunning}"/>
 
                         <!--  Label to display the description of this page  -->
                         <!--<Label
@@ -137,7 +138,8 @@
                             Grid.Row="5"
                             Margin="30,16"
                             Command="{Binding LoginCommand}"
-                            CornerRadius="4"
+                            CornerRadius="4"                            
+                            IsEnabled="{Binding  NotIsRunning}"
                             HorizontalOptions="Fill" 
                             Style="{StaticResource GradientButtonStyle}"
                             Text="Login" />

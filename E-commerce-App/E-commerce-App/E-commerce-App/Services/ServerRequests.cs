@@ -11,8 +11,10 @@ using Xamarin.Forms;
 namespace E_commerce_App.Services
 {
     public class ServerRequests
-    {
-    const string BaseURL= "https://deff-156-198-207-28.eu.ngrok.io";
+{
+
+
+    const string BaseURL= "https://9844-102-189-69-174.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -48,13 +50,36 @@ namespace E_commerce_App.Services
             return product;
         }
 
-    public async Task<User> Login(string userName="Defualt")
+        public async Task<bool> SignUp(User user)
+        {
+            // fake api => https://fakestoreapi.com/products/{id}
+            //string ProductAPI = $"http://localhost:3000/products/{id}";
+            string SginUpAPI = $"{BaseURL}/users/";
+            var json = JsonConvert.SerializeObject(user);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var httpResponse = await httpClient.PostAsync(SginUpAPI,data);
+            return httpResponse.IsSuccessStatusCode;
+        }
+
+        public async Task<User> Login(string userName="Defualt")
         {
             //string LoginAPI = $"http://localhost:3000/users?username={userName}";
             string LoginAPI = $"{BaseURL}/users?username={userName}";
             string response = await httpClient.GetStringAsync(LoginAPI);
             ObservableCollection<User> result = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
             if (result.Count>0)
+            {
+                return result[0];
+            }
+            return null;
+        }
+        public async Task<User> CheckEmail(string email = "Defualt")
+        {
+            string LoginAPI = $"{BaseURL}/users?email={email}";
+            string response = await httpClient.GetStringAsync(LoginAPI);
+            ObservableCollection<User> result = JsonConvert.DeserializeObject<ObservableCollection<User>>(response);
+            if (result.Count > 0)
             {
                 return result[0];
             }

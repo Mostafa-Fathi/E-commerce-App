@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:E_commerce_App.Controls"
+             x:Class="E_commerce_App.Views.AddAddressess" Title="Add Address">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout BackgroundColor="
+                     #EBEBEB" Spacing="0">
+            <StackLayout Orientation="Vertical" 
+                         Spacing="0">
+                <Label Text="First Name" 
+                       Margin="20,10,0,0"
+                       TextColor="Black" 
+                       FontAttributes="Bold" 
+                       FontSize="17" />
+               
+                <controls:CustomEntry 
+                       Placeholder="Enter First Name Here" 
+                       TextColor="Gray" 
+                       BackgroundColor="White" 
+                       Margin="40,10" 
+                       VerticalTextAlignment="Center" 
+                       HeightRequest="50"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" 
+                         Spacing="0" >
+                <Label Text="Last Name" 
+                       Margin="20,10,0,0" 
+                       FontSize="17"
+                       TextColor="Black" 
+                       FontAttributes="Bold" />
+
+                <controls:CustomEntry 
+                       Placeholder="Enter Last Name Here" 
+                       TextColor="Gray" 
+                       BackgroundColor="White" 
+                       Margin="40,10" 
+                       FontSize="17"
+                       VerticalTextAlignment="Center" 
+                    HeightRequest="50"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" 
+                         Spacing="0" >
+                <Label Text="Phone" 
+                       Margin="20,10,0,0" 
+                       FontSize="17"
+                       TextColor="Black" 
+                       FontAttributes="Bold" />
+
+                <controls:CustomEntry 
+                       Placeholder="Enter Phone Here" 
+                       TextColor="Gray" 
+                       BackgroundColor="White"
+                       Margin="40,10" FontSize="17"
+                       VerticalTextAlignment="Center" 
+                       HeightRequest="50"
+                       Keyboard="Telephone"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Spacing="0" >
+                <Label Text="Choose State" 
+                       Margin="20,10,0,0" 
+                       FontSize="17"
+                       TextColor="Black" 
+                       FontAttributes="Bold" />
+                <controls:CustomEntry 
+                       Placeholder="Enter State Details Here" 
+                       TextColor="Gray" 
+                       BackgroundColor="White" 
+                       Margin="40,10" FontSize="17"
+                       VerticalTextAlignment="Center" 
+                       HeightRequest="50"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" Spacing="0" >
+                <Label Text="Street" 
+                       Margin="20,10,0,0" 
+                       FontSize="17"
+                       TextColor="Black"
+                       FontAttributes="Bold" />
+
+                <controls:CustomEntry 
+                       Placeholder="Enter Street Details Here"
+                       TextColor="Gray" 
+                       BackgroundColor="White"
+                       Margin="40,10"
+                       VerticalTextAlignment="Center" 
+                       HeightRequest="50"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Spacing="10" >
+                <Label Text="Make as Default Shipping Address" 
+                       Margin="20,10,0,0" 
+                       FontSize="17"
+                       TextColor="Black" 
+                       FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal" Spacing="10" 
+                             HorizontalOptions="Start" Margin="40,0">
+                    <Button x:Name="btn_Yes" Text="Yes" 
+                            BackgroundColor="White" 
+                            FontAttributes="Bold" FontSize="17"
+                            TextTransform="None" TextColor="Black"
+                            Clicked="cls1_defaultAddress"/>
+                    <Button x:Name="btn_No" Text="No" 
+                            BackgroundColor="Green" 
+                            FontAttributes="Bold" 
+                            FontSize="17"
+                            TextTransform="None" 
+                            TextColor="White" 
+                            Clicked="cls2_defaultAddress"/>
+                </StackLayout>
+                <Label x:Name="default_Address_label" 
+                       Text="This is NOT default shipping Address" 
+                       Margin="20,10,0,0" 
+                       FontSize="16"
+                       TextColor="Gray" 
+                       FontAttributes="Bold" />
+            </StackLayout>
+
+            <Button Text="Add Address" 
+                    BackgroundColor="Red"
+                    TextTransform="None"  
+                    FontAttributes="Bold"
+                    FontSize="17"
+                    TextColor="White" 
+                    Margin="35,10"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

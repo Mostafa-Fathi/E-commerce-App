@@ -8,5 +8,10 @@ namespace E_commerce_App.Models
     {
         public string firstname { get; set; }
         public string lastname { get; set; }
+
+        public override string ToString()
+        {
+            return firstname + lastname;
+        }
     }
 }

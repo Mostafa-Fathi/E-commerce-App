@@ -33,6 +33,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.Content>
+        
         <Grid>
             <gradient:SfGradientView Style="{StaticResource BlueGradientStyle}" />
 
@@ -59,6 +60,7 @@
                         Spacing="24"
                         VerticalOptions="CenterAndExpand" BackgroundColor="Black">
 
+
                         <!--  Label to display the title of this page  -->
                         <Label
                             FontSize="20"
@@ -72,7 +74,14 @@
                             Style="{StaticResource DescriptionLabelStyle}"
                             Text="Create an account to start add product to cart and do more"
                             TextColor="{DynamicResource Gray-White}" />
-                        
+                        <ActivityIndicator  Color="Red" 
+                                            HorizontalOptions="Center" 
+                                            VerticalOptions="Center"
+                                            IsRunning="{Binding IsRunning}" 
+                                            IsVisible="{Binding IsRunning}"
+                                            IsEnabled="{Binding IsRunning}"/>
+
+
                         <!--<Label Text="First Name" TextColor="White"/>-->
 
                         <StackLayout>
@@ -282,6 +291,7 @@
                         <buttons:SfButton
                             Command="{Binding SignUpCommand}"
                             HorizontalOptions="FillAndExpand"
+                            IsEnabled="{Binding NotIsRunning}"
                             Style="{StaticResource GradientButtonStyle}"
                             Text="Register" />
                     </StackLayout>
