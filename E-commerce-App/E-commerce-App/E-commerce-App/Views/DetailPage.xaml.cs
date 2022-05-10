@@ -1,3 +1,4 @@
+using E_commerce_App.Models;
 using E_commerce_App.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -15,10 +16,10 @@ namespace E_commerce_App.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="DetailPage" /> class.
         /// </summary>
-        public DetailPage()
+        public DetailPage(Product product)
         {
             this.InitializeComponent();
-            this.BindingContext = DetailPageViewModel.BindingContext;
+            this.BindingContext = new DetailPageViewModel(product);
         }
 
         /// <summary>

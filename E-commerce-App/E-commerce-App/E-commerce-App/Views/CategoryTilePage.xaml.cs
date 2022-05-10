@@ -1,5 +1,6 @@
 using E_commerce_App.DataService;
 using E_commerce_App.ViewModel;
+using E_commerce_App.ViewModels;
 using Syncfusion.ListView.XForms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -19,7 +20,7 @@ namespace E_commerce_App.Views
         public CategoryTilePage()
         {
             this.InitializeComponent();
-            this.BindingContext = new CategoryVM();// CategoryDataService.Instance.CategoryPageViewModel;
+            this.BindingContext = new CategoryPageViewModel();// CategoryDataService.Instance.CategoryPageViewModel;
         }
 
         //protected override void OnSizeAllocated(double width, double height)

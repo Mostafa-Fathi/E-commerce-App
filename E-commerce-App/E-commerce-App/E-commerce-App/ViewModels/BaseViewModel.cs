@@ -61,7 +61,6 @@ namespace E_commerce_App.ViewModels
             {
                 return false;
             }
-
             storage = value;
             this.NotifyPropertyChanged(propertyName);
 

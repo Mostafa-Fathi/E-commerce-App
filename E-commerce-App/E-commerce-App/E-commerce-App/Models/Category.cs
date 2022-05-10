@@ -23,5 +23,10 @@ namespace E_commerce_App.Models
 
         public string name { set; get; }
         public Uri img { set; get; }
+        public override string ToString()
+        {
+            return name;
+        }
     }
+    
 }

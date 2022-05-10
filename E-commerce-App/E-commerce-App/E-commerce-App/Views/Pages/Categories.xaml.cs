@@ -1,4 +1,5 @@
 ﻿using E_commerce_App.ViewModel;
+using E_commerce_App.ViewModels;
 using Syncfusion.ListView.XForms;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace E_commerce_App.Views.Pages
         public Categories()
         {
             InitializeComponent();
-            BindingContext = new CategoryVM();
+            BindingContext = new CategoryPageViewModel();
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -42,7 +43,7 @@ namespace E_commerce_App.Views.Pages
 
         private void toProducts(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new ProductTilePage());
+          //  Navigation.PushAsync(new ProductTilePage());
         }
     }
 }
