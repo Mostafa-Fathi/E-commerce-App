@@ -171,12 +171,6 @@
     <AndroidResource Include="Resources\drawable\location1.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\remove24.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\remove96.png" />
   </ItemGroup>
   <ItemGroup>

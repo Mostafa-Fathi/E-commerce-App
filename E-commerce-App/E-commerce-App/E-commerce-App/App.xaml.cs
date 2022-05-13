@@ -19,9 +19,9 @@ namespace E_commerce_App
 
 
 
-            MainPage = new Views.EmptyWishList();
+            MainPage = //new Views.EmptyWishList();
                 //new Views.AddedAddressDetails();
-            //new NavigationPage(new Views.AccountDetails());
+            new NavigationPage(new Views.AccountDetails());
            //new Views.AccountDetails();
             //new Categories();
             //new Products();

@@ -34,8 +34,7 @@ namespace E_commerce_App.Views
 
         private void FavouriteProductClick(object sender, EventArgs e)
         {
-            //this alert for testing event Tapped we will change it to navigate to another page
-            DisplayAlert("data", "data", "ok", "cancel");
+            Navigation.PushAsync(new EmptyWishList());
         }
 
         private void LogoutClick(object sender, EventArgs e)
