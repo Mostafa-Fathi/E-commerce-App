@@ -1,4 +1,6 @@
 using E_commerce_App.Models;
+using E_commerce_App.Services;
+using E_commerce_App.Views;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Xamarin.Forms;
@@ -15,8 +17,9 @@ namespace E_commerce_App.ViewModels
     {
         #region Fields
 
-        private ObservableCollection<Category> categories;
-
+        private ObservableCollection<Category> categoriesList = new ObservableCollection<Category> {                new Category(){name="Loading",img=new System.Uri("https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg")}
+};
+        private ServerRequests httpClient;
         private Command categorySelectedCommand;
 
         private Command notificationCommand;
@@ -28,25 +31,29 @@ namespace E_commerce_App.ViewModels
         /// <summary>
         /// Gets or sets the property that has been bound with StackLayout, which displays the categories using ComboBox.
         /// </summary>
-        [DataMember(Name = "categories")]
-        public ObservableCollection<Category> Categories
+        [DataMember(Name = "categoriesList")]
+        public ObservableCollection<Category> CategoriesList
         {
-            get
-            {
-                return this.categories;
-            }
-
+            get { return categoriesList; }
             set
             {
-                if (this.categories == value)
-                {
-                    return;
-                }
-
-                this.SetProperty(ref this.categories, value);
+                categoriesList = value;
+                NotifyPropertyChanged();
             }
         }
 
+        #endregion
+
+        #region
+        public CategoryPageViewModel()
+        {
+            httpClient = new ServerRequests();
+            CategoriesList = new ObservableCollection<Category>()
+            {
+               new Category(){name="Loading"}
+            };
+            loadData();
+        }
         #endregion
 
         #region Command
@@ -75,9 +82,12 @@ namespace E_commerce_App.ViewModels
         /// Invoked when the Category is selected.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void CategorySelected(object obj)
+        private async void CategorySelected(object obj)
         {
             // Do Something
+            Category category = (Category)obj;
+           // await Application.Current.MainPage.DisplayAlert(category.name, "","ok");
+            await Application.Current.MainPage.Navigation.PushAsync(new ProductTilePage(category.name));
         }
 
         /// <summary>
@@ -88,7 +98,10 @@ namespace E_commerce_App.ViewModels
         {
             // Do something
         }
-
+        private async void loadData()
+        {
+            CategoriesList = await httpClient.GetCategories();
+        }
         #endregion
     }
 }

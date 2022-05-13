@@ -1,5 +1,6 @@
 using E_commerce_App.Models;
 using E_commerce_App.Services;
+using E_commerce_App.Views;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -20,9 +21,9 @@ namespace E_commerce_App.ViewModels
 
         private ObservableCollection<Category> filterOptions;
         private ServerRequests httpClient;
-
         private ObservableCollection<string> sortOptions;
-
+        private Category selectedFilter;
+        private string selectedSort;
         private Command addFavouriteCommand;
 
         private Command itemSelectedCommand;
@@ -44,101 +45,23 @@ namespace E_commerce_App.ViewModels
         /// <summary>
         /// Initializes a new instance for the <see cref="CatalogPageViewModel" /> class.
         /// </summary>
-        
-        public CatalogPageViewModel()
+
+        public CatalogPageViewModel(string categoryName)
         {
-            this.FilterOptions = new ObservableCollection<Category>
-            {
-                new Category
-                {
-                    name = "Gender",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Men",
-                    //    "Women",
-                    //},
-                },
-                new Category
-                {
-                    name = "Brand",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Brand A",
-                    //    "Brand B",
-                    //},
-                },
-                new Category
-                {
-                    name = "Categories",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Category A",
-                    //    "Category B",
-                    //},
-                },
-                new Category
-                {
-                    name = "Color",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Maroon",
-                    //    "Pink",
-                    //},
-                },
-                new Category
-                {
-                    name = "Price",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Above 3000",
-                    //    "1000 to 3000",
-                    //    "Below 1000",
-                    //},
-                },
-                new Category
-                {
-                    name = "Size",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "S", "M", "L", "XL", "XXL",
-                    //},
-                },
-                new Category
-                {
-                    name = "Patterns",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Pattern 1", "Pattern 2",
-                    //},
-                },
-                new Category
-                {
-                    name = "Offers",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Buy 1 Get 1", "Buy 1 Get 2",
-                    //},
-                },
-                new Category
-                {
-                    name = "Coupons",
-                    //SubCategories = new List<string>
-                    //{
-                    //    "Coupon 1", "Coupon 2",
-                    //},
-                },
-            };
+
 
             this.SortOptions = new ObservableCollection<string>
             {
-                "New Arrivals",
-                "Price - high to low",
+                "Price - High to Low",
                 "Price - Low to High",
-                "Popularity",
-                "Discount",
             };
             httpClient = new ServerRequests();
-            loadProducts();
+            loadProducts(categoryName);
+            FilterOptions = new ObservableCollection<Category>()
+           {
+               new Category(){name="loading"}
+           };
+            loadCategories();
         }
 
         #endregion
@@ -160,18 +83,35 @@ namespace E_commerce_App.ViewModels
             }
         }
         private ObservableCollection<Product> cart;
-
         public ObservableCollection<Product> Cart
         {
             get { return cart; }
-            set { 
+            set {
                 cart = value;
                 NotifyPropertyChanged();
             }
         }
 
 
-
+        public Category SelectedFilter{
+            get { return selectedFilter; }
+            set { 
+                this.selectedFilter = value;
+                this.FilterClicked();
+                NotifyPropertyChanged();
+            }
+        }
+        public string SelectedSort
+        {
+            get { return selectedSort; }
+            set
+            {
+                this.selectedSort = value;
+                this.SortClicked();
+                NotifyPropertyChanged();
+            }
+        }
+        
 
         /// <summary>
         /// Gets or sets the property that has been bound with a list view, which displays the filter options.
@@ -294,40 +234,60 @@ namespace E_commerce_App.ViewModels
         /// Invoked when an item is selected.
         /// </summary>
         /// <param name="attachedObject">The Object</param>
-        private void ItemSelected(object attachedObject)
-        {
+        private async void ItemSelected(object attachedObject)
+        {   Product product = (Product)attachedObject;
             // Do something
+            await Application.Current.MainPage.Navigation.PushAsync(new DetailPage(product));
+
         }
 
         /// <summary>
         /// Invoked when the items are sorted.
         /// </summary>
         /// <param name="attachedObject">The Object</param>
-        private void SortClicked(object attachedObject)
+        private void SortClicked()
         {
             // Do something
             List<Product> unOrderdList = new List<Product>(Products);
-            // title
-            unOrderdList.Sort((a, b) => a.title.CompareTo(b.title));
-            Products = new ObservableCollection<Product>(unOrderdList);
+            List<Product> orderdList;
+            switch (selectedSort)
+            {
+                case "Price - High to Low":
+                    orderdList = unOrderdList.OrderBy(product => product.price).ToList<Product>();
+                    Products = new ObservableCollection<Product>(orderdList);
+                    break;
+                case "Price - Low to High":
+                    orderdList = unOrderdList.OrderByDescending(product => product.price).ToList<Product>();
+                    Products = new ObservableCollection<Product>(orderdList);
+                    break;
+
+
+            }
             // price 
-            List<Product> orderdList= unOrderdList.OrderBy(product=>product.price).ToList<Product>();
-            Products = new ObservableCollection<Product>(orderdList);
+            
         }
 
         /// <summary>
         /// Invoked when the filter button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void FilterClicked(object obj)
+        private void FilterClicked()
         {
             // Do something
             List<Product> unFilterdList = new List<Product>(Products);
             // filter by price more than 100
             //List<Product> filterdList = unFilterdList.Where(o => o.price > 100).ToList();
             // filter by category
-            List<Product> filterdList = unFilterdList.Where(o => o.category=="jewelery").ToList();
-            Products = new ObservableCollection<Product>(filterdList);
+            if (selectedFilter.name == "all")
+            {
+                loadAllProducts();
+            }
+            else
+            {
+                List<Product> filterdList = unFilterdList.Where(o => o.category == selectedFilter.name).ToList();
+                Products = new ObservableCollection<Product>(filterdList);
+            }
+
             
         }
 
@@ -373,11 +333,19 @@ namespace E_commerce_App.ViewModels
             // navigate to cart screen
         }
 
-        private async void loadProducts()
+        private async void loadProducts(string categoryName)
         {
-            Products = await httpClient.GetProducts("category/jewelery");
+          //  await Application.Current.MainPage.DisplayAlert(categoryName, "", "ok");
+            Products = await httpClient.GetSelectedProducts($"{categoryName}");
         }
-
+        private async void loadAllProducts()
+        {
+            Products = await httpClient.GetProducts();
+        }
+        private async void loadCategories() {
+            FilterOptions = await httpClient.GetCategories();
+            FilterOptions.Add(new Category() { name = "all" });
+        }
         #endregion
     }
 }

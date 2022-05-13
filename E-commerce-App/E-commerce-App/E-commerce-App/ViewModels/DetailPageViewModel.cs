@@ -63,8 +63,10 @@ namespace E_commerce_App.ViewModels
         /// <summary>
         /// Initializes a new instance for the <see cref="DetailPageViewModel" /> class.
         /// </summary>
-        static DetailPageViewModel()
+        public DetailPageViewModel(Product product)
         {
+            PreviewImages = new List<string>() { product.image.ToString() };
+
         }
 
         #endregion
@@ -74,7 +76,7 @@ namespace E_commerce_App.ViewModels
         /// <summary>
         /// Gets or sets the value of detail page view model.
         /// </summary>
-        public static DetailPageViewModel BindingContext =>
+       public static DetailPageViewModel BindingContext =>
             detailPageViewModel = PopulateData<DetailPageViewModel>("detail.json");
 
         /// <summary>

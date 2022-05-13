@@ -16,10 +16,11 @@ namespace E_commerce_App.Views
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductTilePage" /> class.
         /// </summary>
-        public ProductTilePage()
+       
+        public ProductTilePage(string categoryName)
         {
             this.InitializeComponent();
-            this.BindingContext = new CatalogPageViewModel();
+            this.BindingContext = new CatalogPageViewModel(categoryName);
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -47,9 +48,6 @@ namespace E_commerce_App.Views
             DisplayAlert("alert", "alert", "ok");
         }
 
-        private void toProductDetails(object sender, System.EventArgs e)
-        {
-            Navigation.PushAsync(new DetailPage());
-        }
+        
     }
 }

@@ -14,7 +14,7 @@ namespace E_commerce_App.Services
 {
 
 
-    const string BaseURL= "https://0b6f-102-189-69-174.eu.ngrok.io";
+    const string BaseURL= "https://19cf-105-197-11-127.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -39,15 +39,15 @@ namespace E_commerce_App.Services
         products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
         return products;
     }
-    public async Task<Product> GetSelectedProduct(string id = "")
+    public async Task<ObservableCollection<Product>> GetSelectedProducts(string categoryName = "")
         {
-            //fake api => https://fakestoreapi.com/products/{id}
+            //fake api => https://fakestoreapi.com/ 
             //string ProductAPI = $"http://localhost:3000/products/{id}";
-            string ProductAPI = $"{BaseURL}/products/{id}";
-            Product product;
+            string ProductAPI = $"{BaseURL}/products?category={categoryName}";
+            ObservableCollection<Product> products;
             string productsAsString = await httpClient.GetStringAsync(ProductAPI);
-            product = JsonConvert.DeserializeObject<Product>(productsAsString);
-            return product;
+            products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
+            return products;
         }
 
         public async Task<bool> SignUp(User user)

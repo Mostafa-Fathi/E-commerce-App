@@ -41,8 +41,7 @@
                     Orientation="Horizontal"
                     Spacing="8"
                     VerticalOptions="Center">
-
-                    <!--  Filter Button  -->
+                    <!--  Filter Button  
                     <buttons:SfButton
                         BackgroundColor="Transparent"
                         Command="{Binding FilterCommand}"
@@ -70,9 +69,15 @@
                                     VerticalTextAlignment="Center" />
                             </StackLayout>
                         </buttons:SfButton.Content>
-                    </buttons:SfButton>
+                    </buttons:SfButton>-->
+                    <Picker ItemsSource="{Binding FilterOptions}" SelectedItem="{Binding SelectedFilter}" Title="Filter" x:Name="filterPicker">
+                       
+                    </Picker>
+                    <Picker ItemsSource="{Binding SortOptions}" SelectedItem="{Binding SelectedSort}" Title="Sort">
 
-                    <!--  Sort Button  -->
+                    </Picker>
+
+                    <!--  Sort Button  
                     <buttons:SfButton
                         BackgroundColor="Transparent"
                         Command="{Binding SortCommand}"
@@ -99,7 +104,7 @@
                             </StackLayout>
                         </buttons:SfButton.Content>
                     </buttons:SfButton>
-
+-->
                 </StackLayout>
             </DataTemplate>
 
@@ -109,11 +114,9 @@
     <ContentPage.Content>
 
         <Grid
-          
             ColumnSpacing="0"
             RowDefinitions="Auto, *"
             RowSpacing="0">
-            <Button Text="To Product Details" Margin="15" Clicked="toProductDetails" BackgroundColor="Yellow"/>
             <!--  Title View  -->
             <!--<controls:TitleView BackgroundColor="Red"  Title="Dress" Grid.Row="0">
                 
