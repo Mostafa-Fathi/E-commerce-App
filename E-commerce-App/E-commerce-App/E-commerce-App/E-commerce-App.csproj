@@ -163,6 +163,9 @@
     <EmbeddedResource Update="Views\TabContainer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\EmptyWishList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\SocialIconTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

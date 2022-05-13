@@ -58,8 +58,24 @@
                        HeightRequest="50"
                        Keyboard="Telephone"/>
             </StackLayout>
-            <StackLayout Orientation="Vertical" Spacing="0" >
-                <Label Text="Choose State" 
+
+                <StackLayout Orientation="Vertical" Spacing="0" >
+                    <Label Text="Country" 
+                       Margin="20,10,0,0" 
+                       FontSize="17"
+                       TextColor="Black" 
+                       FontAttributes="Bold" />
+                    <controls:CustomEntry 
+                       Placeholder="Enter Country Details Here" 
+                       TextColor="Gray" 
+                       BackgroundColor="White" 
+                       Margin="40,10" FontSize="17"
+                       VerticalTextAlignment="Center" 
+                       HeightRequest="50"/>
+                </StackLayout>
+            
+                <StackLayout Orientation="Vertical" Spacing="0" >
+                <Label Text="State" 
                        Margin="20,10,0,0" 
                        FontSize="17"
                        TextColor="Black" 
