@@ -1,4 +1,5 @@
 ﻿using E_commerce_App.Models;
+using E_commerce_App.Services;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -55,7 +56,7 @@ namespace E_commerce_App.ViewModels
         private Command cardItemCommand;
 
         private Command loadMoreCommand;
-
+        private Product selectedProduct;
         #endregion
 
         #region Constructor
@@ -66,17 +67,29 @@ namespace E_commerce_App.ViewModels
         public DetailPageViewModel(Product product)
         {
             PreviewImages = new List<string>() { product.image.ToString() };
-
+            IsFavourite = product.isFavourite;
+            OverallRating = product.rating.rate;
+            Name = product.title;
+            Description= product.description;
+            ActualPrice = product.price;
+            DiscountPrice = product.discountPrice;
+            DiscountPercent = product.discountPercent;
+            SelectedProduct = product;
         }
 
         #endregion
 
         #region Public properties
+        public Product SelectedProduct
+        {
+            get { return selectedProduct; }
+            set { selectedProduct = value; }
+        }
 
         /// <summary>
         /// Gets or sets the value of detail page view model.
         /// </summary>
-       public static DetailPageViewModel BindingContext =>
+        public static DetailPageViewModel BindingContext =>
             detailPageViewModel = PopulateData<DetailPageViewModel>("detail.json");
 
         /// <summary>
@@ -436,10 +449,12 @@ namespace E_commerce_App.ViewModels
         /// Invoked when the Cart button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void AddToCartClicked(object obj)
+        private async void AddToCartClicked(object obj)
         {
+            ServerRequests httpClient = new ServerRequests();
             this.cartItemCount = this.cartItemCount ?? 0;
             this.CartItemCount += 1;
+            await httpClient.addProductToCart(SelectedProduct);
         }
 
         /// <summary>

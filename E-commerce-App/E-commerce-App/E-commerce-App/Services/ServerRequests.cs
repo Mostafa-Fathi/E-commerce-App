@@ -14,7 +14,7 @@ namespace E_commerce_App.Services
 {
 
 
-    const string BaseURL= "https://19cf-105-197-11-127.eu.ngrok.io";
+    const string BaseURL= "https://a636-105-197-29-8.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -84,6 +84,22 @@ namespace E_commerce_App.Services
                 return result[0];
             }
             return null;
+        }
+        public async Task<bool> addProductToCart(Product product )
+        {
+            string CartAPI = $"{BaseURL}/cart";
+            var json = JsonConvert.SerializeObject(product);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await httpClient.PostAsync(CartAPI, data);
+            return httpResponse.IsSuccessStatusCode;
+        }
+        public async Task<ObservableCollection<Product>> getProductFromCart()
+        {
+            string CartAPI = $"{BaseURL}/cart";
+            string cartAsString =await httpClient.GetStringAsync(CartAPI);
+            ObservableCollection<Product> Cart;
+            Cart = JsonConvert.DeserializeObject<ObservableCollection<Product>>(cartAsString);
+            return Cart;
         }
     }
     

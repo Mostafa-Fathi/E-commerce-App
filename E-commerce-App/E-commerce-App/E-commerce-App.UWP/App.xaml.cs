@@ -1,3 +1,4 @@
+using Syncfusion.XForms.UWP.Cards;
 using Syncfusion.XForms.UWP.EffectsView;
 using System.Reflection;
 using Syncfusion.SfRating.XForms.UWP;
@@ -75,7 +76,8 @@ namespace E_commerce_App.UWP
                     typeof(SfSegmentedControlRenderer).GetTypeInfo().Assembly,
                     typeof(SfTextInputLayoutRenderer).GetTypeInfo().Assembly,
                     typeof(SfComboBoxRenderer).GetTypeInfo().Assembly,
-                    typeof(SfEffectsViewRenderer).GetTypeInfo().Assembly
+                    typeof(SfEffectsViewRenderer).GetTypeInfo().Assembly,
+                    typeof(SfCardViewRenderer).GetTypeInfo().Assembly
                 };
                 Xamarin.Forms.Forms.Init(e, assembliesToInclude);
 

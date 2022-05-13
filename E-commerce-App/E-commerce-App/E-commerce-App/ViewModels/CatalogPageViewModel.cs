@@ -229,22 +229,12 @@ namespace E_commerce_App.ViewModels
         #endregion
 
         #region Methods
-
-        /// <summary>
-        /// Invoked when an item is selected.
-        /// </summary>
-        /// <param name="attachedObject">The Object</param>
         private async void ItemSelected(object attachedObject)
         {   Product product = (Product)attachedObject;
             // Do something
             await Application.Current.MainPage.Navigation.PushAsync(new DetailPage(product));
 
         }
-
-        /// <summary>
-        /// Invoked when the items are sorted.
-        /// </summary>
-        /// <param name="attachedObject">The Object</param>
         private void SortClicked()
         {
             // Do something
@@ -267,10 +257,6 @@ namespace E_commerce_App.ViewModels
             
         }
 
-        /// <summary>
-        /// Invoked when the filter button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
         private void FilterClicked()
         {
             // Do something
@@ -284,17 +270,13 @@ namespace E_commerce_App.ViewModels
             }
             else
             {
-                List<Product> filterdList = unFilterdList.Where(o => o.category == selectedFilter.name).ToList();
-                Products = new ObservableCollection<Product>(filterdList);
+                loadProducts(selectedFilter.name);
             }
 
             
         }
 
-        /// <summary>
-        /// Invoked when the favourite button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
+       
         //private void AddFavouriteClicked(object obj)
         //{
         //    if (obj is Product product)
@@ -303,10 +285,6 @@ namespace E_commerce_App.ViewModels
         //    }
         //}
 
-        /// <summary>
-        /// Invoked when the cart button is clicked.
-        /// </summary>
-        /// <param name="obj">The Object</param>
         private void AddToCartClicked(object obj)
         {
             // Do something
@@ -322,11 +300,6 @@ namespace E_commerce_App.ViewModels
                 //Cart.Add(selectedItem);
             }
         }
-
-        /// <summary>
-        /// Invoked when cart icon button is clicked.
-        /// </summary>
-        /// <param name="obj"></param>
         private void CartClicked(object obj)
         {
             // Do something

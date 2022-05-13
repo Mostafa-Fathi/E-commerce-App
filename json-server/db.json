@@ -10,7 +10,12 @@
       "rating": {
         "rate": 3.9,
         "count": 120
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 2,
@@ -22,7 +27,12 @@
       "rating": {
         "rate": 4.1,
         "count": 259
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 3,
@@ -46,7 +56,12 @@
       "rating": {
         "rate": 2.1,
         "count": 430
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 5,
@@ -58,7 +73,12 @@
       "rating": {
         "rate": 4.6,
         "count": 400
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 6,
@@ -70,7 +90,12 @@
       "rating": {
         "rate": 3.9,
         "count": 70
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 7,
@@ -82,7 +107,12 @@
       "rating": {
         "rate": 3,
         "count": 400
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 8,
@@ -94,7 +124,12 @@
       "rating": {
         "rate": 1.9,
         "count": 100
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 9,
@@ -106,7 +141,12 @@
       "rating": {
         "rate": 3.3,
         "count": 203
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 10,
@@ -118,7 +158,12 @@
       "rating": {
         "rate": 2.9,
         "count": 470
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 11,
@@ -130,7 +175,12 @@
       "rating": {
         "rate": 4.8,
         "count": 319
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 12,
@@ -142,7 +192,12 @@
       "rating": {
         "rate": 4.8,
         "count": 400
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 13,
@@ -154,7 +209,12 @@
       "rating": {
         "rate": 2.9,
         "count": 250
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 14,
@@ -166,7 +226,12 @@
       "rating": {
         "rate": 2.2,
         "count": 140
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 15,
@@ -178,7 +243,12 @@
       "rating": {
         "rate": 2.6,
         "count": 235
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 16,
@@ -190,7 +260,12 @@
       "rating": {
         "rate": 2.9,
         "count": 340
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 17,
@@ -202,7 +277,12 @@
       "rating": {
         "rate": 3.8,
         "count": 679
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 18,
@@ -214,7 +294,12 @@
       "rating": {
         "rate": 4.7,
         "count": 130
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 19,
@@ -226,7 +311,12 @@
       "rating": {
         "rate": 4.5,
         "count": 146
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     },
     {
       "id": 20,
@@ -238,7 +328,12 @@
       "rating": {
         "rate": 3.6,
         "count": 145
-      }
+      },
+      "totalQuantity": 0,
+      "actualPrice": 0,
+      "discountPercent": 0,
+      "discountPrice": 0,
+      "isFavourite": false
     }
   ],
   "category": [
@@ -607,5 +702,22 @@
   ],
   "profile": {
     "name": "typicode"
+  },
+  "cart": {
+    "id": 9,
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+    "price": 64,
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+    "rating": {
+      "rate": 3.3,
+      "count": 203
+    },
+    "totalQuantity": 0,
+    "isFavourite": false,
+    "actualPrice": 0,
+    "discountPercent": 0,
+    "discountPrice": 0
   }
 }

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:pages="clr-namespace:E_commerce_App.Views.Pages"
-             x:Class="E_commerce_App.Views.TabContainer"
+       xmlns:pages="clr-namespace:E_commerce_App.Views.Pages" xmlns:views="clr-namespace:E_commerce_App.Views"
+       x:Class="E_commerce_App.Views.TabContainer"
        TabBarBackgroundColor="#F7F7F7" BackgroundColor="red"
        TabBarTitleColor="red" TabBarUnselectedColor="Black"
        >
@@ -15,7 +15,7 @@
         </Tab>
         <Tab Title="Cart" Icon="cart.png">
             <ShellContent >
-                <pages:Cart />
+                <views:CartPage/>
             </ShellContent>
         </Tab>
         <Tab Title="Profile" Icon="user.png">
