@@ -15,7 +15,7 @@
     <ContentPage.Content>
         <StackLayout Margin="20,40" Spacing="30">
             <StackLayout Orientation="Vertical" Spacing="10">
-                <Image Source="persongetails" HeightRequest="100" WidthRequest="100"/>
+                <Image Source="persondetails" HeightRequest="100" WidthRequest="100"/>
                 <!-- we will Bind here for User Name and User Email--> 
                 <!--<Label Text="{Binding}" TextColor="Black" FontSize="17"
                HorizontalTextAlignment="Center"/>-->

@@ -74,7 +74,12 @@
                             Style="{StaticResource DescriptionLabelStyle}"
                             Text="Create an account to start add product to cart and do more"
                             TextColor="{DynamicResource Gray-White}" />
-                        <ActivityIndicator  Color="Red" HorizontalOptions="Center"  VerticalOptions="Center" IsRunning="{Binding IsRunning}" IsVisible="{Binding IsRunning}" IsEnabled="{Binding IsRunning}"/>
+                        <ActivityIndicator  Color="Red" 
+                                            HorizontalOptions="Center" 
+                                            VerticalOptions="Center"
+                                            IsRunning="{Binding IsRunning}" 
+                                            IsVisible="{Binding IsRunning}"
+                                            IsEnabled="{Binding IsRunning}"/>
 
 
                         <!--<Label Text="First Name" TextColor="White"/>-->
@@ -286,7 +291,7 @@
                         <buttons:SfButton
                             Command="{Binding SignUpCommand}"
                             HorizontalOptions="FillAndExpand"
-                            IsEnabled="{Binding Path=!IsRunning}"
+                            IsEnabled="{Binding NotIsRunning}"
                             Style="{StaticResource GradientButtonStyle}"
                             Text="Register" />
                     </StackLayout>

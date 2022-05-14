@@ -16,5 +16,10 @@ namespace E_commerce_App.Views
         {
             InitializeComponent();
         }
+
+        private void AddAddressesPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new AddAddressess());
+        }
     }
 }

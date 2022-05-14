@@ -10,17 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace E_commerce_App.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MyOrders : ContentPage
+    public partial class EmptyWishList : ContentPage
     {
-        public MyOrders()
+        public EmptyWishList()
         {
             InitializeComponent();
         }
 
-        private void BackToAccountDetails(object sender, EventArgs e)
+        private void GoToCategoryPage(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new AccountDetails());
-            Navigation.PopToRootAsync();
+           //Navigation.PushAsync(new Views.Pages.Categories());
+           //Navigation.PushAsync(new NavigationPage(new Views.Pages.Categories()));
         }
     }
 }

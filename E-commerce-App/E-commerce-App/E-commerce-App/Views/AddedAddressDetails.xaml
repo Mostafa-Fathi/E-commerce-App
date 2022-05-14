@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="E_commerce_App.Views.AddedAddressDetails" Title="My Addresses">
+    <ContentPage.Content>
+        <ScrollView BackgroundColor="#EBEBEB">
+            <StackLayout Orientation="Vertical">
+                <Button Text="+ Add New Address" TextColor="Teal" 
+                        Margin="20,5" HorizontalOptions="EndAndExpand"
+                        TextTransform="None" BackgroundColor="Transparent"/>
+                
+          <!--this stack appear once time if we choose default address from previews page (AddAddressess) -->
+                <StackLayout Orientation="Vertical" BackgroundColor="White" 
+                             Padding="30" Spacing="5" Margin="20,10">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Default Address" FontSize="20" 
+                               FontAttributes="Bold" TextColor="Black"/>
+                        <ImageButton Source="edit64" BackgroundColor="Transparent"
+                                     HeightRequest="25" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                    <!--Will bind on Name here-->
+                    <Label Text="Hadeer Elsayed Mohammed Eladawey" TextColor="Black" FontSize="17"/>
+                    <!--Will bind on Street here-->
+                    <Label Text="Al Roshdy Street" TextColor="Black" FontSize="17" />
+                    <!--Will bind on city,state,zipid-->
+                    <Label Text="Belqas,Al Daqahliya,2222" TextColor="Black" FontSize="17"/>
+                    <!--Will bind on country-->
+                    <Label Text="Egypt" TextColor="Black" FontSize="17"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="T:" TextColor="Black"/>
+                        <!--Will bind on telephone-->
+                        <Label Text="01205753004" TextColor="Black" FontSize="17"/>
+                        <ImageButton Source="remove96" BackgroundColor="Transparent"
+                                     HeightRequest="25" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+                
+                <Label Text="Additional Addresses" FontSize="20" 
+                       FontAttributes="Bold" TextColor="Black" Margin="20,5"/>
+                
+          <!--this stack appear more than one time if we choose default address from previews page (AddAddressess) -->
+                <StackLayout Orientation="Vertical" BackgroundColor="White" 
+                             Padding="30" Spacing="5" Margin="20,10">
+                    <StackLayout Orientation="Horizontal">
+                        <!--Will bind on Name here-->
+                        <Label Text="Hadeer Elsayed Mohammed Eladawey" TextColor="Black" FontSize="17"/>
+                        <ImageButton Source="edit64" BackgroundColor="Transparent"
+                                     HeightRequest="25" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                    <!--Will bind on Street here-->
+                    <Label Text="Al Roshdy Street" TextColor="Black" FontSize="17" />
+                    <!--Will bind on city,state,zipid-->
+                    <Label Text="Belqas,Al Daqahliya,2222" TextColor="Black" FontSize="17"/>
+                    <!--Will bind on country-->
+                    <Label Text="Egypt" TextColor="Black" FontSize="17"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="T:" TextColor="Black"/>
+                        <!--Will bind on telephone-->
+                        <Label Text="01205753004" TextColor="Black" FontSize="17"/>
+                        <ImageButton Source="remove96" BackgroundColor="Transparent"
+                                     HeightRequest="25" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
