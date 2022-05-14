@@ -15,6 +15,9 @@ namespace E_commerce_App.Views
         public AccountDetails()
         {
             InitializeComponent();
+            Navigation.PopToRootAsync();
+
+            
         }
 
         private void AccountDetailsClick(object sender, EventArgs e)
@@ -40,7 +43,9 @@ namespace E_commerce_App.Views
 
         private void LogoutClick(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Pages.Profile());
+            Services.SharedPreferences sharedPreferences = Services.SharedPreferences.Instance;
+            sharedPreferences.LogOut();
+            Shell.Current.Navigation.PopToRootAsync();
         }
     }
 }

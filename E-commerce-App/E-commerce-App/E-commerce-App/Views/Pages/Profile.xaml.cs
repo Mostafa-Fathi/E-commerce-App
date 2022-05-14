@@ -11,14 +11,14 @@ using Xamarin.Forms.Xaml;
 
 namespace E_commerce_App.Views.Pages
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-public partial class Profile : ContentPage
-{
-    public Profile()
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Profile : ContentPage
     {
-        InitializeComponent();
-          
-    }
+        public Profile()
+        {
+            InitializeComponent();
+
+        }
 
         private void GoToLoginPage(object sender, EventArgs e)
         {

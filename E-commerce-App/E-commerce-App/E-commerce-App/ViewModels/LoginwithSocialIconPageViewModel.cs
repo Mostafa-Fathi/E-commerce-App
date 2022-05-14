@@ -41,13 +41,8 @@ namespace E_commerce_App.ViewModels
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
             httpClient = new ServerRequests();
             IsRunning = false;
+            currentUser=new User();
             SharedPreferences sharedPreferences = SharedPreferences.Instance;
-            if (sharedPreferences.IsLoggedIn) {
-                // go to profile 
-                User user =sharedPreferences.CurrentUserInfo;
-                App.Current.MainPage.DisplayAlert(user.email, "Wrong Password", "OK");
-
-            }
 
 
         }
@@ -172,7 +167,6 @@ namespace E_commerce_App.ViewModels
             {
 
                 IsRunning = true;
-
                 currentUser = await httpClient.CheckEmail(Email.Value);
                 if (currentUser == null)
                 {
@@ -185,7 +179,7 @@ namespace E_commerce_App.ViewModels
                     IsRunning = false;
                     SharedPreferences sharedPreferences = SharedPreferences.Instance;
                     sharedPreferences.CurrentUserInfo = currentUser;
-                    App.Current.MainPage.Navigation.PushAsync(new LoginwithSocialIconPage());
+                    await App.Current.MainPage.Navigation.PopToRootAsync();
                 }
                 else
                 {

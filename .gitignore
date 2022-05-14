@@ -193,3 +193,5 @@ UpgradeLog*.htm
 FakesAssemblies/
 
 .vscode/settings.json
+*.v1
+E-commerce-App/.vs/E-commerce-App/v17/.suo

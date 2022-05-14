@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E_commerce_App.Views.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ public partial class TabContainer : Shell
     public TabContainer()
     {
         InitializeComponent();
+            Routing.RegisterRoute("Categories", typeof(Categories));
     }
 }
 }
