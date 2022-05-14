@@ -241,7 +241,10 @@ namespace E_commerce_App.ViewModels
                         // will be deleted 
                         // TODO : Go to home page
                         // TODO : manual login
-                        await App.Current.MainPage.DisplayAlert("Scuuses", "This Email is Already Exits Do You Forget Your Password", "Yes", "Not my Email");
+                        SharedPreferences sharedPreferences = SharedPreferences.Instance;
+                        sharedPreferences.CurrentUserInfo=user;
+                        await App.Current.MainPage.DisplayAlert($"welcome {user.name.firstname}", "congratulations to finish sign up ", "Yes");
+                        await Shell.Current.Navigation.PopToRootAsync();
 
                     }
                     else {
