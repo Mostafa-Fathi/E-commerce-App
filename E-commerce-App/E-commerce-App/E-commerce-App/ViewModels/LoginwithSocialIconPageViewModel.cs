@@ -174,7 +174,7 @@ namespace E_commerce_App.ViewModels
                     await App.Current.MainPage.DisplayAlert("Error", "Wrong Email", "OK");
 
                 }
-                else if ((currentUser.password.ToLower().Equals(Password.Value.ToLower())))
+                else if ((currentUser.password.Equals(Password.Value)))
                 {
                     IsRunning = false;
                     SharedPreferences sharedPreferences = SharedPreferences.Instance;

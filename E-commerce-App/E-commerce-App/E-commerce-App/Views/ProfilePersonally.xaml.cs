@@ -17,19 +17,6 @@ namespace E_commerce_App.Views
             InitializeComponent();
         }
 
-        private void EditEmailPage(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new EditEmail());
-        }
-
-        private void EditAccountInfo(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new EditAccountInfo());
-        }
-
-        private void ResetPassword(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new ResetPassword());
-        }
+       
     }
 }

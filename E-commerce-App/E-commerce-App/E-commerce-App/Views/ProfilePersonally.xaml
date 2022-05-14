@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewModel="clr-namespace:E_commerce_App.ViewModels"
              x:Class="E_commerce_App.Views.ProfilePersonally" Title="Profile">
+
+
+    <!--  Binding context for login with social icon page  -->
+    <ContentPage.BindingContext>
+        <viewModel:ProfilePersonallyViewModel />
+    </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <StackLayout BackgroundColor="	#EBEBEB">
             <StackLayout Orientation="Vertical" BackgroundColor="white"  Margin="0,30"
@@ -9,17 +16,17 @@
                 <Label Text="First Name" Margin="10,10,0,0"
                        TextColor="Maroon" FontSize="17"/>
                 <!--binding here on text-->
-                <Label Text="Hadeer"  TextColor="Black"  
+                <Label Text="{Binding FirstName}"  TextColor="Black"  
                        Margin="15,0,0,0" />
                 <Label Text="Last Name" Margin="10,10,0,0" 
                        TextColor="Maroon" FontSize="17"/>
                 <!--binding here on text-->
-                <Label Text="Elsayed Mohammed Eladawey" 
+                <Label Text="{Binding LastName}" 
                        TextColor="Black"  Margin="15,0,0,0" />
                 <Label Text="Email" Margin="10,10,0,0" 
                        TextColor="Maroon" FontSize="17"/>
                 <!--binding here on text-->
-                <Label Text="hadeereladawy123@gmail.com"  
+                <Label Text="{Binding Email}"  
                        TextColor="Black"  Margin="15,0,0,0" />
             </StackLayout>
             <Label Text="Edit Information" HeightRequest="50" TextColor="Black" Margin="40,0" FontSize="20"/>
@@ -27,13 +34,13 @@
                      HorizontalOptions="Center" WidthRequest="300" HeightRequest="220">
                 <Button Text="Edit Email" TextColor="LightGray" Margin="40,10" TextTransform="None"
                         BorderColor="LightGray" BorderWidth="1" 
-                        BackgroundColor="Transparent" Clicked="EditEmailPage"/>
+                        BackgroundColor="Transparent" Command="{Binding EditEmailCommand}"/>
                 <Button Text="Edit Account Information" TextColor="LightGray" Margin="40,10" 
                         TextTransform="None" BorderColor="LightGray" BorderWidth="1"
-                        BackgroundColor="Transparent" Clicked="EditAccountInfo"/>
+                        BackgroundColor="Transparent" Command="{Binding EditAccountInfoCommand}"/>
                 <Button Text="Edit Password" TextColor="LightGray"
                         Margin="40,10" TextTransform="None" BorderColor="LightGray" 
-                        BorderWidth="1" BackgroundColor="Transparent" Clicked="ResetPassword"/>
+                        BorderWidth="1" BackgroundColor="Transparent" Command="{Binding EditPasswordCommand}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

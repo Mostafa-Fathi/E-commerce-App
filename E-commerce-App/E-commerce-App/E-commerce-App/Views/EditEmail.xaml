@@ -1,32 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:E_commerce_App.Controls"
+             xmlns:controls="clr-namespace:E_commerce_App.Controls" xmlns:viewModel="clr-namespace:E_commerce_App.ViewModels"
              x:Class="E_commerce_App.Views.EditEmail" Title="Edit Email">
+    <ContentPage.BindingContext>
+        <viewModel:EditEmailViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout BackgroundColor="	#EBEBEB">
             <StackLayout Orientation="Vertical" Spacing="10" >
                 <Label Text="Email" Margin="20,10,0,0"
                        TextColor="Black" FontSize="20"/>
                 <!--binding here on text-->
-                <controls:CustomEntry Text="hadeereladawy123@gmail.com" TextColor="Gray" 
+                <controls:CustomEntry Text="{Binding Email}" TextColor="Gray" 
                        BackgroundColor="White" Margin="40,10" FontSize="17"
                        VerticalTextAlignment="Center" HeightRequest="50"/>
             </StackLayout>
             <StackLayout Orientation="Vertical" Spacing="10" >
-                <Label Text="Your Cuttent Password" Margin="20,10,0,0"
+                <Label Text="Your Current Password" Margin="20,10,0,0"
                        TextColor="Black" FontSize="20" />
                 <!--  -->
                 <controls:CustomEntry Placeholder="Enter Password here" TextColor="Gray"
                        BackgroundColor="White" Margin="40,10" 
                        FontSize="17" IsPassword="True"
+                       Text="{Binding Password}"
                        VerticalTextAlignment="Center" HeightRequest="50"/>
 
                 
             </StackLayout>
             <!-- -->
             <Button Text="Edit Email" BackgroundColor="Red"
-                    TextTransform="None" TextColor="White" Margin="35,50"/>
+                    TextTransform="None" TextColor="White" Margin="35,50" Command="{Binding EditEmailCommand}"/>
+            <ActivityIndicator  Color="Red" HorizontalOptions="Center"  VerticalOptions="Center" IsRunning="{Binding IsRunning}" IsVisible="{Binding IsRunning}" IsEnabled="{Binding IsRunning}"/>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

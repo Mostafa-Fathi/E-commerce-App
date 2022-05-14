@@ -4,7 +4,13 @@
              x:Class="E_commerce_App.Views.AccountDetails"
              Title="Account Details"
              Shell.NavBarIsVisible="False"
+             xmlns:viewModel="clr-namespace:E_commerce_App.ViewModels"
              >
+
+    <!--  Binding context for login with social icon page  -->
+    <ContentPage.BindingContext>
+        <viewModel:AccountDetailsViewModel />
+    </ContentPage.BindingContext>
 
     <ContentPage.Content>
         <StackLayout Margin="20,40" Spacing="30">
@@ -13,9 +19,9 @@
                 <!-- we will Bind here for User Name and User Email--> 
                 <!--<Label Text="{Binding}" TextColor="Black" FontSize="17"
                HorizontalTextAlignment="Center"/>-->
-                <Label Text="Hadeer Elsayed Mohammed Eladawey" TextColor="Black" FontSize="17"
+                <Label Text="{Binding UserName}" TextColor="Black" FontSize="17"
                HorizontalTextAlignment="Center"/>
-                <Label Text="hadeereladawy123@gmail.com"
+                <Label Text="{Binding Email}"
                   HorizontalTextAlignment="Center" />
             </StackLayout>
             
@@ -32,7 +38,7 @@
                     </Frame>
                     <Label Text="Account Information" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="AccountDetailsClick"/>
+                        <TapGestureRecognizer Command="{Binding AccountInfoCommand}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 
@@ -42,7 +48,7 @@
                     </Frame>
                     <Label Text="My Address" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="AddressClick"/>
+                        <TapGestureRecognizer Command="{Binding MyAddressCommand}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 
@@ -52,7 +58,7 @@
                     </Frame>
                     <Label Text="My Orders" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OrdersClick"/>
+                        <TapGestureRecognizer Command="{Binding MyOrdersCommand}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
                 
@@ -62,7 +68,7 @@
                     </Frame>
                     <Label Text="My WishList" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="FavouriteProductClick"/>
+                        <TapGestureRecognizer Command="{Binding MyWishListCommand}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 
@@ -72,7 +78,7 @@
                     </Frame>
                     <Label Text="Log out" TextColor="Black" FontSize="15" VerticalTextAlignment="Center" />
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="LogoutClick"/>
+                        <TapGestureRecognizer Command="{Binding LogOutCommand}"/>
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
 

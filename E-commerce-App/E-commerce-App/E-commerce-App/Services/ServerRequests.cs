@@ -14,7 +14,7 @@ namespace E_commerce_App.Services
 {
 
 
-    const string BaseURL= "https://7c06-154-178-199-118.eu.ngrok.io";
+    const string BaseURL= "https://62a1-154-178-199-118.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -84,6 +84,15 @@ namespace E_commerce_App.Services
                 return result[0];
             }
             return null;
+        }
+        public async Task<bool> UpdateUserData(User user)
+        {
+            string UserAPI = $"{BaseURL}/users/{user.id}";
+            var json = JsonConvert.SerializeObject(user);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await httpClient.PutAsync(UserAPI,data);
+            return httpResponse.IsSuccessStatusCode;
+
         }
     }
     
