@@ -2,6 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="E_commerce_App.Views.MyAddresses" Title="MyAddresses">
+    
+      <!--<NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,0,75,0">
+            <Label Text="My Addresses" FontSize="15" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Start"  VerticalTextAlignment="Center"/>
+        </StackLayout>
+    </NavigationPage.TitleView>-->
     <ContentPage.Content>
         <StackLayout Spacing="20" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
             <Image Source="location1"/>

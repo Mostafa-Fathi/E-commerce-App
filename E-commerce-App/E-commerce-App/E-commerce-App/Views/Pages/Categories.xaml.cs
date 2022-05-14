@@ -19,7 +19,7 @@ namespace E_commerce_App.Views.Pages
             InitializeComponent();
             BindingContext = new CategoryVM();
         }
-       
+
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
@@ -38,6 +38,11 @@ namespace E_commerce_App.Views.Pages
                     (this.CategoryTile.LayoutManager as GridLayout).SpanCount = 3;
                 }
             }
+        }
+
+        private void toProducts(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ProductTilePage());
         }
     }
 }
