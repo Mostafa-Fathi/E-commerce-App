@@ -8,11 +8,20 @@
     xmlns:converter="clr-namespace:E_commerce_App.Converters"
     xmlns:local="clr-namespace:E_commerce_App.Views"
     xmlns:syncEffectsView="clr-namespace:Syncfusion.XForms.EffectsView;assembly=Syncfusion.Core.XForms"
-    xmlns:template="clr-namespace:E_commerce_App.Views.Templates"
+    xmlns:template="clr-namespace:E_commerce_App.Views.Templates" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     x:Name="cartPage"
     Title="Cart"
     BackgroundColor="{DynamicResource Gray-100}"
     NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Behaviors>
+        <xct:EventToCommandBehavior
+                EventName="Appearing"
+                Command="{Binding PageAppearingCommand}" />
+        <xct:EventToCommandBehavior
+                EventName="Disappearing"
+                Command="{Binding PageDisappearingCommand}" />
+    </ContentPage.Behaviors>
 
     <ContentPage.Resources>
         <ResourceDictionary>

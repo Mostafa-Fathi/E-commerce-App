@@ -1,4 +1,5 @@
 ﻿using E_commerce_App.DataService;
+using E_commerce_App.ViewModels;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
@@ -17,7 +18,7 @@ namespace E_commerce_App.Views
         public CartPage()
         {
             this.InitializeComponent();
-            this.BindingContext = CartDataService.Instance.CartPageViewModel;
+            this.BindingContext = new CartPageViewModel();
         }
     }
 }

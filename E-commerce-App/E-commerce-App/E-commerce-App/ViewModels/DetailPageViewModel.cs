@@ -1,5 +1,6 @@
 ﻿using E_commerce_App.Models;
 using E_commerce_App.Services;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reflection;
@@ -21,6 +22,8 @@ namespace E_commerce_App.ViewModels
 
         private static DetailPageViewModel detailPageViewModel;
 
+        private ServerRequests httpClient = new ServerRequests();
+
         private double productRating;
 
         private ObservableCollection<Category> categories;
@@ -37,7 +40,7 @@ namespace E_commerce_App.ViewModels
 
         private double discountPercent;
 
-        private List<string> previewImages;
+        private List<Uri> previewImages;
 
         private double overallRating;
 
@@ -66,12 +69,12 @@ namespace E_commerce_App.ViewModels
         /// </summary>
         public DetailPageViewModel(Product product)
         {
-            PreviewImages = new List<string>() { product.image.ToString() };
+            PreviewImages = new List<Uri>() { product.image };
             IsFavourite = product.isFavourite;
             OverallRating = product.rating.rate;
             Name = product.title;
             Description= product.description;
-            ActualPrice = product.price;
+            ActualPrice = product.actualPrice;
             DiscountPrice = product.discountPrice;
             DiscountPercent = product.discountPercent;
             SelectedProduct = product;
@@ -283,15 +286,15 @@ namespace E_commerce_App.ViewModels
         /// Gets or sets the property that has been bound with SfRotator, which displays the item images.
         /// </summary>
         [DataMember(Name = "previewImages")]
-        public List<string> PreviewImages
+        public List<Uri> PreviewImages
         {
             get
             {
-                for (var i = 0; i < this.previewImages.Count; i++)
+                /*for (var i = 0; i < this.previewImages.Count; i++)
                 {
                     this.previewImages[i] = this.previewImages[i].Contains(App.ImageServerPath) ? this.previewImages[i] : App.ImageServerPath + this.previewImages[i];
                 }
-
+                */
                 return this.previewImages;
             }
 
@@ -395,11 +398,8 @@ namespace E_commerce_App.ViewModels
         private static T PopulateData<T>(string fileName)
         {
             var file = "E_commerce_App.Data." + fileName;
-
             var assembly = typeof(App).GetTypeInfo().Assembly;
-
             T data;
-
             using (var stream = assembly.GetManifestResourceStream(file))
             {
                 var serializer = new DataContractJsonSerializer(typeof(T));
@@ -437,11 +437,17 @@ namespace E_commerce_App.ViewModels
         /// Invoked when the Favourite button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void AddFavouriteClicked(object obj)
+        private async void AddFavouriteClicked(object obj)
         {
             if (obj is DetailPageViewModel model)
             {
-                model.IsFavourite = !model.IsFavourite;
+                this.IsFavourite = !this.IsFavourite;
+                SelectedProduct.isFavourite = IsFavourite;
+                bool isSuccess= await httpClient.addRemoveFavourites(SelectedProduct);
+                if (!isSuccess)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Network Error","Check your network","OK");
+                }
             }
         }
 
@@ -451,10 +457,22 @@ namespace E_commerce_App.ViewModels
         /// <param name="obj">The Object</param>
         private async void AddToCartClicked(object obj)
         {
-            ServerRequests httpClient = new ServerRequests();
             this.cartItemCount = this.cartItemCount ?? 0;
             this.CartItemCount += 1;
-            await httpClient.addProductToCart(SelectedProduct);
+            int statusCode = await httpClient.addProductToCart(SelectedProduct);
+            if (statusCode==500)
+            {
+                await Application.Current.MainPage.DisplayAlert("Cart", "Item already exist", "OK");
+            }
+            else if (statusCode==201)
+            {
+                await Application.Current.MainPage.DisplayAlert("Cart", "Added Item", "OK");
+
+            }
+            else
+            {
+                await Application.Current.MainPage.DisplayAlert("Network Error", "Check your connection", "OK");
+            }
         }
 
         /// <summary>

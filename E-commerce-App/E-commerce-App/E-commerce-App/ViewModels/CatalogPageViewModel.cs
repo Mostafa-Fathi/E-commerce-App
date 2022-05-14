@@ -243,11 +243,11 @@ namespace E_commerce_App.ViewModels
             switch (selectedSort)
             {
                 case "Price - High to Low":
-                    orderdList = unOrderdList.OrderBy(product => product.price).ToList<Product>();
+                    orderdList = unOrderdList.OrderBy(product => product.actualPrice).ToList<Product>();
                     Products = new ObservableCollection<Product>(orderdList);
                     break;
                 case "Price - Low to High":
-                    orderdList = unOrderdList.OrderByDescending(product => product.price).ToList<Product>();
+                    orderdList = unOrderdList.OrderByDescending(product => product.actualPrice).ToList<Product>();
                     Products = new ObservableCollection<Product>(orderdList);
                     break;
 

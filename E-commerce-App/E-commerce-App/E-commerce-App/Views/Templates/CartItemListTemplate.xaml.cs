@@ -63,5 +63,10 @@ namespace E_commerce_App.Views.Templates
             get { return this.GetValue(ChildElementProperty); }
             set { this.SetValue(ChildElementProperty, value); }
         }
+
+        private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace E_commerce_App.ViewModels
         #region Fields
 
         private ObservableCollection<Product> cartDetails;
-        private ServerRequests httpRequest;
+        private ServerRequests httpRequest= new ServerRequests();
         private double totalPrice;
 
         private double discountPrice;
@@ -40,7 +40,7 @@ namespace E_commerce_App.ViewModels
         private Command applyCouponCommand;
 
         private Command itemTappedCommand;
-
+        private Command pageAppearingCommand;
         #endregion
 
         #region
@@ -50,12 +50,11 @@ namespace E_commerce_App.ViewModels
                 new Product(){
                 id= 2,
                 title= "Mens Casual Premium Slim Fit T-Shirts ",
-                price= 22,
                 description= "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
                 category= "men's clothing",
                 image= new Uri("https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"),
                 totalQuantity= 0,
-                actualPrice= 0,
+                actualPrice= 22,
                 discountPercent= 0,
                 discountPrice= 0,
                 isFavourite= false,
@@ -64,7 +63,6 @@ namespace E_commerce_App.ViewModels
 
 
             };
-            
             loadData();
         }
         #endregion
@@ -142,7 +140,7 @@ namespace E_commerce_App.ViewModels
                 this.SetProperty(ref this.discountPercent, value);
             }
         }
-
+/*
         [DataMember(Name = "products")]
         public ObservableCollection<Product> Products
         {
@@ -164,6 +162,7 @@ namespace E_commerce_App.ViewModels
                 NotifyPropertyChanged();
             }
         }
+*/
 
         #endregion
 
@@ -219,11 +218,21 @@ namespace E_commerce_App.ViewModels
                 return this.itemTappedCommand ?? (this.itemTappedCommand = new Command(this.ItemSelected));
             }
         }
+        public Command PageAppearingCommand
+        {
+            get
+            {
+                return (this.pageAppearingCommand ?? (this.pageAppearingCommand = new Command(this.PageAppearing)));
+            }
+        }
 
         #endregion
 
         #region Methods
-
+        private void PageAppearing()
+        {
+            loadData();
+        }
         private void PlaceOrderClicked(object obj)
         {
             // Do something
@@ -231,14 +240,15 @@ namespace E_commerce_App.ViewModels
         private async void loadData()
         {
             CartDetails = await httpRequest.getProductFromCart();
-            await Application.Current.MainPage.DisplayAlert("a",$"{CartDetails.Count}","ok");
+            this.UpdatePrice();
         }
-        private void RemoveClicked(object obj)
+        private async void RemoveClicked(object obj)
         {
             if (obj is Product product)
             {
                 this.CartDetails.Remove(product);
                 this.UpdatePrice();
+                await httpRequest.removeFromCart(product.id);
             }
         }
 
@@ -276,6 +286,7 @@ namespace E_commerce_App.ViewModels
                 this.CartDetails = products;
             }
         }
+       
 
         private void UpdatePrice()
         {

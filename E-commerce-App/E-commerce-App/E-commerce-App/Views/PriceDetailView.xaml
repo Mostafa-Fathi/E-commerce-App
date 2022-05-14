@@ -61,7 +61,7 @@
                 HorizontalTextAlignment="End"
                 Style="{StaticResource SimpleLabelStyle}"
                 Text="{Binding DiscountPercent, StringFormat='{}{0}%'}" />
-            <!--  Coupon Discount  -->
+            <!--  Coupon Discount 
             <Label
                 Grid.Row="4"
                 Margin="16,0"
@@ -87,6 +87,7 @@
                         TextColor="{DynamicResource HyperLink}" />
                 </buttons:SfButton.Content>
             </buttons:SfButton>
+             -->
             <!--  Delivery Charges  -->
             <Label
                 Grid.Row="5"
@@ -130,7 +131,6 @@
                 Text="{Binding DiscountPrice, StringFormat='${0}'}" />
 
         </Grid>
-
         <!--  Place order button  -->
         <buttons:SfButton
             Margin="{OnIdiom Default=24,

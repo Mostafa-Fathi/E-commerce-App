@@ -14,7 +14,7 @@ namespace E_commerce_App.Services
 {
 
 
-    const string BaseURL= "https://a636-105-197-29-8.eu.ngrok.io";
+    const string BaseURL= "https://506f-102-189-87-121.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -29,7 +29,7 @@ namespace E_commerce_App.Services
     }
 
     // Only used for get all products or products belong to specific category  
-    public async Task<ObservableCollection<Product>> GetProducts(string url="")
+        public async Task<ObservableCollection<Product>> GetProducts(string url="")
     {
         // https://fakestoreapi.com/products/{url}
         //string ProductAPI = $"http://localhost:3000/products";
@@ -39,7 +39,7 @@ namespace E_commerce_App.Services
         products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
         return products;
     }
-    public async Task<ObservableCollection<Product>> GetSelectedProducts(string categoryName = "")
+        public async Task<ObservableCollection<Product>> GetSelectedProducts(string categoryName = "")
         {
             //fake api => https://fakestoreapi.com/ 
             //string ProductAPI = $"http://localhost:3000/products/{id}";
@@ -49,7 +49,6 @@ namespace E_commerce_App.Services
             products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
             return products;
         }
-
         public async Task<bool> SignUp(User user)
         {
             // fake api => https://fakestoreapi.com/products/{id}
@@ -61,7 +60,6 @@ namespace E_commerce_App.Services
             var httpResponse = await httpClient.PostAsync(SginUpAPI,data);
             return httpResponse.IsSuccessStatusCode;
         }
-
         public async Task<User> Login(string userName="Defualt")
         {
             //string LoginAPI = $"http://localhost:3000/users?username={userName}";
@@ -85,12 +83,18 @@ namespace E_commerce_App.Services
             }
             return null;
         }
-        public async Task<bool> addProductToCart(Product product )
+        public async Task<int> addProductToCart(Product product )
         {
             string CartAPI = $"{BaseURL}/cart";
             var json = JsonConvert.SerializeObject(product);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             var httpResponse = await httpClient.PostAsync(CartAPI, data);
+            return (int)httpResponse.StatusCode;
+        }
+        public async Task<bool> removeFromCart(int productId)
+        {
+            string CartAPI = $"{BaseURL}/cart/{productId}";
+            var httpResponse = await httpClient.DeleteAsync(CartAPI);
             return httpResponse.IsSuccessStatusCode;
         }
         public async Task<ObservableCollection<Product>> getProductFromCart()
@@ -101,6 +105,23 @@ namespace E_commerce_App.Services
             Cart = JsonConvert.DeserializeObject<ObservableCollection<Product>>(cartAsString);
             return Cart;
         }
+        public async Task<bool> addRemoveFavourites(Product product)
+        {
+            string ProductAPI = $"{BaseURL}/products/{product.id}";
+            var json = JsonConvert.SerializeObject(product);
+            var data = new StringContent(json, Encoding.UTF8, "application/json");
+            var httpResponse = await httpClient.PutAsync(ProductAPI,data);
+            return httpResponse.IsSuccessStatusCode;
+        }
+        public async Task<ObservableCollection<Product>> GetFavProducts(string categoryName = "")
+        {
+            string ProductAPI = $"{BaseURL}/isFavourite?isFavourite={true}";
+            ObservableCollection<Product> products;
+            string productsAsString = await httpClient.GetStringAsync(ProductAPI);
+            products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(productsAsString);
+            return products;
+        }
+
     }
     
 }
