@@ -13,11 +13,11 @@ namespace E_commerce_App.ViewModels
 
         SharedPreferences sharedPreferences;
         User currentUser;
-        private string password;
+        private string password = "";
         ServerRequests httpClient;
         private bool isRunning;
-        private string lastName;
-        private string firstName;
+        private string lastName = "";
+        private string firstName = "";
 
         #endregion
 

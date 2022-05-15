@@ -1,3 +1,4 @@
+using E_commerce_App.Views;
 using E_commerce_App.Views.Pages;
 using System;
 using Xamarin.Forms;
@@ -17,8 +18,8 @@ namespace E_commerce_App
         {
             InitializeComponent();
 
-            
-           
+
+
             MainPage = new E_commerce_App.Views.TabContainer();
             //new NavigationPage(new Views.AccountDetails());
             //new Views.AccountDetails();
@@ -32,8 +33,8 @@ namespace E_commerce_App
             //new Cart();
             //new Views.LoginwithSocialIconPage();
             //new E_commerce_App.Views.CategoryTilePage();
-           //new E_commerce_App.Views.ProductTilePage();
-           //new E_commerce_App.Views.DetailPage();
+            //new E_commerce_App.Views.ProductTilePage();
+            //new E_commerce_App.Views.DetailPage();
         }
 
         protected override void OnStart()

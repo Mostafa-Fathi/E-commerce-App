@@ -14,11 +14,11 @@ namespace E_commerce_App.ViewModels
 
         SharedPreferences sharedPreferences;
         User currentUser;
-        private string currentPassword;
+        private string currentPassword = "";
         ServerRequests httpClient;
         private bool isRunning;
-        private string newPassword;
-        private string confirmNewPassword;
+        private string newPassword = "";
+        private string confirmNewPassword = "";
 
         #endregion
 

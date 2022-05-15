@@ -16,8 +16,8 @@ namespace E_commerce_App.ViewModels
 
         SharedPreferences sharedPreferences;
         User currentUser;
-        private string email;
-        private string password;
+        private string email="";
+        private string password="";
         ServerRequests httpClient;
         private bool isRunning;
 
@@ -149,7 +149,8 @@ namespace E_commerce_App.ViewModels
 
                         }
 
-                        else {
+                        else
+                        {
 
                             IsRunning = false;
                             await App.Current.MainPage.DisplayAlert("Error", "Error While Update Email", "OK");
@@ -170,6 +171,10 @@ namespace E_commerce_App.ViewModels
 
                 }
 
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Wrong input", "You must compelte input fields", "OK");
             }
         }
         #endregion

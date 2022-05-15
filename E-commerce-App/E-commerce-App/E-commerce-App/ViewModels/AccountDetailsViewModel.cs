@@ -111,7 +111,15 @@ namespace E_commerce_App.ViewModels
 
         private void AddressClick(object sender)
         {
-            App.Current.MainPage.Navigation.PushAsync(new MyAddresses());
+            if (currentUser.address.Count == 0)
+            {
+                App.Current.MainPage.Navigation.PushAsync(new MyAddresses());
+            }
+            else
+            {
+                App.Current.MainPage.Navigation.PushAsync(new AddedAddressDetails());
+            }
+
         }
 
         private void OrdersClick(object sender)

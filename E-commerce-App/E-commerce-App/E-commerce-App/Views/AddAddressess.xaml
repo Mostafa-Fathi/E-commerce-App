@@ -1,8 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:controls="clr-namespace:E_commerce_App.Controls"
+             xmlns:controls="clr-namespace:E_commerce_App.Controls" xmlns:viewModel="clr-namespace:E_commerce_App.ViewModels"
              x:Class="E_commerce_App.Views.AddAddressess" Title="Add Address">
+    <!--  Binding context for login with social icon page  -->
+    <ContentPage.BindingContext>
+        <viewModel:AddAddressViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
         <StackLayout BackgroundColor="
@@ -17,6 +21,7 @@
                
                 <controls:CustomEntry 
                        Placeholder="Enter First Name Here" 
+                       Text="{Binding FirstName}"
                        TextColor="Gray" 
                        BackgroundColor="White" 
                        Margin="40,10" 
@@ -33,6 +38,7 @@
 
                 <controls:CustomEntry 
                        Placeholder="Enter Last Name Here" 
+                       Text="{Binding LastName}"
                        TextColor="Gray" 
                        BackgroundColor="White" 
                        Margin="40,10" 
@@ -52,6 +58,8 @@
                 <controls:CustomEntry 
                        Placeholder="Enter Phone Here" 
                        TextColor="Gray" 
+                                           Text="{Binding Phone}"
+
                        BackgroundColor="White"
                        Margin="40,10" FontSize="17"
                        VerticalTextAlignment="Center" 
@@ -67,6 +75,8 @@
                        FontAttributes="Bold" />
                     <controls:CustomEntry 
                        Placeholder="Enter Country Details Here" 
+                                               Text="{Binding Country}"
+
                        TextColor="Gray" 
                        BackgroundColor="White" 
                        Margin="40,10" FontSize="17"
@@ -82,6 +92,8 @@
                        FontAttributes="Bold" />
                 <controls:CustomEntry 
                        Placeholder="Enter State Details Here" 
+                                           Text="{Binding State}"
+
                        TextColor="Gray" 
                        BackgroundColor="White" 
                        Margin="40,10" FontSize="17"
@@ -97,6 +109,8 @@
 
                 <controls:CustomEntry 
                        Placeholder="Enter Street Details Here"
+                                           Text="{Binding Street}"
+
                        TextColor="Gray" 
                        BackgroundColor="White"
                        Margin="40,10"
@@ -114,10 +128,12 @@
                              HorizontalOptions="Start" Margin="40,0">
                     <Button x:Name="btn_Yes" Text="Yes" 
                             BackgroundColor="White" 
+                            Command="{Binding DefaultAddressCommand}"
                             FontAttributes="Bold" FontSize="17"
                             TextTransform="None" TextColor="Black"
                             Clicked="cls1_defaultAddress"/>
                     <Button x:Name="btn_No" Text="No" 
+                            Command="{Binding AdditionalAddressCommand}"
                             BackgroundColor="Green" 
                             FontAttributes="Bold" 
                             FontSize="17"
@@ -135,6 +151,7 @@
 
             <Button Text="Add Address" 
                     BackgroundColor="Red"
+                    Command="{Binding AddAddressCommand}"
                     TextTransform="None"  
                     FontAttributes="Bold"
                     FontSize="17"
