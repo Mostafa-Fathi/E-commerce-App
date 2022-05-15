@@ -34,15 +34,17 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="20.1.0.50" />
-    <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="20.1.0.50" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Cards" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBadgeView" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfComboBox" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRating" Version="20.1.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRotator" Version="20.1.0.55" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.2" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -115,6 +117,9 @@
     <EmbeddedResource Update="Views\AddedAddressDetails.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\CartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\DetailPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -154,6 +159,9 @@
     <EmbeddedResource Update="Views\ProfileLandingPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\PriceDetailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\ProfilePersonally.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -169,7 +177,16 @@
     <EmbeddedResource Update="Views\EmptyWishList.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\CartItemListTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\SocialIconTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\WishlistItemTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\WishlistPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
   </ItemGroup>

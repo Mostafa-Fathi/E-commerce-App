@@ -11,7 +11,6 @@
             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid RowDefinitions="Auto, *" >
-            <Button Text="To Products" Margin="15" Clicked="toProducts" BackgroundColor="Yellow"/>
             <!--  Title View  -->
             <!--  ListView for Category  -->
             <listView:SfListView
@@ -21,6 +20,7 @@
                 AutoFitMode="Height"
                 HorizontalOptions="FillAndExpand"
                 ItemSpacing="8"
+                SelectedItem="{Binding SelectedCategory}"
                 ItemsSource="{Binding CategoriesList}"
                 Style="{StaticResource TransparentSelectionListView}">
 

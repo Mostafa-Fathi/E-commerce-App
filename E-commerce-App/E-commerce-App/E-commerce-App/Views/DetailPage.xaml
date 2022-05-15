@@ -39,7 +39,7 @@
                         <UriImageSource
                             CacheValidity="14"
                             CachingEnabled="true"
-                            Uri="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" />
+                            Uri="{Binding}" />
                     </Image.Source>
                 </Image>
             </DataTemplate>
@@ -56,7 +56,7 @@
                         <UriImageSource
                             CacheValidity="14"
                             CachingEnabled="true"
-                            Uri="{Binding .}" />
+                            Uri="{Binding}" />
                     </Image.Source>
                 </Image>
             </DataTemplate>
@@ -84,10 +84,7 @@
     <ContentPage.ControlTemplate>
         <ControlTemplate>
             <StackLayout Spacing="0">
-
                 <!--  Title View  -->
-          
-
                 <ContentPresenter />
 
             </StackLayout>
@@ -255,7 +252,7 @@
                             Text="{Binding IsFavourite, Converter={StaticResource BoolToStringConverter}, ConverterParameter=1}"
                             TextColor="{Binding IsFavourite, Converter={x:StaticResource BoolToColorConverter}, ConverterParameter=4}" />
 
-                        <!--  Share Icon  -->
+                        <!--  Share Icon  
                         <buttons:SfButton
                             Grid.Row="2"
                             Grid.RowSpan="2"
@@ -269,7 +266,7 @@
                             Style="{StaticResource IconButtonStyle}"
                             Text="{StaticResource Share}"
                             VerticalOptions="Start" />
-
+-->
                         <BoxView
                             Grid.Row="{OnIdiom Default=5,
                                                Phone=4}"
@@ -283,7 +280,7 @@
                                             Desktop={DynamicResource Gray-Bg},
                                             Converter={StaticResource DynamicResourceToColorConverter}}" />
 
-                        <!--  Size Label  -->
+                        <!--  Size Label  
                         <Label
                             Grid.Row="{OnIdiom Default=6,
                                                Phone=5}"
@@ -294,8 +291,8 @@
                             HorizontalOptions="Start"
                             Style="{StaticResource TitleLabelStyle}"
                             Text="Select Size" />
-
-                        <!--  Size variant buttons  -->
+-->
+                        <!--  Size variant buttons  
                         <buttons:SfSegmentedControl
                             Grid.Row="{OnIdiom Default=7,
                                                Phone=6}"
@@ -311,7 +308,7 @@
                                 <behavior:SegmentedControlCommandBehavior Command="{Binding BindingContext.VariantCommand, Source={x:Reference detailPage}}" />
                             </buttons:SfSegmentedControl.Behaviors>
                         </buttons:SfSegmentedControl>
-
+-->
                         <BoxView
                             Grid.Row="8"
                             Grid.Column="0"

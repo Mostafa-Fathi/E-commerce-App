@@ -15,8 +15,8 @@
             </ShellContent>
         </Tab>
         <Tab Title="Cart" Icon="cart.png">
-            <ShellContent >
-                <pages:Cart />
+            <ShellContent Route="CartPage" >
+                <views:CartPage/>
             </ShellContent>
         </Tab>
         <Tab Title="Profile" Icon="user.png">

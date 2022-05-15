@@ -14,7 +14,7 @@ namespace E_commerce_App.Views
     {
         public AddAddressess()
         {
-            InitializeComponent();
+            InitializeComponent(); 
         }
 
     }
