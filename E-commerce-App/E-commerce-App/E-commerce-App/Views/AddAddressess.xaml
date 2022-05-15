@@ -127,25 +127,25 @@
                 <StackLayout Orientation="Horizontal" Spacing="10" 
                              HorizontalOptions="Start" Margin="40,0">
                     <Button x:Name="btn_Yes" Text="Yes" 
-                            BackgroundColor="White" 
+                            BackgroundColor="{Binding YesBgBtnColor}" 
                             Command="{Binding DefaultAddressCommand}"
                             FontAttributes="Bold" FontSize="17"
-                            TextTransform="None" TextColor="Black"
-                            Clicked="cls1_defaultAddress"/>
+                            TextTransform="None" TextColor="{Binding YesBtnColor}"
+                            />
                     <Button x:Name="btn_No" Text="No" 
                             Command="{Binding AdditionalAddressCommand}"
-                            BackgroundColor="Green" 
+                            BackgroundColor="{Binding NoBgBtnColor}" 
                             FontAttributes="Bold" 
                             FontSize="17"
                             TextTransform="None" 
-                            TextColor="White" 
-                            Clicked="cls2_defaultAddress"/>
+                            TextColor="{Binding NoBtnColor}" 
+                            />
                 </StackLayout>
-                <Label x:Name="default_Address_label" 
-                       Text="This is NOT default shipping Address" 
+                <Label 
+                       Text="{Binding LabelText}" 
                        Margin="20,10,0,0" 
                        FontSize="16"
-                       TextColor="Gray" 
+                       TextColor="{Binding LabelColor}" 
                        FontAttributes="Bold" />
             </StackLayout>
 
