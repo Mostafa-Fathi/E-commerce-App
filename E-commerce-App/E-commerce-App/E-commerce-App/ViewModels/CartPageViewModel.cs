@@ -17,21 +17,23 @@ namespace E_commerce_App.ViewModels
     {
         #region Fields
 
-        private ObservableCollection<Product> cartDetails;
+        private ObservableCollection<CartProductItem> cartDetails;
         private ServerRequests httpRequest= new ServerRequests();
         private double totalPrice;
 
         private double discountPrice;
 
         private double discountPercent;
+        private int quantity;
 
         private double percent;
 
-        private ObservableCollection<Product> produts;
+        private ObservableCollection<CartProductItem> produts;
 
         private Command placeOrderCommand;
 
         private Command removeCommand;
+        private Command plusQuantityCommand;
 
         private Command quantitySelectedCommand;
 
@@ -46,8 +48,8 @@ namespace E_commerce_App.ViewModels
         #region
         public CartPageViewModel()
         {
-            CartDetails = new ObservableCollection<Product>() {
-                new Product(){
+            CartDetails = new ObservableCollection<CartProductItem>() {
+                new CartProductItem(){
                 id= 2,
                 title= "Mens Casual Premium Slim Fit T-Shirts ",
                 description= "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
@@ -58,6 +60,7 @@ namespace E_commerce_App.ViewModels
                 discountPercent= 0,
                 discountPrice= 0,
                 isFavourite= false,
+                quantity = 1,
                 rating= new Rating(){rate=4, count=259}
     }
 
@@ -69,7 +72,7 @@ namespace E_commerce_App.ViewModels
 
         #region Public properties 
 
-        public ObservableCollection<Product> CartDetails
+        public ObservableCollection<CartProductItem> CartDetails
         {
             get
             {
@@ -140,29 +143,30 @@ namespace E_commerce_App.ViewModels
                 this.SetProperty(ref this.discountPercent, value);
             }
         }
-/*
-        [DataMember(Name = "products")]
-        public ObservableCollection<Product> Products
-        {
-            get
-            {
-                return this.produts;
-            }
-
-            set
-            {
-                if (this.produts == value)
+      
+        /*  
+                [DataMember(Name = "products")]
+                public ObservableCollection<Product> Products
                 {
-                    return;
-                }
+                    get
+                    {
+                        return this.produts;
+                    }
 
-                this.SetProperty(ref this.produts, value);
-              //  this.GetProducts(this.Products);
-                this.UpdatePrice();
-                NotifyPropertyChanged();
-            }
-        }
-*/
+                    set
+                    {
+                        if (this.produts == value)
+                        {
+                            return;
+                        }
+
+                        this.SetProperty(ref this.produts, value);
+                      //  this.GetProducts(this.Products);
+                        this.UpdatePrice();
+                        NotifyPropertyChanged();
+                    }
+                }
+        */
 
         #endregion
 
@@ -182,6 +186,10 @@ namespace E_commerce_App.ViewModels
         public Command RemoveCommand
         {
             get { return this.removeCommand ?? (this.removeCommand = new Command(this.RemoveClicked)); }
+        } 
+        public Command PlusQuantityCommand
+        {
+            get { return this.plusQuantityCommand ?? (this.plusQuantityCommand = new Command(this.PlusQuantityClicked)); }
         }
 
         /// <summary>
@@ -244,14 +252,18 @@ namespace E_commerce_App.ViewModels
         }
         private async void RemoveClicked(object obj)
         {
-            if (obj is Product product)
+            if (obj is CartProductItem product)
             {
                 this.CartDetails.Remove(product);
                 this.UpdatePrice();
                 await httpRequest.removeFromCart(product.id);
             }
         }
-
+         private  void PlusQuantityClicked(object obj)
+        {
+            this.quantity++;
+        }
+        
         private void QuantitySelected(object selectedItem)
         {
             // Incident - 249030 - Issue in ComboBox Slection changed event.
@@ -278,9 +290,9 @@ namespace E_commerce_App.ViewModels
             // Do something
         }
 
-        private void GetProducts(ObservableCollection<Product> products)
+        private void GetProducts(ObservableCollection<CartProductItem> products)
         {
-            this.CartDetails = new ObservableCollection<Product>();
+            this.CartDetails = new ObservableCollection<CartProductItem>();
             if (products != null && products.Count > 0)
             {
                 this.CartDetails = products;

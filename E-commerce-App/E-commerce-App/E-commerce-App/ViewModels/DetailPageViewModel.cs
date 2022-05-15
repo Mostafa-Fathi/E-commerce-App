@@ -60,6 +60,7 @@ namespace E_commerce_App.ViewModels
 
         private Command loadMoreCommand;
         private Product selectedProduct;
+        private CartProductItem cartProduct;
         #endregion
 
         #region Constructor
@@ -75,9 +76,11 @@ namespace E_commerce_App.ViewModels
             Name = product.title;
             Description= product.description;
             ActualPrice = product.actualPrice;
+            product.discountPrice = product.actualPrice - product.actualPrice * product.discountPercent;
             DiscountPrice = product.discountPrice;
             DiscountPercent = product.discountPercent;
             SelectedProduct = product;
+            cartProduct = product as CartProductItem;
         }
 
         #endregion
@@ -459,7 +462,7 @@ namespace E_commerce_App.ViewModels
         {
             this.cartItemCount = this.cartItemCount ?? 0;
             this.CartItemCount += 1;
-            int statusCode = await httpClient.addProductToCart(SelectedProduct);
+            int statusCode = await httpClient.addProductToCart(cartProduct);
             if (statusCode==500)
             {
                 await Application.Current.MainPage.DisplayAlert("Cart", "Item already exist", "OK");

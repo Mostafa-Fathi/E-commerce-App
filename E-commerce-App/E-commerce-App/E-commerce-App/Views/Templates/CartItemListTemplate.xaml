@@ -116,8 +116,8 @@
                 HeightRequest="32"
                 HorizontalOptions="Start">
 
-                <!--  Product quantity dropdown  
-                <combobox:SfComboBox
+                <!--  Product quantity dropdown  -->
+                <!--<combobox:SfComboBox
                     x:Name="QuantityComboBox"
                     BorderColor="{DynamicResource Gray-300}"
                     DataSource="{Binding Quantities}"
@@ -162,18 +162,53 @@
                     <combobox:SfComboBox.Behaviors>
                         <behaviors:SfComboBoxDropDownBehavior Command="{Binding Source={x:Reference cartItemTemplate}, Path=ParentBindingContext.QuantitySelectedCommand}" />
                     </combobox:SfComboBox.Behaviors>
-                </combobox:SfComboBox>
--->
+                </combobox:SfComboBox>-->
+
             </border:SfBorder>
            <!-- <StackLayout x:Name="Container">
                 <Label BindingContext="{x:Reference stepper}" Text="{Binding Value}" />
                 <Stepper Minimum="0" Maximum="10" x:Name="stepper" Increment="0.5" />
             </StackLayout>
             -->
+            <!--<buttons:SfButton
+                helper:RTLHelper.Margin="{OnIdiom Default='44,0,16,0',
+                                                  Phone='24,0,16,0'}"
+                CommandParameter="{Binding}"
+                HeightRequest="32"
+                HorizontalOptions="EndAndExpand"
+                Style="{StaticResource TransparentButtonStyle}"
+                VerticalOptions="Center"
+                WidthRequest="92">
+                <buttons:SfButton.Behaviors>
+                    <behaviors:ItemTemplateButtonBehavior
+                        ChildElement="{Binding Path=ChildElement, Source={x:Reference cartItemTemplate}}"
+                        Command="{Binding Path=ParentBindingContext.PlusQuantityCommand, Source={x:Reference cartItemTemplate}}"
+                        ParentElement="{Binding Path=ParentElement, Source={x:Reference cartItemTemplate}}" />
+                </buttons:SfButton.Behaviors>
+                <buttons:SfButton.Content>
+                    <Label
+                        FontSize="14"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="{Binding quantity}"
+                        TextColor="{DynamicResource HyperLink}"
+                        VerticalOptions="Center" />
+                </buttons:SfButton.Content>
+            </buttons:SfButton>-->
+                 
+                <Button Text="ـــ" HorizontalOptions="Center" CornerRadius="30" VerticalOptions="Center" Margin="5,0,0,0" BorderColor="Black" BorderWidth="1" BackgroundColor="White" WidthRequest="40" HeightRequest="40"/>
+                <Label
+                        FontSize="20"
+                        Style="{StaticResource TitleLabelStyle}"
+                        Text="1"
+                        TextColor="Black"
+                        VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="5,0,5,0"/>
+                <Button Text="+" HorizontalOptions="Center" CornerRadius="30" VerticalOptions="Center" Margin="5,0,0,0" BorderColor="Black" BorderWidth="1" BackgroundColor="White" WidthRequest="40" HeightRequest="40"/>
+            
+            
             <!--  Remove button  -->
             <buttons:SfButton
                 helper:RTLHelper.Margin="{OnIdiom Default='44,0,16,0',
-                                                  Phone='24,0,16,0'}"
+                                                  Phone='0,0,16,0'}"
                 CommandParameter="{Binding}"
                 HeightRequest="32"
                 HorizontalOptions="EndAndExpand"
@@ -191,7 +226,7 @@
                         FontSize="14"
                         Style="{StaticResource TitleLabelStyle}"
                         Text="Remove"
-                        TextColor="{DynamicResource HyperLink}"
+                        TextColor="Red"
                         VerticalOptions="Center" />
                 </buttons:SfButton.Content>
             </buttons:SfButton>

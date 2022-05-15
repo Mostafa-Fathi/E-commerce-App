@@ -12,5 +12,6 @@ namespace E_commerce_App.Models
         public DateTime date { get; set; }
 
         public List<CartProductItem> products { get; set; }
+
     }
 }

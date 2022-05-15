@@ -4,10 +4,10 @@ using System.Text;
 
 namespace E_commerce_App.Models
 {
-    public class CartProductItem
+    public class CartProductItem : Product
     {
-        public int productId { get; set; }
-        public int quantity { get; set; }
+        //public Product product { get; set; }
+        public int quantity { get; set; } = 1;
     }
 
 }

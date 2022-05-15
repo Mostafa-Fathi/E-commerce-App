@@ -684,54 +684,5 @@
   "profile": {
     "name": "typicode"
   },
-  "cart": [
-    {
-      "id": 17,
-      "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
-      "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
-      "category": "women's clothing",
-      "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
-      "rating": {
-        "rate": 3.8,
-        "count": 679
-      },
-      "totalQuantity": 0,
-      "isFavourite": false,
-      "actualPrice": 39.99,
-      "discountPercent": 0,
-      "discountPrice": 0
-    },
-    {
-      "id": 7,
-      "title": "White Gold Plated Princess",
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
-      "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-      "rating": {
-        "rate": 3,
-        "count": 400
-      },
-      "totalQuantity": 0,
-      "isFavourite": false,
-      "actualPrice": 9.99,
-      "discountPercent": 0,
-      "discountPrice": 0
-    },
-    {
-      "id": 4,
-      "title": "Mens Casual Slim Fit",
-      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-      "rating": {
-        "rate": 2.1,
-        "count": 430
-      },
-      "totalQuantity": 0,
-      "isFavourite": true,
-      "actualPrice": 15.99,
-      "discountPercent": 0,
-      "discountPrice": 0
-    }
-  ]
+  "cart": []
 }

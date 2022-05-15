@@ -14,7 +14,7 @@ namespace E_commerce_App.Services
 {
 
 
-    const string BaseURL= "https://506f-102-189-87-121.eu.ngrok.io";
+    const string BaseURL= "https://c0aa-84-233-75-84.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -83,8 +83,9 @@ namespace E_commerce_App.Services
             }
             return null;
         }
-        public async Task<int> addProductToCart(Product product )
+        public async Task<int> addProductToCart(CartProductItem product )
         {
+            //product.quantity = 1;
             string CartAPI = $"{BaseURL}/cart";
             var json = JsonConvert.SerializeObject(product);
             var data = new StringContent(json, Encoding.UTF8, "application/json");
@@ -97,12 +98,12 @@ namespace E_commerce_App.Services
             var httpResponse = await httpClient.DeleteAsync(CartAPI);
             return httpResponse.IsSuccessStatusCode;
         }
-        public async Task<ObservableCollection<Product>> getProductFromCart()
+        public async Task<ObservableCollection<CartProductItem>> getProductFromCart()
         {
             string CartAPI = $"{BaseURL}/cart";
             string cartAsString =await httpClient.GetStringAsync(CartAPI);
-            ObservableCollection<Product> Cart;
-            Cart = JsonConvert.DeserializeObject<ObservableCollection<Product>>(cartAsString);
+            ObservableCollection<CartProductItem> Cart;
+            Cart = JsonConvert.DeserializeObject<ObservableCollection<CartProductItem>>(cartAsString);
             return Cart;
         }
         public async Task<bool> addRemoveFavourites(Product product)
