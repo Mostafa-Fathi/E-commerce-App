@@ -34,9 +34,8 @@ namespace E_commerce_App.Views
 
         private void FavouriteProductClick(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new EmptyWishList());
+            Navigation.PushAsync(new WishlistPage());
         }
-
         private void LogoutClick(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Pages.Profile());

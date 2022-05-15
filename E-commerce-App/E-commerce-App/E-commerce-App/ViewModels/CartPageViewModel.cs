@@ -218,6 +218,7 @@ namespace E_commerce_App.ViewModels
                 return this.itemTappedCommand ?? (this.itemTappedCommand = new Command(this.ItemSelected));
             }
         }
+
         public Command PageAppearingCommand
         {
             get
@@ -245,7 +246,7 @@ namespace E_commerce_App.ViewModels
         private async void RemoveClicked(object obj)
         {
             if (obj is Product product)
-            {
+            { 
                 this.CartDetails.Remove(product);
                 this.UpdatePrice();
                 await httpRequest.removeFromCart(product.id);

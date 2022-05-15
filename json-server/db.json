@@ -55,7 +55,7 @@
         "count": 430
       },
       "totalQuantity": 0,
-      "isFavourite": true,
+      "isFavourite": false,
       "actualPrice": 15.99,
       "discountPercent": 0,
       "discountPrice": 0
@@ -80,7 +80,6 @@
       "id": 6,
       "title": "Solid Gold Petite Micropave ",
       "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
-      "actualPrice": 168,
       "category": "jewelery",
       "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
       "rating": {
@@ -88,7 +87,8 @@
         "count": 70
       },
       "totalQuantity": 0,
-      "isFavourite": true,
+      "isFavourite": false,
+      "actualPrice": 168,
       "discountPercent": 0,
       "discountPrice": 0
     },
@@ -159,7 +159,6 @@
     {
       "id": 11,
       "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
-      "actualPrice": 109,
       "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
       "category": "electronics",
       "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
@@ -168,9 +167,10 @@
         "count": 319
       },
       "totalQuantity": 0,
+      "isFavourite": false,
+      "actualPrice": 109,
       "discountPercent": 0,
-      "discountPrice": 0,
-      "isFavourite": false
+      "discountPrice": 0
     },
     {
       "id": 12,
@@ -702,34 +702,50 @@
       "discountPrice": 0
     },
     {
-      "id": 7,
-      "title": "White Gold Plated Princess",
-      "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+      "id": 6,
+      "title": "Solid Gold Petite Micropave ",
+      "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
       "category": "jewelery",
-      "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+      "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
       "rating": {
-        "rate": 3,
-        "count": 400
+        "rate": 3.9,
+        "count": 70
       },
       "totalQuantity": 0,
-      "isFavourite": false,
-      "actualPrice": 9.99,
+      "isFavourite": true,
+      "actualPrice": 168,
       "discountPercent": 0,
       "discountPrice": 0
     },
     {
-      "id": 4,
-      "title": "Mens Casual Slim Fit",
-      "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
-      "category": "men's clothing",
-      "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+      "id": 9,
+      "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
       "rating": {
-        "rate": 2.1,
-        "count": 430
+        "rate": 3.3,
+        "count": 203
       },
       "totalQuantity": 0,
       "isFavourite": true,
-      "actualPrice": 15.99,
+      "actualPrice": 64,
+      "discountPercent": 0,
+      "discountPrice": 0
+    },
+    {
+      "id": 11,
+      "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+      "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+      "category": "electronics",
+      "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+      "rating": {
+        "rate": 4.8,
+        "count": 319
+      },
+      "totalQuantity": 0,
+      "isFavourite": true,
+      "actualPrice": 109,
       "discountPercent": 0,
       "discountPrice": 0
     }

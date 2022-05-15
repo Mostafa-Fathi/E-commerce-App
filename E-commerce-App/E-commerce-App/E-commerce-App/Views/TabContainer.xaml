@@ -14,13 +14,13 @@
             </ShellContent>
         </Tab>
         <Tab Title="Cart" Icon="cart.png">
-            <ShellContent >
+            <ShellContent Route="CartPage" >
                 <views:CartPage/>
             </ShellContent>
         </Tab>
         <Tab Title="Profile" Icon="user.png">
             <ShellContent>
-                <pages:Profile />
+                <views:AccountDetails />
             </ShellContent>
         </Tab>
       

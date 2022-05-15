@@ -17,9 +17,7 @@ namespace E_commerce_App
         public App()
         {
             InitializeComponent();
-
-
-
+            Routing.RegisterRoute("wishListScreen", typeof(WishlistPage));
             MainPage =
             //new NavigationPage(new Views.AccountDetails());
             //new Views.AccountDetails();
@@ -36,6 +34,7 @@ namespace E_commerce_App
             //new E_commerce_App.Views.CategoryTilePage();
             //new E_commerce_App.Views.ProductTilePage();
             //new E_commerce_App.Views.DetailPage();
+            //new WishlistPage();
         }
 
         protected override void OnStart()
