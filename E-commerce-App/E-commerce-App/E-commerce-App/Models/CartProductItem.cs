@@ -8,6 +8,14 @@ namespace E_commerce_App.Models
     {
         //public Product product { get; set; }
         public int quantity { get; set; } = 1;
+        public void plusQuantity()
+        {
+            quantity++;
+        }
+        public void minusQuantity()
+        {
+            quantity--;
+        }
     }
 
 }

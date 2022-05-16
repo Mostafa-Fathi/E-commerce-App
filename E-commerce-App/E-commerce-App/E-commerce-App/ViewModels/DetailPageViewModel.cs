@@ -474,7 +474,7 @@ namespace E_commerce_App.ViewModels
             }
             else
             {
-                await Application.Current.MainPage.DisplayAlert("Network Error", "Check your connection", "OK");
+                await Application.Current.MainPage.DisplayAlert(statusCode.ToString(), "Check your connection", "OK");
             }
         }
 

@@ -14,7 +14,7 @@ namespace E_commerce_App.Services
 {
 
 
-    const string BaseURL= "https://c0aa-84-233-75-84.eu.ngrok.io";
+    const string BaseURL= "https://82fa-62-114-51-252.eu.ngrok.io";
     HttpClient httpClient = new HttpClient();
     public async Task<ObservableCollection<Category>> GetCategories(){
         // fake api 
@@ -86,6 +86,7 @@ namespace E_commerce_App.Services
         public async Task<int> addProductToCart(CartProductItem product )
         {
             //product.quantity = 1;
+
             string CartAPI = $"{BaseURL}/cart";
             var json = JsonConvert.SerializeObject(product);
             var data = new StringContent(json, Encoding.UTF8, "application/json");

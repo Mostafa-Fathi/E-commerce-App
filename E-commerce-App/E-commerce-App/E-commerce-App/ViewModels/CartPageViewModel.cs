@@ -243,7 +243,7 @@ namespace E_commerce_App.ViewModels
         }
         private void PlaceOrderClicked(object obj)
         {
-            // Do something
+            Application.Current.MainPage.DisplayAlert("PlaceOrderClicked", "Order", "OK");
         }
         private async void loadData()
         {
@@ -262,6 +262,7 @@ namespace E_commerce_App.ViewModels
          private  void PlusQuantityClicked(object obj)
         {
             this.quantity++;
+            Application.Current.MainPage.DisplayAlert("New Quantity", this.quantity.ToString(), "OK");
         }
         
         private void QuantitySelected(object selectedItem)

@@ -195,11 +195,15 @@
                 </buttons:SfButton.Content>
             </buttons:SfButton>-->
                  
-                <Button Text="ـــ" HorizontalOptions="Center" CornerRadius="30" VerticalOptions="Center" Margin="5,0,0,0" BorderColor="Black" BorderWidth="1" BackgroundColor="White" WidthRequest="40" HeightRequest="40"/>
+                <Button Text="ـــ" HorizontalOptions="Center" CornerRadius="30" 
+                        VerticalOptions="Center" Margin="5,0,0,0" BorderColor="Black" BorderWidth="1"
+                        BackgroundColor="White" WidthRequest="40" HeightRequest="40"
+                        
+                        />
                 <Label
                         FontSize="20"
                         Style="{StaticResource TitleLabelStyle}"
-                        Text="1"
+                        Text="{Binding quantity}"
                         TextColor="Black"
                         VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Margin="5,0,5,0"/>
                 <Button Text="+" HorizontalOptions="Center" CornerRadius="30" VerticalOptions="Center" Margin="5,0,0,0" BorderColor="Black" BorderWidth="1" BackgroundColor="White" WidthRequest="40" HeightRequest="40"/>
@@ -218,7 +222,7 @@
                 <buttons:SfButton.Behaviors>
                     <behaviors:ItemTemplateButtonBehavior
                         ChildElement="{Binding Path=ChildElement, Source={x:Reference cartItemTemplate}}"
-                        Command="{Binding Path=ParentBindingContext.RemoveCommand, Source={x:Reference cartItemTemplate}}"
+                        Command="{Binding Path=ParentBindingContext.PlusQuantityCommand, Source={x:Reference cartItemTemplate}}"
                         ParentElement="{Binding Path=ParentElement, Source={x:Reference cartItemTemplate}}" />
                 </buttons:SfButton.Behaviors>
                 <buttons:SfButton.Content>
