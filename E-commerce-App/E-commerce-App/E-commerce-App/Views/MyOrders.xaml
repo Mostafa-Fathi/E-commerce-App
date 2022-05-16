@@ -7,11 +7,11 @@
             <Image Source="market"/>
             <Label Text="No Orders Till Now"
                    HorizontalTextAlignment="Center"
-                   TextColor="Black" FontSize="20"/>
-            <Label Text="Start Now" FontSize="17"
+                   TextColor="Black" FontSize="20"/> 
+            <Label Text="Start Now" FontSize="17" 
                    HorizontalTextAlignment="Center"
-                   TextColor="Black" />
-            <Button Text="Back" BackgroundColor="Red" Clicked="BackToAccountDetails"
+                   TextColor="Black"/>
+            <Button Text="Back" BackgroundColor="Red" Clicked="BackToAccountDetails" 
                     TextTransform="None" TextColor="White" Margin="50,0"/>
         </StackLayout>
     </ContentPage.Content>
