@@ -64,7 +64,27 @@ namespace E_commerce_App.Services
 
             }
         }
-        
+
+        public Address EditableAdd
+        {
+            get
+            {
+                string temp = Preferences.Get("EditAdd", "null");
+                if (temp != "null")
+                {
+                    Address address = JsonConvert.DeserializeObject<Address>(temp);
+                    return address;
+                }
+                else return null;
+            }
+            set
+            {
+                Preferences.Set("EditAdd", JsonConvert.SerializeObject(value));
+                OnPropertyChanged("EditableAdd");
+
+            }
+        }
+
 
     }
 }

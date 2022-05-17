@@ -16,8 +16,8 @@
                     <StackLayout Orientation="Horizontal">
                         <Label Text="{Binding DefaultAddressLabel}" FontSize="20" 
                                FontAttributes="Bold" TextColor="Black"/>
-                        <!--<ImageButton Source="edit64" BackgroundColor="Transparent"
-                                     HeightRequest="25" HorizontalOptions="EndAndExpand" />-->
+                        <ImageButton Source="edit64" BackgroundColor="Transparent"
+                                     HeightRequest="25" HorizontalOptions="EndAndExpand" />
                     </StackLayout>
                     <StackLayout IsVisible="{Binding DefAddIsVisible}">
                         <!--Will bind on Name here-->
@@ -33,7 +33,7 @@
                             <!--Will bind on telephone-->
                             <Label Text="{Binding DefaultAddressObj.phone}" TextColor="Black" FontSize="17"/>
                             <ImageButton Source="remove96" BackgroundColor="Transparent"
-                                     HeightRequest="25" HorizontalOptions="EndAndExpand" />
+                                     HeightRequest="25" HorizontalOptions="EndAndExpand"  />
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
@@ -44,7 +44,7 @@
                 <Label IsVisible="{Binding AdditionalAddressesIsVisible}" Text="Additional Addresses" FontSize="20" 
                        FontAttributes="Bold" TextColor="Black" Margin="20,5"/>
 
-                <ListView x:Name="mylist" RowHeight="250" ItemsSource="{Binding AddressesList}">
+                <ListView x:Name="mylist" RowHeight="250" ItemsSource="{Binding AddressesList}" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

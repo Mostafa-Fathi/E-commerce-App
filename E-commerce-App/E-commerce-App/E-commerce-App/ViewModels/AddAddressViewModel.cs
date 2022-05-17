@@ -299,6 +299,7 @@ namespace E_commerce_App.ViewModels
 
         #region methods
 
+        
         private async void AddAddressButtonAsync(object sender)
         {
             if (Phone != String.Empty && Country != String.Empty && State != String.Empty && FirstName != String.Empty && LastName != String.Empty && Street != String.Empty)
@@ -332,7 +333,6 @@ namespace E_commerce_App.ViewModels
                         sharedPreferences.CurrentUserInfo=currentUser;
                         await App.Current.MainPage.DisplayAlert("Done", "Address added successfully", "OK");
                         await Shell.Current.Navigation.PopToRootAsync();
-
                     }
                     else
                     {

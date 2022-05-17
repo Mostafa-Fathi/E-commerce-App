@@ -130,7 +130,7 @@ namespace E_commerce_App.ViewModels
         private void FavouriteProductClick(object sender)
         {
             //this alert for testing event Tapped we will change it to navigate to another page
-            App.Current.MainPage.DisplayAlert("data", "data", "ok", "cancel");
+            App.Current.MainPage.Navigation.PushAsync(new WishlistPage());
         }
 
         private void LogoutClick(object sender)

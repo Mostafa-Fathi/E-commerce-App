@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace E_commerce_App.ViewModels
 {
-    public class AddedAddressDetailsViewModel :BaseViewModel
+    public class AddedAddressDetailsViewModel : BaseViewModel
     {
         #region Fields
 
@@ -31,11 +31,12 @@ namespace E_commerce_App.ViewModels
         public AddedAddressDetailsViewModel()
         {
             this.AddAddressCommand = new Command(this.AddAddressButton);
+            this.DeleteDefAddressCommand = new Command(this.DeleteDefAddressButton);
             sharedPreferences = SharedPreferences.Instance;
             currentUser = sharedPreferences.CurrentUserInfo;
             serverRequests = new ServerRequests();
-            defAddIsVisible= false;
-            additionalAddressesIsVisible= false;
+            defAddIsVisible = false;
+            additionalAddressesIsVisible = false;
             defaultAddressLabel = "There is No Default Address";
             addressesList = new ObservableCollection<Address>();
             foreach (var item in currentUser.address)
@@ -45,7 +46,7 @@ namespace E_commerce_App.ViewModels
                     additionalAddressesIsVisible = true;
                     addressesList.Add(item);
                 }
-                else 
+                else
                 {
                     defaultAddressLabel = "Default Address";
                     defAddIsVisible = true;
@@ -163,6 +164,7 @@ namespace E_commerce_App.ViewModels
         #region Command
 
         public Command AddAddressCommand { get; set; }
+        public Command DeleteDefAddressCommand { get; set; }
 
         public Command DefaultAddressCommand { get; set; }
 
@@ -175,6 +177,25 @@ namespace E_commerce_App.ViewModels
         private void AddAddressButton(object sender)
         {
             Shell.Current.Navigation.PushAsync(new Views.AddAddressess());
+        }
+        private async void DeleteDefAddressButton(object sender)
+        {
+          Address address = sender as Address;
+
+            bool answer = await App.Current.MainPage.DisplayAlert(address.phone, address.street,address.name.firstname, "No");
+            //if (answer)
+            //{
+            //    foreach (var item in currentUser.address)
+            //    {
+            //        if (item.defaultAddress == true)
+            //        {
+            //            currentUser.address.Remove(item);
+            //            await serverRequests.UpdateUserData(currentUser);
+            //            sharedPreferences.CurrentUserInfo = currentUser;
+            //        }
+            //    }
+
+            //}
         }
         #endregion
     }
